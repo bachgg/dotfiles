@@ -1,0 +1,89 @@
+# Custom variables
+export EDITOR="nvim"
+export VISUAL="EDITOR"
+export PYTHONPATH=$PYTHONPATH:/home/bach/env/sandbox/lib/python3.8/site-packages
+export ROS_DISTRO=noetic
+PATH=$PATH:~/.local/bin
+export ROS_MASTER_URI=http://192.168.0.111:11311
+export ROS_IP=192.168.0.111
+#PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+
+# Custom commands
+#source /opt/ros/${ROS_DISTRO}/setup.zsh
+
+ROS_SETUP_ZSH=$HOME/ros_catkin_ws/devel_isolated/setup.zsh
+[[ ! -f $ROS_SETUP_ZSH ]] || source $ROS_SETUP_ZSH
+
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init zsh)"
+
+#source /usr/share/doc/fzf/examples/key-bindings.zsh
+#source /usr/share/doc/fzf/examples/completion.zsh
+
+# START download stuff from MARV
+MARV_USER=guenther
+PW='moped@70.03'
+NGROKID='36bc-2a00-1398-200-202-6165-ffd4-2e75-7dc9'
+
+dlMarv () {
+	TOKEN=$(curl -s -X POST -H "Content-Type: application/json" \
+	  -d '{"username": "'$MARV_USER'", "password": "'$PW'"}' \
+	  https://$NGROKID.ngrok.io/marv/api/auth | jq -r .access_token)
+	wget --header "Authorization: Bearer $TOKEN" --content-disposition --continue https://$NGROKID.ngrok.io/marv/api/dataset/$1/0
+}
+# END download stuff from MARV
+
+compdf () {
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress \
+	-dNOPAUSE -dQUIET -dBATCH -sOutputFile=_$1 $1
+}
+
+# Aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias ssources="source ~/.sources"
+alias salias="source ~/.alias"
+alias ulogout="pkill -u bach"
+alias moped="cd ~/kit20d/moped_ws"
+alias slam="cd ~/kit20d/moped_ws/src/slam_ws"
+alias dog="pygmentize -g"
+alias startcar="rostopic pub /MCU/state sensor_msgs/RegionOfInterest \"{x_offset: 4, y_offset: 4, height: 0, width: 0, do_rectify: false}\""
+alias g="git status"
+alias addkey="ssh-add ~/.ssh/linux_karaceing"
+alias tf="source /home/bach/env/sandbox/bin/activate"
+alias charm="/home/bach/Programs/pycharm-professional-2020.2.2/pycharm-2020.2.2/bin/pycharm.sh"
+alias fsgbag="rosbag play -l ~/Rosbags/fsg_autocross.bag"
+alias shared="cd ~/kit20d/moped_ws/src/shared_ws"
+alias cm="catkin_make"
+alias dv="source devel/setup.zsh"
+alias rviz-slam='rosrun rviz rviz -d ~/kit20d/moped_ws/src/slam_ws/src/slam_pkg/rviz/slam.rviz'
+alias publishExplatzMap='~/kit20d/moped_ws/src/slam_ws/src/slam_pkg/scripts/publishMap.sh ~/kit20d/moped_ws/src/slam_ws/src/slam_pkg/maps/explatz_corrected_cw.yaml'
+alias cmj="catkin_make --use-ninja"
+alias graph="roslaunch slam_pkg graph_slam_node.launch"
+alias ekf="roslaunch slam_pkg ekf_slam_node.launch"
+alias tb="tensorboard --logdir='/home/bach/kit20d/moped_ws/src/slam_ws/src/slam_pkg/log'"
+alias bsh="cm -C /home/bach/kit20d/moped_ws/src/shared_ws"
+alias dvsh="source /home/bach/kit20d/moped_ws/src/shared_ws/devel/setup.zsh"
+alias bsl="cm -C /home/bach/kit20d/moped_ws/src/slam_ws"
+alias dvsl="source /home/bach/kit20d/moped_ws/src/slam_ws/devel/setup.zsh"
+alias rmsh="rm -rf /home/bach/kit20d/moped_ws/src/shared_ws/devel /home/bach/kit20d/moped_ws/src/shared_ws/build"
+alias rmsl="rm -rf /home/bach/kit20d/moped_ws/src/slam_ws/devel /home/bach/kit20d/moped_ws/src/slam_ws/build"
+alias perfgr="perf record -a --call-graph lbr /home/bach/kit20d/moped_ws/src/slam_ws/devel/lib/slam_pkg/graph_slam_node"
+alias prof="cd /home/bach/workspace/my-awesome-project/profiling"
+alias rv="dvsl && dvsh && rviz -d /home/bach/kit20d/moped_ws/src/slam_ws/src/slam_pkg/rviz/slam.rviz"
+alias bags="cd ~/bags"
+alias rb="rosbag"
+alias rbp="rosbag play"
+alias open="xdg-open"
+alias ws="cd ~/workspace"
+alias l="exa --long --icons --all --no-user"
+alias fapt="/home/bach/.config/fzf/fapt"
+alias fimg="/home/bach/.config/fzf/fzfimg.sh"
+alias cmc="catkin_make -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++"
+alias cmcj="cmc --use-ninja"
+alias rosmon="rosrun rosmon_core rosmon"
+alias srm="source /opt/ros/${ROS_DISTRO}/etc/catkin/profile.d/50-rosmon.zsh"
+alias traj="cd /home/bach/kit20d/moped_ws/src/trajectory_ws"
+alias btraj"cm -C /home/bach/kit20d/moped_ws/src/trajectory_ws"
+alias dvtraj="source /home/bach/kit20d/moped_ws/src/trajectory_ws/devel/setup.zsh"
+alias syncdoc="rclone sync -iP ~/Documents googledrive:Documents"
