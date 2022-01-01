@@ -10,7 +10,9 @@ export ROS_IP=192.168.0.111
 
 # Custom commands
 #source /opt/ros/${ROS_DISTRO}/setup.zsh
-source /home/bach/ros_catkin_ws/devel_isolated/setup.zsh
+
+ROS_SETUP_ZSH=$HOME/ros_catkin_ws/devel_isolated/setup.zsh
+[[ ! -f $ROS_SETUP_ZSH ]] || source $ROS_SETUP_ZSH
 
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"

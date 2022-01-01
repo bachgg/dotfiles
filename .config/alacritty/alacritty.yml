@@ -15,7 +15,7 @@ font:
     family: MesloLGS NF
     style: Bold Italic
 
-  size: 12
+  size: 10
 # Colors (One Dark)
 colors:
   # Default colors
