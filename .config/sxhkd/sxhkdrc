@@ -2,13 +2,9 @@
 # wm independent hotkeys
 #
 
-# Change keyboard language
-super + alt + space
-    {setxkbmap -layout us, setxkbmap -layout de}
-
 # terminal emulator
 super + Return
-	__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia alacritty --option font.size=13
+	alacritty
 # program launcher
 super + @space
 	rofi -show run
@@ -122,3 +118,13 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# control volume with PulseAudio
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +3%
+
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -3%
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
