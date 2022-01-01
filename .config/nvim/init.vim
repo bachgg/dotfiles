@@ -20,11 +20,14 @@ call plug#begin('~/.config/nvim/plugged')
 	" Other usefull completion sources
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/cmp-buffer'	
-	Plug 'sainnhe/sonokai'
-	Plug 'itchyny/lightline.vim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'simrat39/rust-tools.nvim'
+
+	" Eye candy
+	Plug 'sainnhe/sonokai'
+	Plug 'itchyny/lightline.vim'
+	Plug 'edkolev/tmuxline.vim'
 	
 call plug#end()
 
