@@ -8,8 +8,9 @@ PROGRAMS=(
 	sxhkd
 	alacritty
 	starship
-	nvim
-	tmux
+	rofi
+	#nvim
+	#tmux
 )
 
 for p in ${PROGRAMS[@]}; do
