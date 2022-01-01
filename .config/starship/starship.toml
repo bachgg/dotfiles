@@ -11,7 +11,7 @@ error_symbol = "[✗✗✗](bold red)"
 disabled = true
 
 [cmd_duration]
-min_time = 500
+min_time = 100
 format = "underwent [$duration](bold yellow)"
 
 [directory]
