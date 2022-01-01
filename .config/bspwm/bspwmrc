@@ -2,7 +2,7 @@
 
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-$HOME/.config/polybar/launch.sh &
+$HOME/.config/polybar/launch.sh --hack &
 feh --bg-fill ~/Downloads/oneway.jpg &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
