@@ -61,6 +61,8 @@ window {
     spacing: 0;
     children:  [mainbox];
     orientation: horizontal;
+    width: 600;
+    height: 400;
 }
 mainbox {
     spacing: 0;
@@ -85,7 +87,16 @@ inputbar {
     border-radius:  7px 7px 0px 0px;
     border-color: @foreground;
     font: "Source Code Pro 18";
+    children: [textbox-prompt-colon, entry, case-indicator ];
 }
+
+ textbox-prompt-colon {                                                
+     text-color: inherit;                                              
+     expand: false;                                                    
+     margin: 0 0.3em 0em 0em;                                          
+     str: "❯❯❯";
+ }   
+
 entry,prompt,case-indicator {
     text-font: inherit;
     text-color:inherit;
