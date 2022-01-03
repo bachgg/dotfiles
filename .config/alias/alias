@@ -1,9 +1,10 @@
 # Custom variables
 export EDITOR="nvim"
-export VISUAL="EDITOR"
+export VISUAL=$EDITOR
 export PYTHONPATH=$PYTHONPATH:/home/bach/env/sandbox/lib/python3.8/site-packages
+export PATH=$PATH:~/.local/bin
+
 export ROS_DISTRO=noetic
-PATH=$PATH:~/.local/bin
 export ROS_MASTER_URI=http://192.168.0.111:11311
 export ROS_IP=192.168.0.111
 #PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
