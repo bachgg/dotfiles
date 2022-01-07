@@ -1,7 +1,6 @@
 #!/bin/sh
 
-mkdir -p ~/utility
-[[ ! -f ~/utility/dotfiles ]] || git clone https://github.com/ntbdev/dotfiles.git ~/utility
+[[ ! -f ~/dotfiles ]] || git clone https://github.com/ntbdev/dotfiles.git ~/dotfiles
 
 PROGRAMS=(
 	bspwm
@@ -9,10 +8,8 @@ PROGRAMS=(
 	alacritty
 	starship
 	rofi
-	#nvim
-	#tmux
+	nvim
+	tmux
 )
 
-for p in ${PROGRAMS[@]}; do
-	echo $p
-done
+ln -sf ~/dotfiles/.config/* ~/.config/
