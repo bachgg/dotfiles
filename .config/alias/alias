@@ -1,13 +1,18 @@
 # Custom variables
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
+export DOCKER_BUILDKIT=1
 export PYTHONPATH=$PYTHONPATH:/home/bach/env/sandbox/lib/python3.9/site-packages
 export ROS_DISTRO=noetic
 export PATH=$PATH:~/.local/bin:/sbin
+export PATH=$PATH:~/.bin
+export PATH=$PATH:~/miniconda3/bin
 #export ROS_MASTER_URI=http://192.168.0.111:11311
 #export ROS_IP=192.168.0.111
 
-#PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+export PATH=$PATH:/usr/local/texlive/2021/bin/x86_64-linux
+export MANPATH=$MANPATH:/usr/local/texlive/2021/texmf-dist/doc/man
+export INFOPATH=$INFOPATH:/usr/local/texlive/2021/texmf-dist/doc/info
 
 # Custom commands
 #source /opt/ros/${ROS_DISTRO}/setup.zsh
@@ -21,22 +26,33 @@ eval "$(starship init zsh)"
 #source /usr/share/doc/fzf/examples/key-bindings.zsh
 #source /usr/share/doc/fzf/examples/completion.zsh
 
-# START download stuff from MARV
-MARV_USER=guenther
-PW='moped@70.03'
-NGROKID='36bc-2a00-1398-200-202-6165-ffd4-2e75-7dc9'
-
-dlMarv () {
-	TOKEN=$(curl -s -X POST -H "Content-Type: application/json" \
-	  -d '{"username": "'$MARV_USER'", "password": "'$PW'"}' \
-	  https://$NGROKID.ngrok.io/marv/api/auth | jq -r .access_token)
-	wget --header "Authorization: Bearer $TOKEN" --content-disposition --continue https://$NGROKID.ngrok.io/marv/api/dataset/$1/0
-}
-# END download stuff from MARV
-
 compdf () {
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress \
 	-dNOPAUSE -dQUIET -dBATCH -sOutputFile=_$1 $1
+}
+
+connect_monitor() {
+	xrandr --setprovideroutputsource NVIDIA-G0 modesetting && xrandr --auto
+}
+
+moppediere() {
+	if [[ "$1" == "start" ]]; then
+		docker run -it -d --restart=unless-stopped\
+		        --env="DISPLAY"\
+		        --env="QT_X11_NO_MITSHM=1"\
+		        --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"\
+		        --volume="$HOME/kit20d:/root/kit20d"\
+		        --volume="$HOME/bags:/root/bags"\
+		        --volume="$HOME/ros-stuff:/root/ros-stuff"\
+		        --security-opt seccomp=/home/bach/docker-perf.json\
+		        --name=moped\
+		        tienbach/kardev:noetic-dev
+	fi
+	
+	export containerId=$(docker ps --filter name=moped -q)
+	
+	xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerId`
+	docker start $containerId
 }
 
 # Aliases

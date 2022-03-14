@@ -19,3 +19,8 @@ truncation_length = 8
 truncation_symbol = "…/"
 truncate_to_repo = false
 home_symbol = "🚀"
+
+[conda]
+symbol = "🐍 "
+format = "via [$symbol$environment](bold green) "
+
