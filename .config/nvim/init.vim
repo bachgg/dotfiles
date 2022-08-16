@@ -1,7 +1,9 @@
 " Settings
 set number
 set relativenumber
-
+set tabstop=4
+set shiftwidth=4
+set expandtab 
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
