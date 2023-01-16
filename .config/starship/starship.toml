@@ -25,11 +25,16 @@ symbol = "🐍 "
 format = "via [$symbol$environment](bold green) "
 
 [gcloud]
-symbol = "️🇬️ "
-format = "[$symbol]($style) "
+disabled = true
+symbol = "️G"
+format = '[$symbol(\($region\))]($style) '
 
 [aws]
 format = '[$symbol($profile )]($style)'
 style = "orange"
 symbol = "🅰 "
+
+[kubernetes]
+disabled = false
+format = '[⛵ $cluster](dimmed green) '
 
