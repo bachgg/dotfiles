@@ -47,3 +47,10 @@ function install zsh() {
 	apt-get install -y zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
+
+install_git
+install_zsh
+install_tmux
+install_rust
+install_neovim
+install_vscode
