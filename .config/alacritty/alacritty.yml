@@ -15,7 +15,7 @@ font:
     family: MesloLGS NF
     style: Bold Italic
 
-  size: 10
+  size: 14
 # Colors (One Dark)
 colors:
   # Default colors
@@ -49,8 +49,10 @@ window:
   columns: 1920
   rows: 1200
   opacity: 0.95
-  decorations: none
+  decorations: full
   startup_mode: Maximized
+  padding:
+    x: 10
 
 scrolling:
   history: 100000

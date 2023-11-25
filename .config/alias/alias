@@ -15,7 +15,7 @@ export MANPATH=$MANPATH:/usr/local/texlive/2021/texmf-dist/doc/man
 export INFOPATH=$INFOPATH:/usr/local/texlive/2021/texmf-dist/doc/info
 
 # Custom commands
-source /opt/ros/noetic/setup.zsh
+#source /opt/ros/noetic/setup.zsh
 
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
@@ -87,7 +87,7 @@ alias rv="dvsl && dvsh && rviz -d /home/bach/${MOPED_REPO_NAME}/moped_ws/src/sla
 alias bags="cd ~/bags"
 alias rb="rosbag"
 alias rbp="rosbag play"
-alias open="xdg-open"
+#alias open="xdg-open"
 alias ws="cd ~/workspace"
 alias l="exa --long --icons --all --no-user"
 alias fapt="/home/bach/.config/fzf/fapt"
@@ -107,3 +107,6 @@ alias grass="roslaunch slam_pkg grass_slam_node.launch rviz:=true"
 alias backupmap="scp -r as@192.168.19.19:/home/as/maps /home/bach/backup_maps"
 alias pubpub="rostopic pub -f $HOME/staging_transformed.yaml /slam/map as_msgs/Cones"
 alias cpmap="scp $HOME/staging_transformed.yaml as@192.168.19.19:/home/as/"
+
+alias mypy="poetry run mypy --config-file $HOME/uai/workspace/mypy-config/mypy_strict.ini"
+alias black="poetry run black --config $HOME/uai/workspace/black_config/pyproject.toml"
