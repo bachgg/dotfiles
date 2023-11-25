@@ -70,12 +70,12 @@ cmp.setup({
     ["<C-d>"] = cmp.mapping.scroll_docs(4),
     ['<C-k>'] = cmp.mapping(function()
       if cmp.visible() then
-        cmp.select_prev_item({behavior = 'insert'})
+        cmp.select_prev_item({behavior = 'select'})
       end
     end),
     ['<C-j>'] = cmp.mapping(function()
       if cmp.visible() then
-        cmp.select_next_item({behavior = 'insert'})
+        cmp.select_next_item({behavior = 'select'})
       end
     end),
     ['<C-Space>'] = cmp.mapping.complete(),
