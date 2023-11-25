@@ -4,6 +4,11 @@ lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
   lsp_zero.default_keymaps({buffer = bufnr})
+  local opts = {buffer = bufnr}
+  local bind = vim.keymap.set
+
+  bind('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+
 end)
 
 require'lspconfig'.lua_ls.setup {
@@ -76,7 +81,7 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Insert,
-      select = true,
+      select = false,
     }),
   }),
   snippet = {
