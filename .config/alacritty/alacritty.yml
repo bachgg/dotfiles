@@ -1,21 +1,21 @@
 font:
   normal:
-    family: MesloLGS NF
+    family: UbuntuMono Nerd Font
     style: Regular
 
   bold:
-    family: MesloLGS NF
+    family: UbuntuMono Nerd Font
     style: Bold
 
   italic:
-    family: MesloLGS NF
+    family: UbuntuMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: MesloLGS NF
+    family: UbuntuMono Nerd Font
     style: Bold Italic
 
-  size: 14
+  size: 18
 # Colors (One Dark)
 colors:
   # Default colors
@@ -46,8 +46,6 @@ colors:
     white:   '0xffffff'
 
 window:
-  columns: 1920
-  rows: 1200
   opacity: 0.95
   decorations: full
   startup_mode: Maximized
@@ -58,7 +56,7 @@ scrolling:
   history: 100000
 
 key_bindings:
-- { key: V,   mods: Super, action: Paste }
+- { key: V, mods: Super, action: Paste }
 - { key: C, mods: Super, action: Copy }
 
 env:
