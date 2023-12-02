@@ -4,12 +4,21 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>gr', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
-vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>gb', builtin.buffers, {})
+vim.keymap.set('n', '<leader><Space>', builtin.buffers, {})
 
 local actions = require('telescope.actions')
 
 require('telescope').setup{
+  pickers = {
+    buffers = {
+      initial_mode = "normal",
+      mappings = {
+        n = {
+            ["d"] = actions.delete_buffer
+        }
+      }
+    }
+  },
   defaults = {
     mappings = {
       i = {
