@@ -12,7 +12,6 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 require'lspconfig'.lua_ls.setup {
-    -- ... other configs
     settings = {
         Lua = {
             diagnostics = {
@@ -21,6 +20,17 @@ require'lspconfig'.lua_ls.setup {
         }
     }
 }
+
+require('rust-tools').setup({
+    tools = {
+        parameter_hints_prefix = "◀︎ ",
+        inlay_hints = {
+            other_hints_prefix = "▶︎ "
+        }
+    }
+})
+
+
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -90,3 +100,5 @@ cmp.setup({
     end,
   },
 })
+
+
