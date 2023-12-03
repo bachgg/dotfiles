@@ -87,4 +87,4 @@ require('lualine').setup {
 }
 
 -- setup must be called before loading
-vim.cmd("colorscheme ayu")
+vim.cmd("colorscheme kanagawa")
