@@ -23,4 +23,3 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- delete to void register
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
-
