@@ -15,7 +15,7 @@ lsp_zero.on_attach(function(client, bufnr)
     })
 end)
 
-require 'lspconfig'.lua_ls.setup {
+require('lspconfig').lua_ls.setup {
     settings = {
         Lua = {
             diagnostics = {
@@ -74,7 +74,6 @@ cmp.setup({
         { name = 'nvim_lsp' },
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-y>'] = cmp.mapping.confirm({ select = false }),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<Up>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
         ['<Down>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
