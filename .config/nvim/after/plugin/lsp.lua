@@ -11,6 +11,9 @@ lsp_zero.on_attach(function(client, bufnr)
 
 end)
 
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+
 require'lspconfig'.lua_ls.setup {
     settings = {
         Lua = {
