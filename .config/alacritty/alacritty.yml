@@ -1,21 +1,23 @@
 font:
   normal:
-    family: UbuntuMono Nerd Font
+    family: MesloLGS NF
     style: Regular
 
   bold:
-    family: UbuntuMono Nerd Font
+    family: MesloLGS NF
     style: Bold
 
   italic:
-    family: UbuntuMono Nerd Font
+    family: MesloLGS NF
     style: Italic
 
   bold_italic:
-    family: UbuntuMono Nerd Font
+    family: MesloLGS NF
     style: Bold Italic
 
-  size: 18
+  size: 14
+
+
 # Colors (One Dark)
 colors:
   # Default colors
