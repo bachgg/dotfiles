@@ -1,4 +1,2 @@
-require("nvim-surround").setp({
-    hello(fnciton calls)
+require("nvim-surround").setup({
 })
-
