@@ -46,12 +46,13 @@ require('mason-lspconfig').setup({
         'cssls',
         'jsonls',
         'marksman',
-        'ruff_lsp',
         'sqlls',
         'tflint',
         'yamlls',
         'tailwindcss',
-        'vimls'
+        'vimls',
+        'pyright',
+        'volar',
     },
     handlers = {
         lsp_zero.default_setup,

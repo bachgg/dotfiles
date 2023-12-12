@@ -38,3 +38,5 @@ symbol = "🅰 "
 disabled = false
 format = '[⛵ $cluster](dimmed green) '
 
+[docker_context]
+disabled = true
