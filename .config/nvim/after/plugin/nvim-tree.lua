@@ -5,15 +5,25 @@ vim.opt.termguicolors = true
 
 require("nvim-tree").setup({
     sort = {
-        sorter = "case_sensitive",
+        sorter = "name",
     },
     view = {
-        width = 45,
+        width = 40,
         number = true,
-        relativenumber = true
+        relativenumber = true,
+        signcolumn = "auto",
+        float = {
+            enable = false
+        }
     },
     renderer = {
         group_empty = true,
+        highlight_opened_files = "all",
+        icons = {
+            show = {
+                folder_arrow = false
+            }
+        }
     },
     filters = {
         dotfiles = false,
@@ -23,6 +33,10 @@ require("nvim-tree").setup({
         update_root = false,
         ignore_list = {},
     },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true
+    }
 })
 
 local api = require 'nvim-tree.api'
