@@ -8,8 +8,6 @@ lsp_zero.on_attach(function(client, bufnr)
     local bind = vim.keymap.set
 
     bind('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-
-    lsp_zero.buffer_autoformat()
 end)
 
 lsp_zero.set_sign_icons({
@@ -36,6 +34,14 @@ require('lspconfig').lua_ls.setup {
         }
     }
 }
+
+require('lspconfig').eslint.setup({
+    on_attach = function(client, bufnr)
+        vim.keymap.set('n', '<leader>es', function()
+            vim.api.nvim_command('EslintFixAll')
+        end)
+    end,
+})
 
 require('rust-tools').setup({
     tools = {
