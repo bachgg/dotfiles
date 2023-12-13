@@ -9,18 +9,30 @@ lsp_zero.on_attach(function(client, bufnr)
 
     bind('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
-    -- Format on buffer write
-    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-        callback = function() vim.lsp.buf.format() end
-    })
+    lsp_zero.buffer_autoformat()
 end)
+
+lsp_zero.set_sign_icons({
+    error = '✘',
+    warn = '▲',
+    hint = '⚑',
+    info = '»'
+})
 
 require('lspconfig').lua_ls.setup {
     settings = {
         Lua = {
+            runtime = {
+                version = 'LuaJIT'
+            },
             diagnostics = {
                 globals = { 'vim' }
-            }
+            },
+            workspace = {
+                library = {
+                    vim.env.VIMRUNTIME,
+                }
+            },
         }
     }
 }
@@ -85,6 +97,7 @@ cmp.setup({
                 cmp.select_prev_item({ behavior = 'select' })
             end
         end),
+
         ['<C-j>'] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.select_next_item({ behavior = 'select' })

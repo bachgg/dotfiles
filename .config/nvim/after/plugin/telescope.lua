@@ -19,7 +19,8 @@ require('telescope').setup {
                 n = {
                     ["d"] = actions.delete_buffer
                 }
-            }
+            },
+            sort_lastused = true
         }
     },
     defaults = {
