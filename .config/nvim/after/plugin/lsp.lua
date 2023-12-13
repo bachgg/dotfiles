@@ -3,11 +3,22 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
-    lsp_zero.default_keymaps({ buffer = bufnr })
     local opts = { buffer = bufnr }
-    local bind = vim.keymap.set
+    lsp_zero.default_keymaps(opts)
 
-    bind('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', 'ga', function()
+        vim.lsp.buf.code_action()
+    end, opts)
+
+    vim.keymap.set('n', 'gr', function()
+        require('telescope.builtin').lsp_references({
+            preview = {
+                hide_on_startup = false
+            },
+            initial_mode = "normal",
+            sorting_strategy = "ascending"
+        })
+    end, opts)
 end)
 
 lsp_zero.set_sign_icons({
