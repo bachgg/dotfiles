@@ -8,15 +8,15 @@ format_on_save.setup({
     },
     formatter_by_ft = {
         css = formatters.lsp,
+        c = formatters.lsp,
+        cpp = formatters.lsp,
         html = formatters.lsp,
         java = formatters.lsp,
         json = formatters.lsp,
         lua = formatters.lsp,
         markdown = formatters.prettierd,
-        openscad = formatters.lsp,
         python = formatters.black,
         rust = formatters.lsp,
-        scad = formatters.lsp,
         scss = formatters.lsp,
         sh = formatters.shfmt,
         terraform = formatters.lsp,
@@ -26,11 +26,7 @@ format_on_save.setup({
     },
 
     -- Optional: fallback formatter to use when no formatters match the current filetype
-    fallback_formatter = {
-        formatters.remove_trailing_whitespace,
-        formatters.remove_trailing_newlines,
-        formatters.prettierd,
-    },
+    fallback_formatter = {},
 
     -- By default, all shell commands are prefixed with "sh -c" (see PR #3)
     -- To prevent that set `run_with_sh` to `false`.
