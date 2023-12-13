@@ -23,3 +23,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- delete to void register
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
+
+-- first line first character & last line last character
+vim.keymap.set("n", "gg", "gg0")
+vim.keymap.set("n", "G", "G$")
