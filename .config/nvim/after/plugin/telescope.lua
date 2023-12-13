@@ -38,8 +38,11 @@ require('telescope').setup {
         preview = {
             hide_on_startup = true
         },
-        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-        results_title = ""
+        borderchars = { "╌", "╎", "╌", "╎", "┌", "┐", "┘", "└" },
+        results_title = "",
+        prompt_prefix = " ▶ ",
+        selection_caret = " ",
+        entry_prefix = " "
     },
     extensions = {
         ["ui-select"] = {
