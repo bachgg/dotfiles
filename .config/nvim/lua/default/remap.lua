@@ -27,3 +27,9 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 -- first line first character & last line last character
 vim.keymap.set("n", "gg", "gg0")
 vim.keymap.set("n", "G", "G$")
+
+-- moving between panes
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>")

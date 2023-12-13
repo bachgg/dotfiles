@@ -10,6 +10,7 @@ end)
 vim.keymap.set('n', '<leader><Space>', builtin.buffers, {})
 
 local actions = require('telescope.actions')
+local actions_layout = require('telescope.actions.layout')
 
 require('telescope').setup {
     pickers = {
@@ -27,8 +28,27 @@ require('telescope').setup {
         mappings = {
             i = {
                 ["<C-j>"] = actions.move_selection_next,
-                ["<C-k>"] = actions.move_selection_previous
+                ["<C-k>"] = actions.move_selection_previous,
+                ["<C-p>"] = actions_layout.toggle_preview
+            },
+            n = {
+                ["<C-p>"] = actions_layout.toggle_preview
+            },
+        },
+        preview = {
+            hide_on_startup = true
+        },
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+        results_title = ""
+    },
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+                initial_mode = "normal"
             }
         }
-    },
+    }
 }
+
+require('telescope').load_extension('fzf')
+require("telescope").load_extension("ui-select")
