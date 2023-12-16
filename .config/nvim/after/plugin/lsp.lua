@@ -10,6 +10,14 @@ lsp_zero.on_attach(function(client, bufnr)
         vim.lsp.buf.code_action()
     end, opts)
 
+    vim.keymap.set('n', 'gn', function()
+        vim.diagnostic.goto_next()
+    end)
+
+    vim.keymap.set('n', 'gp', function()
+        vim.diagnostic.goto_prev()
+    end)
+
     vim.keymap.set('n', 'gr', function()
         require('telescope.builtin').lsp_references({
             preview = {
