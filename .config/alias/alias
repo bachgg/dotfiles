@@ -113,3 +113,4 @@ alias black="poetry run black --config $HOME/uai/workspace/black_config/pyprojec
 alias gb="git checkout \$(git branch | fzf)"
 
 alias v="nvim ."
+export XDG_CONFIG_HOME="$HOME/.config"
