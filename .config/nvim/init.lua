@@ -17,7 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 if vim.g.neovide then
-    vim.g.neovide_cursor_animation_length = 0
-    vim.g.neovide_cursor_animate_command_line = false
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_cursor_animate_command_line = false
 end
-
