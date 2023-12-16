@@ -12,11 +12,11 @@ lsp_zero.on_attach(function(client, bufnr)
 
     vim.keymap.set('n', 'gn', function()
         vim.diagnostic.goto_next()
-    end)
+    end, opts)
 
     vim.keymap.set('n', 'gp', function()
         vim.diagnostic.goto_prev()
-    end)
+    end, opts)
 
     vim.keymap.set('n', 'gr', function()
         require('telescope.builtin').lsp_references({
@@ -73,8 +73,6 @@ require('rust-tools').setup({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    -- Replace the language servers listed here
-    -- with the ones you want to install
     ensure_installed = {
         'tsserver',
         'rust_analyzer',
@@ -112,7 +110,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-e>'] = cmp.mapping.abort(),
+        -- ['<Esc>'] = cmp.mapping.abort(),
         ['<Up>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
         ['<Down>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
