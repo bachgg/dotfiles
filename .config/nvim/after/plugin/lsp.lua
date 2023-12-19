@@ -24,7 +24,9 @@ lsp_zero.on_attach(function(client, bufnr)
         hide_on_startup = false
       },
       initial_mode = "normal",
-      sorting_strategy = "ascending"
+      sorting_strategy = "ascending",
+      results_title = "",
+      dynamic_preview_title = true
     })
   end, opts)
 end)

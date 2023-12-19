@@ -1,5 +1,3 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 -- move blocks around
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -34,5 +32,6 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 
--- search
-vim.keymap.set("v", "<C-f>", "y/\\v<C-r>\"<CR>")
+-- search & replace
+vim.keymap.set("v", "<leader>ss", "y/<C-r>\"")
+vim.keymap.set("v", "<leader>sr", "y:%s/<C-r>\"/<C-r>\"/g<Left><Left><Left>")
