@@ -27,6 +27,9 @@ require('telescope').setup {
         }
       },
       sort_lastused = true
+    },
+    find_files = {
+      hidden = true
     }
   },
   defaults = {
@@ -47,7 +50,11 @@ require('telescope').setup {
     results_title = "",
     prompt_prefix = " ▶ ",
     selection_caret = " ",
-    entry_prefix = " "
+    entry_prefix = " ",
+    file_ignore_patterns = {
+      "^.git/",
+      "^node_modules/"
+    }
   },
   extensions = {
     ["ui-select"] = {

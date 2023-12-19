@@ -3,8 +3,17 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
-  local opts = { buffer = bufnr }
-  lsp_zero.default_keymaps(opts)
+  local opts = {
+    buffer = bufnr,
+  }
+  lsp_zero.default_keymaps(
+    {
+      buffer = bufnr,
+      exclude = { 'K' }
+    }
+  )
+
+  vim.keymap.set('n', 'L', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 
   vim.keymap.set('n', 'ga', function()
     vim.lsp.buf.code_action()
@@ -37,6 +46,9 @@ lsp_zero.set_sign_icons({
   hint = '⚑',
   info = '»'
 })
+
+-- Has to setup neodev before lspconfig
+require("neodev").setup({})
 
 require('lspconfig').lua_ls.setup {
   settings = {
