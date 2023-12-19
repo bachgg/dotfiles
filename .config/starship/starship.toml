@@ -11,14 +11,14 @@ error_symbol = "[✗✗✗](bold red)"
 disabled = true
 
 [cmd_duration]
-min_time = 100
-format = "underwent [$duration](bold yellow)"
+min_time = 10
+format = "[$duration](bold yellow)"
 
 [directory]
 truncation_length = 8
 truncation_symbol = "…/"
 truncate_to_repo = false
-home_symbol = "🚀"
+home_symbol = "_"
 
 [conda]
 symbol = "🐍 "
@@ -30,12 +30,13 @@ symbol = "️G"
 format = '[$symbol(\($region\))]($style) '
 
 [aws]
+disabled = true
 format = '[$symbol($profile )]($style)'
 style = "orange"
 symbol = "🅰 "
 
 [kubernetes]
-disabled = false
+disabled = true
 format = '[⛵ $cluster](dimmed green) '
 
 [docker_context]
