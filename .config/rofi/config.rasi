@@ -1,5 +1,8 @@
-@theme "custom-arthur"
+@theme "DarkBlue"
 
+entry {
+
+}
 
 configuration {
 /*	modi: "window,run,ssh";*/
