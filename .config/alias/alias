@@ -18,6 +18,7 @@ alias ws="cd ~/workspace"
 alias l="exa --long --icons --all --no-user"
 alias fapt="/home/bach/.config/fzf/fapt"
 alias fimg="/home/bach/.config/fzf/fzfimg.sh"
+alias pl="polybar-msg cmd restart"
 
 export UAI_HOME=$HOME/uai
 alias mypy="poetry run mypy --config-file $UAI_HOME/workspace/mypy-config/mypy_strict.ini"

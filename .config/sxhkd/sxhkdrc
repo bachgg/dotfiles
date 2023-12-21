@@ -1,3 +1,8 @@
+###
+# IMPORTANT: command must be on the immediate line after key combination
+# a comment in between those two will make it not work
+###
+
 #
 # wm independent hotkeys
 #
@@ -11,9 +16,11 @@ super + @space
 	rofi -show run
 
 # make sxhkd reload its configuration files:
-super + Escape
+super + shift + e
 	pkill -USR1 -x sxhkd
 
+super + shift + p
+  polybar-msg cmd restart
 #
 # bspwm hotkeys
 #
@@ -123,12 +130,11 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# control volume with PulseAudio
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +3%
+  amixer set Master 3%+
 
 XF86AudioLowerVolume
-	pactl set-sink-volume @DEFAULT_SINK@ -3%
+  amixer set Master 3%-
 
 XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+  amixer set Master toggle
