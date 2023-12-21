@@ -1,0 +1,3 @@
+modmap:
+  - remap:
+      CAPSLOCK: CONTROL_L
