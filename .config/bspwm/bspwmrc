@@ -3,6 +3,7 @@
 pgrep -x sxhkd > ~/.log/sxhkd || sxhkd &
 xremap ~/.config/xremap/config.yml &
 polybar &
+xautocfg &
 #$HOME/.config/polybar/launch.sh --hack &
 #feh --bg-fill ~/Downloads/oneway.jpg &
 #xsetroot -cursor_name left_ptr &

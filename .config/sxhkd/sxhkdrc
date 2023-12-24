@@ -138,3 +138,9 @@ XF86AudioLowerVolume
 
 XF86AudioMute
   amixer set Master toggle
+
+XF86MonBrightnessDown
+  backlight_control -10
+
+XF86MonBrightnessUp
+  backlight_control +10
