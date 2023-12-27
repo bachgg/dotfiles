@@ -131,13 +131,16 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 XF86AudioRaiseVolume
-  amixer set Master 3%+
+  pactl set-sink-mute @DEFAULT_SINK@ false;pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 XF86AudioLowerVolume
-  amixer set Master 3%-
+  pactl set-sink-mute @DEFAULT_SINK@ false;pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 XF86AudioMute
-  amixer set Master toggle
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86AudioMicMute
+  pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 XF86MonBrightnessDown
   backlight_control -10
