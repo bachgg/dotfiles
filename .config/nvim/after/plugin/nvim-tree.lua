@@ -72,6 +72,6 @@ require("nvim-tree").setup({
 
 local api = require 'nvim-tree.api'
 
-vim.keymap.set('n', '<leader>tr', function()
+vim.keymap.set('n', '<leader>gg', function()
   api.tree.toggle({ path = "<args>", update_root = false, find_file = true, focus = true, })
 end, {})
