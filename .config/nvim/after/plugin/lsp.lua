@@ -27,7 +27,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.diagnostic.goto_prev()
   end, opts)
 
-  vim.keymap.set('n', '<Ctrl-l>', function()
+  vim.keymap.set('n', '<C-l>', function()
     vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
   end)
 

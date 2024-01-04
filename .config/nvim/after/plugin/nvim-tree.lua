@@ -9,7 +9,7 @@ require("nvim-tree").setup({
   },
   view = {
     width = function()
-      return math.floor(vim.opt.columns:get() * 0.4)
+      return math.floor(vim.opt.columns:get() * 0.2)
     end,
     number = true,
     relativenumber = true,
@@ -18,7 +18,7 @@ require("nvim-tree").setup({
     cursorline = true,
 
     float = {
-      enable = true,
+      enable = false,
       quit_on_focus_loss = true,
       open_win_config = function()
         local screen_w = vim.opt.columns:get()
@@ -64,7 +64,7 @@ require("nvim-tree").setup({
   },
   actions = {
     open_file = {
-      quit_on_open = true
+      quit_on_open = false
     }
   },
   hijack_cursor = true
@@ -72,6 +72,6 @@ require("nvim-tree").setup({
 
 local api = require 'nvim-tree.api'
 
-vim.keymap.set('n', '<leader>gg', function()
+vim.keymap.set('n', '<c-f>', function()
   api.tree.toggle({ path = "<args>", update_root = false, find_file = true, focus = true, })
 end, {})

@@ -1,5 +1,5 @@
 vim.keymap.set({ 'n', 't' }, '<C-\\>', '<cmd>FloatermToggle --cwd=<buffer-root><cr>', {})
-vim.keymap.set('n', '<leader>git', '<cmd>FloatermNew --cwd=<buffer-root> lazygit<cr>', {})
+vim.keymap.set('n', '<leader>gi', '<cmd>FloatermNew --cwd=<buffer-root> lazygit<cr>', {})
 
 vim.g.floaterm_width = 0.6
 vim.g.floaterm_height = 0.6
