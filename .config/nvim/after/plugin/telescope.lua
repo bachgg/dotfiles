@@ -3,13 +3,21 @@ local builtin = require('telescope.builtin')
 -- vim.ui.select = 'telescope'
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('v', '<leader>gr', function()
-  builtin.grep_string()
+vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
+vim.keymap.set('v', '<leader>fj', function()
+  builtin.grep_string({
+    additional_args = {
+      '--hidden'
+    }
+  });
 end)
 
-vim.keymap.set('n', '<leader>gr', function()
-  builtin.live_grep();
+vim.keymap.set('n', '<leader>fj', function()
+  builtin.live_grep({
+    additional_args = {
+      '--hidden'
+    }
+  });
 end)
 
 vim.keymap.set('n', '<leader><Space>', builtin.buffers, {})
@@ -30,6 +38,9 @@ require('telescope').setup {
     },
     find_files = {
       hidden = true
+    },
+    grep_string = {
+      initial_mode = 'normal'
     }
   },
   defaults = {
