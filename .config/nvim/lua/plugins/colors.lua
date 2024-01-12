@@ -1,5 +1,8 @@
 return {
   "rebelot/kanagawa.nvim",
   "nvim-tree/nvim-web-devicons",
-  { "nvim-lualine/lualine.nvim", requires = { 'nvim-tree/nvim-web-devicons', opt = true } },
+  { 'rose-pine/neovim',           name = 'rose-pine' },
+  { "nvim-lualine/lualine.nvim",  requires = { 'nvim-tree/nvim-web-devicons', opt = true } },
+  { 'projekt0n/github-nvim-theme' }
+
 }
