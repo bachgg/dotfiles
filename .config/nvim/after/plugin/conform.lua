@@ -8,6 +8,7 @@ require("conform").setup({
     typescript = { { "prettierd", "prettier" } },
     typescriptreact = { { "prettierd", "prettier" } },
     terraform = { "terraform_fmt" },
+    vue = { "prettierd" }
 
   },
   format_on_save = {
