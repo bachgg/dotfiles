@@ -1,1 +1,1 @@
-return { 'numToStr/Comment.nvim' }
+return { 'numToStr/Comment.nvim', 'JoosepAlviste/nvim-ts-context-commentstring' }
