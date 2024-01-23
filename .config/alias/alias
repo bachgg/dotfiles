@@ -26,4 +26,5 @@ alias black="poetry run black --config $UAI_HOME/workspace/black_config/pyprojec
 alias gb="git checkout \$(git branch | fzf)"
 
 # lazygit config
+alias gg="lazygit"
 export XDG_CONFIG_HOME="$HOME/.config"
