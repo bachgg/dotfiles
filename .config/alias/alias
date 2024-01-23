@@ -28,3 +28,5 @@ alias gb="git checkout \$(git branch | fzf)"
 # lazygit config
 alias gg="lazygit"
 export XDG_CONFIG_HOME="$HOME/.config"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
