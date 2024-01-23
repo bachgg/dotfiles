@@ -54,6 +54,46 @@ action = "Copy"
 key = "C"
 mods = "Super"
 
+[[keyboard.bindings]]
+chars = "\u0001\u0008"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001\u000c"
+key = "L"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001\u000a"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001\u000b"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001\u0013"
+key = "S"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001\u0004"
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001\u0014"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001\u0007"
+key = "G"
+mods = "Command"
+
 [scrolling]
 history = 100000
 
