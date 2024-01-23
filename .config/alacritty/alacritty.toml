@@ -94,6 +94,11 @@ chars = "\u0001\u0007"
 key = "G"
 mods = "Command"
 
+[[keyboard.bindings]]
+chars = "\u0001\u0001"
+key = "A"
+mods = "Command"
+
 [scrolling]
 history = 100000
 
