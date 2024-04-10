@@ -114,6 +114,6 @@ startup_mode = "Maximized"
 [window.padding]
 x = 10
 
-[shell]
-program = "/opt/homebrew/bin/tmux"
-args = ["new-session", "-As"]
+# [shell]
+# program = "/opt/homebrew/bin/tmux"
+# args = ["new-session", "-As"]
