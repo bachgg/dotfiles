@@ -26,11 +26,20 @@ foreground = "0xabb2bf"
 TERM = "xterm-256color"
 
 [font]
-size = 17.5
+# linux laptop
+size = 10.5
+
+# macos
+# size = 17.5
 
 [font.offset]
 x = 0
-y = 4
+
+# linux laptop
+y = 0
+
+# macos
+# y = 4
 
 [font.bold]
 family = "JetBrainsMonoNL Nerd Font"
@@ -111,8 +120,9 @@ decorations = "Full"
 opacity = 0.95
 startup_mode = "Maximized"
 
-[window.padding]
-x = 10
+# macos
+# [window.padding]
+# x = 10
 
 # [shell]
 # program = "/opt/homebrew/bin/tmux"
