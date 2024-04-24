@@ -1,3 +1,4 @@
 .config/nvim/plugged
 .config/lazygit/state.yml
 .config/google-chrome
+.config/mimeapps.list
