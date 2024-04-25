@@ -67,7 +67,11 @@ bindsym $mod+Escape exec betterlockscreen -l dim
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # A more modern dmenu replacement is rofi:
-bindsym $mod+space exec "$HOME/.config/rofi/launchers/type-1/launcher.sh"
+bindsym $mod+space exec --no-startup-id "$HOME/.config/rofi/launchers/type-1/launcher.sh"
+
+# brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id "backlight_control -10"
+bindsym XF86MonBrightnessUp exec --no-startup-id "backlight_control +10"
 
 # change focus
 bindsym $mod+j focus left
