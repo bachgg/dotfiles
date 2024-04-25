@@ -24,4 +24,8 @@ require('kanagawa').setup({
   },
 })
 
+require('one_monokai').setup({
+  transparent = true
+})
+
 vim.cmd.colorscheme("one_monokai")
