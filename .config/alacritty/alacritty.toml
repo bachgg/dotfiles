@@ -27,7 +27,7 @@ TERM = "xterm-256color"
 
 [font]
 # linux laptop
-size = 10.5
+size = 9.5
 
 # macos
 # size = 17.5
@@ -119,6 +119,7 @@ history = 100000
 decorations = "Full"
 opacity = 0.95
 startup_mode = "Maximized"
+dynamic_padding = true
 
 # macos
 # [window.padding]
