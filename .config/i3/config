@@ -76,6 +76,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 bindsym $mod+space exec --no-startup-id "$HOME/.config/rofi/launchers/type-1/launcher.sh"
 
+# cycle workspaces
+bindsym Mod4+Tab workspace next
+bindsym Mod4+Shift+Tab workspace prev
+
 # brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id "backlight_control -10"
 bindsym XF86MonBrightnessUp exec --no-startup-id "backlight_control +10"
@@ -166,6 +170,10 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# assign apps to workspaces
+assign [class="Alacritty"] $ws1
+assign [class="Brave-browser"] $ws2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
