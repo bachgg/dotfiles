@@ -1,6 +1,7 @@
 #!/bin/sh
 
 autorandr --change
+betterlockscreen -w
 
 # case "${SRANDRD_OUTPUT} ${SRANDRD_EVENT}" in
 #   "DP-1-0 connected") xrandr --output DP-1-0 --auto --above eDP1; echo 'DP-1-0';;
