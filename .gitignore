@@ -1,7 +1,12 @@
 .config/nvim/plugged
 .config/lazygit/state.yml
-.config/google-chrome
+.config/google-chrome*
 .config/mimeapps.list
 .config/pulse
 .config/htop
 .config/BraveSoftware
+.config/1Password
+.config/BraveSoftware
+.config/chromium
+.config/microsoft-edge-dev
+.config/vivaldi*
