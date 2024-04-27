@@ -25,6 +25,7 @@ alias mypy="poetry run mypy --config-file $UAI_HOME/workspace/mypy-config/mypy_s
 alias black="poetry run black --config $UAI_HOME/workspace/black_config/pyproject.toml"
 alias gb="git checkout \$(git branch | fzf)"
 alias f="fastfetch"
+alias t="tmux"
 
 # lazygit config
 alias gg="lazygit"

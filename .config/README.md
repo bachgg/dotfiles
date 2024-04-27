@@ -163,6 +163,9 @@ mkdir ~/.local/share/fonts
 cd ~/.local/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip && rm JetBrainsMono.zip
 
+yay -S noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
+yay -S ttf-croscore
+
 # zsh
 yay -S zsh
 chsh -s /usr/bin/zsh
