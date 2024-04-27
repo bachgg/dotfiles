@@ -13,10 +13,11 @@ set $mod Mod4
 
 default_border pixel
 
+exec --no-startup-id xautocfg &
 exec --no-startup-id xremap .config/xremap/config.yml &
 exec --no-startup-id xmousepasteblock &
-exec --no-startup-id xset r rate 200 42
 exec --no-startup-id srandrd ~/.config/srandrd/display_handler.sh
+exec --no-startup-id ibus-daemon -rxRd
 
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -251,3 +252,4 @@ set $volumestep 5
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig up $volumestep
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig down $volumestep
 bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig mute
+

@@ -205,5 +205,11 @@ yay -S --noconfirm backlight_control
 yay -S --noconfirm networkmanager-dmenu
 
 # block middle click paste
-XMousePasteBlock
+yay -S --noconfirm xmousepasteblock
+
+# keyboard rate
+yay -S --noconfirm xautocfg
+
+# ibus
+yay -s --noconfirm ibus
 ```
