@@ -178,7 +178,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 yay -S --noconfirm neovim cmake ripgrep fd tmux nodejs npm lazygit bat starship exa fastfetch
 
-
 # others
 yay -S --noconfirm openssh
 
@@ -194,6 +193,7 @@ yay -S --noconfirm libnotify dunst i3-volume
 # xremap
 yay -S --noconfirm xremap-x11-bin
 sudo gpasswd -a $USER input
+echo 'uinput' | sudo tee /etc/modules-load.d/uinput.conf
 echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/99-input.rules
 
 # brightness
@@ -203,4 +203,7 @@ yay -S --noconfirm backlight_control
 
 # networkmanager rofi
 yay -S --noconfirm networkmanager-dmenu
+
+# block middle click paste
+XMousePasteBlock
 ```

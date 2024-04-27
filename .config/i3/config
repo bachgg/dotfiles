@@ -13,6 +13,8 @@ set $mod Mod4
 
 default_border pixel
 
+exec --no-startup-id xremap .config/xremap/config.yml &
+exec --no-startup-id xmousepasteblock &
 exec --no-startup-id xset r rate 200 42
 exec --no-startup-id srandrd ~/.config/srandrd/display_handler.sh
 
@@ -63,6 +65,9 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+
+# start a browser
+bindsym $mod+b exec brave
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -178,7 +183,7 @@ assign [class="Brave-browser"] $ws2
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r restart && exec xset r rate 200 42
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+Escape exec "i3-msg exit"
 
