@@ -212,4 +212,13 @@ yay -S --noconfirm xautocfg
 
 # ibus
 yay -s --noconfirm ibus
+echo 'GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus' | sudo tee /etc/environment
+
+# docker
+yay -S --noconfirm docker
+sudo systemctl enable docker.socket
+sudo systemctl start docker.socket
+usermod -a -G docker $USER
 ```
