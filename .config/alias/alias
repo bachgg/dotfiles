@@ -26,6 +26,7 @@ alias black="poetry run black --config $UAI_HOME/workspace/black_config/pyprojec
 alias gb="git checkout \$(git branch | fzf)"
 alias f="fastfetch"
 alias t="tmux"
+alias v="nvim"
 
 # lazygit config
 alias gg="lazygit"
