@@ -11,3 +11,4 @@
 .config/microsoft-edge-dev
 .config/vivaldi*
 .config/dconf
+.config/ibus*
