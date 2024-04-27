@@ -10,3 +10,4 @@
 .config/chromium
 .config/microsoft-edge-dev
 .config/vivaldi*
+.config/dconf
