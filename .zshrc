@@ -29,3 +29,4 @@ export FZF_CTRL_R_OPTS="
   --header 'Press CTRL-Y to copy command into clipboard'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(zellij setup --generate-auto-start zsh)"
