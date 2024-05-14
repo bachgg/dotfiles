@@ -3,7 +3,7 @@ export VISUAL="$EDITOR"
 export PATH=$PATH:~/.local/bin:/sbin
 export PATH=$PATH:~/.bin
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # connect_monitor() {
 # 	xrandr --setprovideroutputsource NVIDIA-G0 modesetting && xrandr --auto
@@ -33,3 +33,8 @@ alias gg="lazygit"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# For faster prompt
+git config --global oh-my-zsh.hide-info 1   # git_prompt_info
+git config --global oh-my-zsh.hide-status 1 # git_prompt_status
+git config --global oh-my-zsh.hide-dirty 1  # parse_git_dirty
