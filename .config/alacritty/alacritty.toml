@@ -198,14 +198,19 @@ mods = "Command"
   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
   args = ["action", "switch-mode", "entersearch"]
 
-[[keyboard.bindings]]
-key = "E"
-mods = "Command"
-  [keyboard.bindings.command]
-  program = "/Users/jimmy/sleepy.sh"
-  # args = [">", "~/alac-envs"]
+# [[keyboard.bindings]]
+# key = "G"
+# mods = "Command"
+#   [keyboard.bindings.command]
+#   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+#   args = ["run", "--", "/opt/homebrew/bin/lazygit"]
 
-
+# [[keyboard.bindings]]
+# key = "E"
+# mods = "Command"
+#   [keyboard.bindings.command]
+#   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+#   args = ["run", "--", "pwd"]
 
 [scrolling]
 history = 100000

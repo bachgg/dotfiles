@@ -38,3 +38,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 git config --global oh-my-zsh.hide-info 1   # git_prompt_info
 git config --global oh-my-zsh.hide-status 1 # git_prompt_status
 git config --global oh-my-zsh.hide-dirty 1  # parse_git_dirty
+
+[ ! -L /Users/jimmy/Library/LaunchAgents/write.zellij.session.plist ] && ln -s /Users/jimmy/dotfiles/.config/alacritty/write.zellij.session.plist /Users/jimmy/Library/LaunchAgents && launchctl load /Users/jimmy/Library/LaunchAgents/write.zellij.session.plist
+
