@@ -1,8 +1,24 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
-    normal {
-        // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
+    normal clear-defaults=true {
+        bind "F3" { SwitchToMode "Pane"; }
+        bind "F4" { SwitchToMode "Tab"; }
+        bind "F5" { SwitchToMode "Resize"; }
+        bind "F6" { SwitchToMode "Move"; }
+        bind "F7" { SwitchToMode "Scroll"; }
+        bind "F8" { SwitchToMode "Session"; }
+
+        bind "Alt ^" { NewPane; }
+        bind "Alt 7" { MoveFocus "Left"; }
+        bind "Alt 8" { MoveFocus "Down"; }
+        bind "Alt 9" { MoveFocus "Up"; }
+        bind "Alt 0" { MoveFocus "Right"; }
+
+        bind "Alt -" { Resize "Decrease"; }
+        bind "Alt =" { Resize "Increase"; }
+
+        bind "Alt F7" { NewPane; }
+        bind "Alt c" { Copy; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -96,6 +112,7 @@ keybinds {
         bind "c" { SearchToggleOption "CaseSensitivity"; }
         bind "w" { SearchToggleOption "Wrap"; }
         bind "o" { SearchToggleOption "WholeWord"; }
+        bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
     }
     entersearch {
         bind "Ctrl c" "Esc" { SwitchToMode "Scroll"; }
@@ -212,7 +229,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-// simplified_ui true
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -228,7 +245,7 @@ plugins {
 //   - true (default)
 //   - false
 //
-pane_frames false
+pane_frames true
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -284,7 +301,7 @@ pane_frames false
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+// default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -316,7 +333,7 @@ default_layout "compact"
 //
 // copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
-// copy_command "pbcopy"                     // osx
+copy_command "pbcopy"                     // osx
 
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.

@@ -72,63 +72,154 @@ key = "C"
 mods = "Super"
 
 [[keyboard.bindings]]
-chars = "\u0001\u0008"
+key = "P"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "new-pane"]
+
+[[keyboard.bindings]]
 key = "H"
 mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "move-focus", "left"]
 
 [[keyboard.bindings]]
-chars = "\u0001\u000c"
 key = "L"
 mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "move-focus", "right"]
 
 [[keyboard.bindings]]
-chars = "\u0001\u000a"
 key = "J"
 mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "move-focus", "down"]
 
 [[keyboard.bindings]]
-chars = "\u0001\u000b"
 key = "K"
 mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "move-focus", "up"]
 
 [[keyboard.bindings]]
-chars = "\u0001\u0013"
-key = "S"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0001\u0004"
-key = "D"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0001\u0014"
 key = "T"
 mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "new-tab"]
 
 [[keyboard.bindings]]
-chars = "\u0001\u0007"
-key = "G"
+key = "1"
 mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "1"]
 
 [[keyboard.bindings]]
-chars = "\u0001\u0001"
-key = "A"
+key = "2"
 mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "2"]
+
+[[keyboard.bindings]]
+key = "3"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "3"]
+
+[[keyboard.bindings]]
+key = "4"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "4"]
+
+[[keyboard.bindings]]
+key = "5"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "5"]
+
+
+[[keyboard.bindings]]
+key = "6"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "6"]
+
+[[keyboard.bindings]]
+key = "7"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "7"]
+
+[[keyboard.bindings]]
+key = "8"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "8"]
+
+[[keyboard.bindings]]
+key = "9"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "9"]
+
+[[keyboard.bindings]]
+key = "0"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "10"]
+
+[[keyboard.bindings]]
+key = "0"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "go-to-tab", "10"]
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "switch-mode", "entersearch"]
+
+[[keyboard.bindings]]
+key = "E"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/sleepy.sh"
+  # args = [">", "~/alac-envs"]
+
+
 
 [scrolling]
 history = 100000
 
 [window]
 decorations = "Full"
-opacity = 1
+opacity = 0.95
 startup_mode = "Maximized"
 dynamic_padding = true
+option_as_alt = "Both"
 
 # macos
 # [window.padding]
-# x = 10
+# x = 93
 
-# [shell]
-# program = "/opt/homebrew/bin/tmux"
-# args = ["new-session", "-As"]
+[shell]
+program = "/opt/homebrew/bin/zellij"

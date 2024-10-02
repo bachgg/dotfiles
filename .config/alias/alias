@@ -1,7 +1,7 @@
-export EDITOR="nvim"
+export EDITOR="$(which nvim)"
 export VISUAL="$EDITOR"
 export PATH=$PATH:~/.local/bin:/sbin
-export PATH=$PATH:~/.bin
+export PATH=$PATH:~/.bin:~/go/bin
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # eval "$(starship init zsh)"
 

@@ -1,6 +1,7 @@
 vim.opt.nu = true
 vim.opt.relativenumber = false
 
+vim.opt.guicursor = "n-v-c-sm:block"
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -15,7 +16,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 0
 
 vim.opt.updatetime = 50
 
