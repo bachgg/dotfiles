@@ -178,20 +178,6 @@ mods = "Command"
   args = ["action", "go-to-tab", "9"]
 
 [[keyboard.bindings]]
-key = "0"
-mods = "Command"
-  [keyboard.bindings.command]
-  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
-  args = ["action", "go-to-tab", "10"]
-
-[[keyboard.bindings]]
-key = "0"
-mods = "Command"
-  [keyboard.bindings.command]
-  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
-  args = ["action", "go-to-tab", "10"]
-
-[[keyboard.bindings]]
 key = "F"
 mods = "Command"
   [keyboard.bindings.command]
@@ -210,7 +196,7 @@ mods = "Command"
 # mods = "Command"
 #   [keyboard.bindings.command]
 #   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
-#   args = ["run", "--", "pwd"]
+#   args = ["run", "--", "/usr/bin/env"]
 
 [scrolling]
 history = 100000
