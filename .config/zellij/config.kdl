@@ -8,16 +8,6 @@ keybinds {
         bind "F7" { SwitchToMode "Scroll"; }
         bind "F8" { SwitchToMode "Session"; }
 
-        bind "Alt ^" { NewPane; }
-        bind "Alt 7" { MoveFocus "Left"; }
-        bind "Alt 8" { MoveFocus "Down"; }
-        bind "Alt 9" { MoveFocus "Up"; }
-        bind "Alt 0" { MoveFocus "Right"; }
-
-        bind "Alt -" { Resize "Decrease"; }
-        bind "Alt =" { Resize "Increase"; }
-
-        bind "Alt F7" { NewPane; }
         bind "Alt c" { Copy; }
     }
     locked {

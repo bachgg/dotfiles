@@ -148,7 +148,6 @@ mods = "Command"
   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
   args = ["action", "go-to-tab", "5"]
 
-
 [[keyboard.bindings]]
 key = "6"
 mods = "Command"
@@ -176,6 +175,20 @@ mods = "Command"
   [keyboard.bindings.command]
   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
   args = ["action", "go-to-tab", "9"]
+
+[[keyboard.bindings]]
+key = "_"
+mods = "Command|Shift"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "resize", "decrease"]
+
+[[keyboard.bindings]]
+key = "+"
+mods = "Command|Shift"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "resize", "increase"]
 
 [[keyboard.bindings]]
 key = "F"
