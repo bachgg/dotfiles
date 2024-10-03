@@ -61,6 +61,17 @@ family = "JetBrainsMonoNL Nerd Font"
 # family = "MesloLGS Nerd Font"
 style = "Regular"
 
+# https://stackoverflow.com/a/42461580
+[[keyboard.bindings]]
+chars = "\u001B[13;2u"
+key = "Return"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[13;5u"
+key = "Return"
+mods = "Control"
+
 [[keyboard.bindings]]
 action = "Paste"
 key = "V"

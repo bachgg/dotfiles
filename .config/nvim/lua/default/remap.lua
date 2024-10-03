@@ -23,7 +23,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- keep pasting the same thing over again
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "p", "\"_dP")
 
 -- copy to system clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
@@ -43,6 +43,12 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
+
+-- resizing panes
+vim.keymap.set("n", "<M-->", ":resize -3<CR>")
+vim.keymap.set("n", "<M-=>", ":resize +3<CR>")
+vim.keymap.set("n", "<M-_>", ":vertical resize -3<CR>")
+vim.keymap.set("n", "<M-+>", ":vertical resize +3<CR>")
 
 -- move cursor in command mode
 vim.keymap.set("c", "<C-h>", "<Left>")
