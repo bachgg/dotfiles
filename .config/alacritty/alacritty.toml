@@ -184,6 +184,62 @@ mods = "Command"
   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
   args = ["action", "switch-mode", "entersearch"]
 
+[[keyboard.bindings]]
+key = ";"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "toggle-pane-embed-or-floating", ""]
+
+[[keyboard.bindings]]
+key = ":"
+mods = "Command|Shift"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "toggle-fullscreen", ""]
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Command|Shift"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "move-pane", "left"]
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Command|Shift"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "move-pane", "right"]
+
+[[keyboard.bindings]]
+key = "K"
+mods = "Command|Shift"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "move-pane", "up"]
+
+[[keyboard.bindings]]
+key = "J"
+mods = "Command|Shift"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "move-pane", "down"]
+
+[[keyboard.bindings]]
+key = ">"
+mods = "Command|Shift"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "move-pane"]
+
+[[keyboard.bindings]]
+key = "<"
+mods = "Command|Shift"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "next-swap-layout"]
+
 # [[keyboard.bindings]]
 # key = "G"
 # mods = "Command"
