@@ -24,6 +24,8 @@ foreground = "0xabb2bf"
 
 [env]
 TERM = "xterm-256color"
+ZELLIJ_SESSION_NAME = "$ZELLIJ_SESSION_NAME"
+HELLO = "$HOME"
 
 [font]
 # linux laptop
@@ -39,7 +41,7 @@ x = 0
 # y = 0
 
 # macos
-y = 5
+y = 4
 
 [font.bold]
 family = "JetBrainsMonoNL Nerd Font"
@@ -60,6 +62,7 @@ style = "Italic"
 family = "JetBrainsMonoNL Nerd Font"
 # family = "MesloLGS Nerd Font"
 style = "Regular"
+
 
 # https://stackoverflow.com/a/42461580
 [[keyboard.bindings]]
@@ -90,6 +93,13 @@ mods = "Command"
   args = ["action", "new-pane"]
 
 [[keyboard.bindings]]
+key = "R"
+mods = "Command"
+  [keyboard.bindings.command]
+  program = "/usr/bin/env"
+  args = ["/bin/sh", "-c", "/Users/jimmy/dotfiles/.config/alacritty/write-env-to-file.sh"]
+
+[[keyboard.bindings]]
 key = "H"
 mods = "Command"
   [keyboard.bindings.command]
@@ -102,6 +112,7 @@ mods = "Command"
   [keyboard.bindings.command]
   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
   args = ["action", "move-focus", "right"]
+  # args = ["action", "write", "58", "78", "97", "118", "105", "103", "97", "116", "111", "114", "82", "105", "103", "104", "116", "13"]
 
 [[keyboard.bindings]]
 key = "J"
@@ -264,12 +275,19 @@ mods = "Command|Shift"
   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
   args = ["action", "next-swap-layout"]
 
-# [[keyboard.bindings]]
-# key = "G"
-# mods = "Command"
-#   [keyboard.bindings.command]
-#   program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
-#   args = ["run", "--", "/opt/homebrew/bin/lazygit"]
+[[keyboard.bindings]]
+key = "H"
+mods = "Alt"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "write", "23", "104"]
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Alt"
+  [keyboard.bindings.command]
+  program = "/Users/jimmy/dotfiles/.config/alacritty/exec-on-current-zellij.sh"
+  args = ["action", "write", "23", "108"]
 
 # [[keyboard.bindings]]
 # key = "E"
@@ -282,11 +300,12 @@ mods = "Command|Shift"
 history = 100000
 
 [window]
-decorations = "Full"
-opacity = 0.95
+decorations = "Buttonless"
+opacity = 0.9
 startup_mode = "Maximized"
-dynamic_padding = true
+dynamic_padding = false
 option_as_alt = "Both"
+blur = true
 
 # macos
 # [window.padding]
