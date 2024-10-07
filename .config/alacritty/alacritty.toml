@@ -303,7 +303,7 @@ history = 100000
 decorations = "Buttonless"
 opacity = 0.9
 startup_mode = "Maximized"
-dynamic_padding = false
+dynamic_padding = true
 option_as_alt = "Both"
 blur = true
 
