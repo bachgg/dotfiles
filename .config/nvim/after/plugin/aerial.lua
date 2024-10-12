@@ -7,8 +7,14 @@ require("aerial").setup({
   end,
 
   layout = {
-    max_width = { 60, 0.3 }
-  }
+    max_width = { 60, 0.3 },
+    min_width = { 0.3, 30 },
+    resize_to_content = false
+  },
+
+  highlight_on_hover = true,
+  autojump = true,
+  show_guides = true
 })
 -- You probably also want to set a keymap to toggle aerial
-vim.keymap.set("n", "<leader>o", "<cmd>AerialToggle<CR>")
+vim.keymap.set("n", "<C-a>", "<cmd>AerialToggle<CR>")

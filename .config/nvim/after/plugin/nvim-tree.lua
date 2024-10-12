@@ -15,6 +15,7 @@ local function my_on_attach(bufnr)
 
   -- custom mappings
   vim.keymap.set("n", "<S-CR>", api.node.open.vertical, opts("Up"))
+  vim.keymap.set("n", "<C-CR>", api.tree.change_root_to_node, opts("CD"))
 end
 
 require("nvim-tree").setup({
@@ -26,9 +27,8 @@ require("nvim-tree").setup({
     width = function()
       return math.floor(vim.opt.columns:get() * 0.2)
     end,
-    number = true,
-    relativenumber = true,
-    signcolumn = "auto",
+    number = false,
+    signcolumn = "yes",
     centralize_selection = true,
     cursorline = true,
 
@@ -67,7 +67,7 @@ require("nvim-tree").setup({
   },
   filters = {
     dotfiles = false,
-    git_ignored = true
+    git_ignored = false
   },
   update_focused_file = {
     enable = true,

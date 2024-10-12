@@ -54,6 +54,21 @@ lsp_zero.set_sign_icons({
 -- Has to setup neodev before lspconfig
 require("neodev").setup({})
 
+local lspconfig = require 'lspconfig'
+local configs = require 'lspconfig.configs'
+
+if not configs.protols then
+  configs.protols = {
+    default_config = {
+      cmd = { 'protols' },
+      root_dir = lspconfig.util.root_pattern('.git'),
+      filetypes = { 'proto' },
+    },
+  }
+end
+
+require('lspconfig').protols.setup {}
+
 require('lspconfig').lua_ls.setup {
   settings = {
     Lua = {
@@ -161,3 +176,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['html'].setup {
   capabilities = capabilities
 }
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.gitlab-ci*.{yml,yaml}",
+  callback = function()
+    vim.bo.filetype = "yaml.gitlab"
+  end,
+})
