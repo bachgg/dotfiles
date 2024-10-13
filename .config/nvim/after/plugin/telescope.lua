@@ -47,7 +47,7 @@ require('telescope').setup {
       initial_mode = "normal",
       mappings = {
         n = {
-          ["d"] = actions.delete_buffer
+          ["x"] = actions.delete_buffer
         }
       },
       sort_lastused = true
@@ -82,7 +82,13 @@ require('telescope').setup {
       "^.git/",
       "^node_modules/"
     },
-    dynamic_preview_title = true
+    dynamic_preview_title = true,
+    path_display = {
+      "smart"
+    },
+    layout_config = {
+      prompt_position = "bottom"
+    }
   },
   extensions = {
     ["ui-select"] = {

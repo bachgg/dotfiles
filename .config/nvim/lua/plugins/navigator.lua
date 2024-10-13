@@ -1,0 +1,3 @@
+return {
+  'dynamotn/Navigator.nvim'
+}

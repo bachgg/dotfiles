@@ -58,7 +58,8 @@ vim.keymap.set("c", "<C-l>", "<Right>")
 
 -- search & replace
 vim.keymap.set("v", "<leader>ss", "y/<C-r>\"")
-vim.keymap.set("v", "<leader>sr", "y:%s/<C-r>\"/<C-r>\"/g<Left><Left>")
+-- below is replaced by nvim-rip-substitute
+-- vim.keymap.set("v", "<leader>sr", "y:%s/<C-r>\"/<C-r>\"/g<Left><Left>")
 
 -- move faster
 vim.keymap.set({ "n", "v" }, "J", "4j")
