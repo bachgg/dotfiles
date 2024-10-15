@@ -14,6 +14,9 @@ vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 vim.keymap.set("n", "∆", ":m .+1<CR>==")
 vim.keymap.set("n", "˚", ":m .-2<CR>==")
 
+-- duplicate a line
+vim.keymap.set("n", "<A-J>", "yyp")
+
 -- cursor stays in the middle when page up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
