@@ -6,6 +6,7 @@ vim.o.foldenable = true
 -- 'za' to toggle fold at the current line
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+vim.keymap.set('n', '<Tab>', 'za')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.foldingRange = {

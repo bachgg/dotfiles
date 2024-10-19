@@ -7,6 +7,7 @@ keybinds {
         bind "F6" { SwitchToMode "Move"; }
         bind "F7" { SwitchToMode "Scroll"; }
         bind "F8" { SwitchToMode "Session"; }
+        bind "F9" { SwitchToMode "EnterSearch"; }
 
         bind "Alt c" { Copy; }
     }
@@ -42,6 +43,7 @@ keybinds {
         bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        bind "s" { NextSwapLayout; }
     }
     move {
         bind "Ctrl h" { SwitchToMode "Normal"; }
@@ -224,7 +226,7 @@ simplified_ui true
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-// default_shell "fish"
+default_shell "/opt/homebrew/bin/fish"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //

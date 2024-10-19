@@ -1,10 +1,13 @@
 # Inserts a blank line between shell prompts
-add_newline = true
+add_newline = false
 
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[❯❯❯](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[✗✗✗](bold red)"
+[character]
+success_symbol = "[I](bold blue)"
+error_symbol = "[I](bold red)"
+vimcmd_symbol = "[N](bold green)"
+vimcmd_replace_one_symbol = "[❮❮❮](bold purple)"
+vimcmd_replace_symbol = "[❮❮❮](bold purple)"
+vimcmd_visual_symbol = "[V](bold yellow)"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -18,7 +21,7 @@ format = "[$duration](bold yellow)"
 truncation_length = 8
 truncation_symbol = "…/"
 truncate_to_repo = false
-home_symbol = "_"
+home_symbol = "🎄🎄🎄"
 
 [conda]
 symbol = "🐍 "
@@ -40,4 +43,7 @@ disabled = true
 format = '[⛵ $cluster](dimmed green) '
 
 [docker_context]
+disabled = true
+
+[nodejs]
 disabled = true

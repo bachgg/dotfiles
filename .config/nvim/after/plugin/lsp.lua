@@ -15,9 +15,9 @@ lsp_zero.on_attach(function(client, bufnr)
 
   vim.keymap.set('n', 'L', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 
-  vim.keymap.set('n', 'ga', function()
-    vim.lsp.buf.code_action()
-  end, opts)
+  -- vim.keymap.set('n', 'ga', function()
+  --   vim.lsp.buf.code_action()
+  -- end, opts)
 
   vim.keymap.set('n', 'gn', function()
     vim.diagnostic.goto_next()
@@ -31,17 +31,17 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
   end)
 
-  vim.keymap.set('n', 'gr', function()
-    require('telescope.builtin').lsp_references({
-      preview = {
-        hide_on_startup = false
-      },
-      initial_mode = "normal",
-      sorting_strategy = "ascending",
-      results_title = "",
-      dynamic_preview_title = true
-    })
-  end, opts)
+  -- vim.keymap.set('n', 'gr', function()
+  --   require('telescope.builtin').lsp_references({
+  --     preview = {
+  --       hide_on_startup = false
+  --     },
+  --     initial_mode = "normal",
+  --     sorting_strategy = "ascending",
+  --     results_title = "",
+  --     dynamic_preview_title = true
+  --   })
+  -- end, opts)
 end)
 
 lsp_zero.set_sign_icons({
@@ -107,7 +107,6 @@ require('rust-tools').setup({
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'tsserver',
     'rust_analyzer',
     'lua_ls',
     'bashls',
@@ -118,14 +117,15 @@ require('mason-lspconfig').setup({
     'tflint',
     'yamlls',
     'tailwindcss',
+    'ts_ls',
     'vimls',
     'pyright',
     'volar',
   },
   handlers = {
     lsp_zero.default_setup,
-    tsserver = function()
-      require('lspconfig').tsserver.setup({
+    ts_ls = function()
+      require('lspconfig').ts_ls.setup({
         settings = {
           completions = {
             completeFunctionCalls = true
