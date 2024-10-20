@@ -1,6 +1,6 @@
 export EDITOR="$(which nvim)"
 export VISUAL="$EDITOR"
-export PATH=$PATH:~/.local/bin:/sbin
+export PATH=$PATH:~/.local/bin:/sbin:/usr/local/bin
 export PATH=$PATH:~/.bin:~/go/bin
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # eval "$(starship init zsh)"
@@ -15,7 +15,7 @@ alias ...="cd ../.."
 alias ulogout="pkill -u bach"
 #alias open="xdg-open"
 alias ws="cd ~/workspace"
-alias l="exa --long --icons --all --no-user"
+alias l="eza --long --icons --all --no-user"
 alias fapt="/home/bach/.config/fzf/fapt"
 alias fimg="/home/bach/.config/fzf/fzfimg.sh"
 alias pl="polybar-msg cmd restart"
