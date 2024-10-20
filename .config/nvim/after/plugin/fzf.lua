@@ -31,7 +31,7 @@ require 'fzf-lua'.setup {
     -- window, can be set to 'false' to remove all borders or to
     -- 'none', 'single', 'double', 'thicc' (+cc) or 'rounded' (default)
     -- border     = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
-    border     = "none",
+    border     = "single",
     -- Backdrop opacity, 0 is fully opaque, 100 is fully transparent (i.e. disabled)
     backdrop   = 60,
     -- requires neovim > v0.9.0, passed as is to `nvim_open_win`
@@ -48,7 +48,7 @@ require 'fzf-lua'.setup {
       hidden       = 'nohidden',  -- hidden|nohidden
       vertical     = 'down:45%',  -- up|down:size
       horizontal   = 'right:60%', -- right|left:size
-      layout       = 'flex',      -- horizontal|vertical|flex
+      layout       = 'vertical',  -- horizontal|vertical|flex
       flip_columns = 120,         -- #cols to switch to horizontal on flex
       -- Only used with the builtin previewer:
       title        = true,        -- preview border title (file/buf)?

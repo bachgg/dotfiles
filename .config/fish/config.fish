@@ -12,6 +12,8 @@ fish_add_path \
   ~/go/bin \
   ~/.cargo/bin
 
+set --export XDG_CONFIG_HOME "$HOME/.config" # For lazygit
+
 function l
   eza --long --icons --all --no-user
 end

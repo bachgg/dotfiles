@@ -30,18 +30,6 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set('n', '<C-y>', function()
     vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
   end)
-
-  -- vim.keymap.set('n', 'gr', function()
-  --   require('telescope.builtin').lsp_references({
-  --     preview = {
-  --       hide_on_startup = false
-  --     },
-  --     initial_mode = "normal",
-  --     sorting_strategy = "ascending",
-  --     results_title = "",
-  --     dynamic_preview_title = true
-  --   })
-  -- end, opts)
 end)
 
 lsp_zero.set_sign_icons({
