@@ -31,16 +31,16 @@ require 'fzf-lua'.setup {
     -- window, can be set to 'false' to remove all borders or to
     -- 'none', 'single', 'double', 'thicc' (+cc) or 'rounded' (default)
     -- border     = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
-    border     = "single",
+    border     = "none",
     -- Backdrop opacity, 0 is fully opaque, 100 is fully transparent (i.e. disabled)
     backdrop   = 60,
     -- requires neovim > v0.9.0, passed as is to `nvim_open_win`
     -- can be sent individually to any provider to set the win title
     -- title         = "Title",
     -- title_pos     = "center",    -- 'left', 'center' or 'right'
-    fullscreen = false,           -- start fullscreen?
+    fullscreen = false, -- start fullscreen?
     preview    = {
-      default      = 'bat',       -- override the default previewer?
+      -- default      = 'bat',       -- override the default previewer?
       -- default uses the 'builtin' previewer
       border       = 'border',    -- border|noborder, applies only to
       -- native fzf previewers (bat/cat/git/etc)
@@ -281,7 +281,7 @@ require 'fzf-lua'.setup {
   --     copen        = "topleft copen",
   --   },
   files = {
-    -- previewer      = "bat",          -- uncomment to override previewer
+    -- previewer = "bat",
     -- (name from 'previewers' table)
     -- set to 'false' to disable
     prompt                 = 'Files❯ ',
@@ -292,7 +292,7 @@ require 'fzf-lua'.setup {
     -- path_shorten   = 1,              -- 'true' or number, shorten path?
     -- Uncomment for custom vscode-like formatter where the filename is first:
     -- e.g. "fzf-lua/previewer/fzf.lua" => "fzf.lua previewer/fzf-lua"
-    -- formatter      = "path.filename_first",
+    formatter              = "path.filename_first",
     -- executed command priority is 'cmd' (if exists)
     -- otherwise auto-detect prioritizes `fd`:`rg`:`find`
     -- default options are controlled by 'fd|rg|find|_opts'
@@ -320,6 +320,11 @@ require 'fzf-lua'.setup {
       --   ["enter"]     = actions.file_edit,
       -- custom actions are available too
       --   ["ctrl-y"]    = function(selected) print(selected[1]) end,
+    },
+    winopts                = {
+      preview = {
+        hidden = "hidden"
+      }
     }
   },
   git = {
@@ -330,6 +335,12 @@ require 'fzf-lua'.setup {
       git_icons    = true, -- show git icons?
       file_icons   = true, -- show file icons (true|"devicons"|"mini")?
       color_icons  = true, -- colorize file|git icons
+      formatter    = "path.filename_first",
+      winopts      = {
+        preview = {
+          hidden = "hidden"
+        }
+      }
       -- force display the cwd header line regardless of your current working
       -- directory can also be used to hide the header when not wanted
       -- cwd_header = true
@@ -467,7 +478,7 @@ require 'fzf-lua'.setup {
     -- default options are controlled by 'rg|grep_opts'
     -- cmd            = "rg --vimgrep",
     grep_opts      = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp -e",
-    rg_opts        = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
+    rg_opts        = "--hidden --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
     -- Uncomment to use the rg config file `$RIPGREP_CONFIG_PATH`
     -- RIPGREP_CONFIG_PATH = vim.env.RIPGREP_CONFIG_PATH
     --
