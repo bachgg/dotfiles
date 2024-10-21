@@ -1,8 +1,10 @@
 local fzf = require("fzf-lua")
+fzf.register_ui_select()
 vim.keymap.set('n', '<leader>ff', fzf.files, {})
 vim.keymap.set('n', '<leader>fg', fzf.git_files, {})
 vim.keymap.set('n', '<leader>fj', fzf.live_grep, {})
 vim.keymap.set('v', '<leader>fj', fzf.grep_visual, {})
+vim.keymap.set('n', '<leader>fc', fzf.commands, {})
 vim.keymap.set({ 'n', 'v' }, '<leader> ', fzf.buffers, {})
 vim.keymap.set({ 'n', 'v' }, 'gr', fzf.lsp_references, {})
 vim.keymap.set({ 'n', 'v' }, 'ga', fzf.lsp_code_actions, {})
@@ -542,7 +544,9 @@ require 'fzf-lua'.setup {
       -- can resume the buffers picker on the same window
       -- eliminating an otherwise unaesthetic win "flash"
       ["ctrl-x"] = { fn = actions.buf_del, reload = true },
-    }
+      ["ctrl-h"] = { fn = actions.toggle_hidden, reload = true }
+    },
+    formatter     = "path.filename_first",
   },
   tabs = {
     prompt      = 'Tabs❯ ',

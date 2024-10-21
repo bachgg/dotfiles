@@ -14,6 +14,10 @@ fish_add_path \
 
 set --export XDG_CONFIG_HOME "$HOME/.config" # For lazygit
 
+bind \cf accept-autosuggestion
+bind -M insert -m insert \cf accept-autosuggestion
+bind -M insert -m insert \e\[32\;5u accept-autosuggestion
+
 function l
   eza --long --icons --all --no-user
 end

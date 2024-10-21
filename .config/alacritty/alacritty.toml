@@ -66,6 +66,7 @@ style = "Regular"
 bindings = [
   { chars = "\u001B[13;2u", key = "Return", mods = "Shift" },
   { chars = "\u001B[13;5u", key = "Return", mods = "Control" },
+  { chars = "\u001B[32;5u", key = "Space", mods = "Control" },
   { action = "Paste", key = "V", mods = "Super" },
   { action = "Copy", key = "C", mods = "Super" },
   # tab
@@ -96,6 +97,8 @@ bindings = [
   { key = "L", mods = "Command|Shift", chars = "\u001b[17~\u006c\u000d" },
   # search
   { key = "F", mods = "Command", chars = "\u001b[20~" },
+  # session
+  { key = "S", mods = "Command", chars = "\u001b[19~\u0077" },
 ]
 
 [scrolling]

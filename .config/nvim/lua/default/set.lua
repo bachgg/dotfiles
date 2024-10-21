@@ -9,7 +9,7 @@ vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.cursorline = true
-
+vim.opt.cursorcolumn = false
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
@@ -24,6 +24,7 @@ vim.opt.scrolloff = 0
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+vim.opt.showmode = false
 
 -- vim.g: global variables (g:)
 vim.g.mapleader = " "

@@ -10,14 +10,14 @@ require('Comment').setup({
     ---Line-comment toggle keymap
     line = 'gcc',
     ---Block-comment toggle keymap
-    block = 'gbc',
+    block = 'gBC',
   },
   ---LHS of operator-pending mappings in NORMAL and VISUAL mode
   opleader = {
     ---Line-comment keymap
     line = 'gc',
     ---Block-comment keymap
-    block = 'gb',
+    block = 'gB',
   },
   ---LHS of extra mappings
   extra = {

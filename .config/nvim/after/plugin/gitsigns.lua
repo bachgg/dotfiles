@@ -1,4 +1,3 @@
-vim.keymap.set('n', '<C-b>', '<CMD>Gitsigns blame_line<CR>')
 require('gitsigns').setup({
   signs                        = {
     add          = { text = '│' },

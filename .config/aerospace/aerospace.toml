@@ -151,7 +151,6 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-semicolon = 'mode service'
 
 [workspace-to-monitor-force-assignment]
-6 = ['secondary', 'built-in']
 7 = ['secondary', 'built-in']
 8 = ['secondary', 'built-in']
 9 = ['secondary', 'built-in']
