@@ -107,7 +107,6 @@ require('mason-lspconfig').setup({
     'tailwindcss',
     'ts_ls',
     'vimls',
-    'pyright',
     'volar',
   },
   handlers = {

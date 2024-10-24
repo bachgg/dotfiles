@@ -14,7 +14,8 @@ vimcmd_visual_symbol = "[V](bold yellow)"
 disabled = true
 
 [cmd_duration]
-min_time = 10
+min_time = 50
+show_milliseconds = true
 format = "[$duration](bold yellow)"
 
 [directory]
