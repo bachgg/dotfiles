@@ -175,3 +175,17 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "yaml.gitlab"
   end,
 })
+
+require("lspconfig").basedpyright.setup {
+  settings = {
+    basedpyright = {
+      disableOrganizeImports = true, -- Using Ruff
+    },
+    python = {
+      analysis = {
+        ignore = { '*' }, -- Using Ruff
+      },
+    },
+  },
+  capabilities = capabilities
+}
