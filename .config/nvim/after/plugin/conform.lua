@@ -18,9 +18,16 @@ require("conform").setup({
   },
   formatters = {
     black_128 = {
+      meta = { url = "https://github.com/psf/black", description = "The uncompromising Python code formatter." },
       command = "black",
-      args = { "--line-length", "128", "$FILENAME" },
-      stdin = false
+      stdin = true,
+      args = { "--line-length", "128", "--stdin-filename", "$FILENAME", "--quiet", "-" },
+      range_args = function(self, ctx)
+        return { "--line-ranges", ctx.range["start"][1] .. "-" .. ctx.range["end"][1] }
+      end,
+      cwd = require("conform.util").root_file({
+        "pyproject.toml",
+      })
     }
   }
 })
