@@ -75,6 +75,13 @@ require('lspconfig').lua_ls.setup {
   }
 }
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.launch",
+  callback = function()
+    vim.bo.filetype = "xml"
+  end,
+})
+
 require('lspconfig').eslint.setup({
   on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>es', function()
@@ -83,18 +90,10 @@ require('lspconfig').eslint.setup({
   end,
 })
 
-require('rust-tools').setup({
-  tools = {
-    parameter_hints_prefix = "◀︎ ",
-    inlay_hints = {
-      other_hints_prefix = "▶︎ "
-    }
-  }
-})
-
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
+    'lemminx',
     'rust_analyzer',
     'lua_ls',
     'bashls',
@@ -120,6 +119,7 @@ require('mason-lspconfig').setup({
         }
       })
     end,
+    rust_analyzer = function() end
   },
 })
 
