@@ -1,7 +1,7 @@
 vim.opt.nu = true
 vim.opt.relativenumber = false
 
-vim.opt.guicursor = "n-v-c-sm:block"
+-- vim.opt.guicursor = "n-v-c-sm:block"
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2

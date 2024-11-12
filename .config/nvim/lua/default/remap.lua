@@ -42,10 +42,10 @@ vim.keymap.set({ "n", "v" }, "gg", "gg0")
 vim.keymap.set({ "n", "v" }, "G", "G$")
 
 -- moving between panes
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
+-- vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
+-- vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
+-- vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
+-- vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 
 -- resizing panes
 vim.keymap.set("n", "<M-->", ":resize -3<CR>")
