@@ -10,5 +10,5 @@ if [ "${DIR_PATH#*uai}" != "$DIR_PATH" ]; then
 else
   SESSION="bach/$DIR_NAME"
 fi
-(tmux has-session -t "$SESSION" &> /dev/null || tmux new-session -c $DIR_PATH -s "$SESSION" -d) && tmux switch-client -t "$SESSION"
+(tmux has-session -t "$SESSION" &> /dev/null || tmux new-session -d -c $DIR_PATH -s "$SESSION" "nvim $DIR_PATH" \; new-window -t $SESSION: -c $DIR_PATH) && tmux switch-client -t "$SESSION"
 
