@@ -1,3 +1,4 @@
+vim.g.tmux_navigator_no_wrap = 1
 require('Navigator').setup()
 
 vim.keymap.set({ 'n', 't' }, "<D-h>", '<CMD>NavigatorLeft<CR>')

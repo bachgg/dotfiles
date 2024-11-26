@@ -1,12 +1,15 @@
 require("conform").setup({
+  default_format_opts = {
+    stop_after_first = true
+  },
   formatters_by_ft = {
-    json = { { "prettierd", "prettier" } },
+    json = { "prettierd", "prettier" },
     lua = { "stylua" },
     python = { "black_128" },
-    javascript = { { "prettierd", "prettier" } },
-    javascriptreact = { { "prettierd", "prettier" } },
-    typescript = { { "prettierd", "prettier" } },
-    typescriptreact = { { "prettierd", "prettier" } },
+    javascript = { "prettierd", "prettier" },
+    javascriptreact = { "prettierd", "prettier" },
+    typescript = { "prettierd", "prettier" },
+    typescriptreactl = { "prettierd", "prettier" },
     terraform = { "terraform_fmt" },
     vue = { "prettierd" }
 

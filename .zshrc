@@ -2,31 +2,33 @@
 HISTFILE=~/.histfile
 HISTSIZE=10000000
 SAVEHIST=1000
-# bindkey -v
-# bindkey "^R" history-incremental-search-backward
 
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/bach/.zshrc'
+source ~/.zprofile
+export ZSH="$HOME/.oh-my-zsh"
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+ZSH_THEME="robbyrussell"
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/dotfiles/.config/scripts/dir_switcher.sh')
+plugins=(zsh-vi-mode)
 
+source $ZSH/oh-my-zsh.sh
+
+export MANPATH="/usr/local/man:$MANPATH"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+#
+# # The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jimmy/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jimmy/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# # The next line enables shell command completion for gcloud.
+if [ -f '/Users/jimmy/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jimmy/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+export PATH="/Users/jimmy/.local/bin:$PATH"
 source ~/.config/alias/alias
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+alias kar-server='ssh -i id_rsa_bullseye -p 32122 bach@185.228.137.28'
 
-export FZF_CTRL_T_OPTS="
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+export PYENV_ROOT="$HOME/.pyen"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+source /Users/jimmy/.config/op/plugins.sh
 
-# CTRL-/ to toggle small preview window to see the full command
-# CTRL-Y to copy the command into clipboard using pbcopy
-export FZF_CTRL_R_OPTS="
-  --preview 'echo {}' --preview-window up:3:hidden:wrap
-  --bind 'ctrl-/:toggle-preview'
-  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-  --color header:italic
-  --header 'Press CTRL-Y to copy command into clipboard'"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(zellij setup --generate-auto-start zsh)"
