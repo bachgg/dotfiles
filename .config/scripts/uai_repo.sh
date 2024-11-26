@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PATH=$PATH:/opt/homebrew/bin
-DIR_PATH=$(ls -d $HOME/uai/workspace/*/ $HOME/workspace/*/ | fzf)
+DIR_PATH=$(ls -d $HOME/uai/workspace/*/ $HOME/workspace/*/ $HOME/dotfiles | fzf)
 if [ ! -z $DIR_PATH ]; then 
   DIR_PATH=$(realpath $DIR_PATH)
   DIR_NAME=$(basename $DIR_PATH)
