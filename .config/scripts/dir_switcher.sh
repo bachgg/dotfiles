@@ -1,11 +1,7 @@
-#!/bin/sh
-
-uai_repo() {
-  DIR_PATH=$(realpath $(ls -d $HOME/uai/workspace/*/ | fzf --tmux))
-  DIR_NAME=$(basename $DIR_PATH)
-  (tmux has-session -t $DIR_NAME &> /dev/null || tmux new-session -c $DIR_PATH -s $DIR_NAME -d) && tmux switch-client -t $DIR_NAME
+switch() {
+  tmux split-window -Z $HOME/dotfiles/.config/scripts/uai_repo.sh
 }
-zle     -N            uai_repo
-bindkey -M emacs '^U' uai_repo
-bindkey -M vicmd '^U' uai_repo
-bindkey -M viins '^U' uai_repo
+zle     -N            switch
+bindkey -M emacs '^U' switch
+bindkey -M vicmd '^U' switch
+bindkey -M viins '^U' switch
