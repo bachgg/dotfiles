@@ -7,7 +7,7 @@ source ~/.zprofile
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
-zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/dotfiles/.config/scripts/dir_switcher.sh')
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 plugins=(zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh

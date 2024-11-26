@@ -104,6 +104,8 @@ bindings = [
   # sessions
   { key = "S", mods = "Command", chars = "\u0001\u0073" },
   { key = "E", mods = "Command", chars = "\u0001\u0065" },
+
+  { key = "U", mods = "Command", chars = "\u0001\u0075" },
 ]
 
 

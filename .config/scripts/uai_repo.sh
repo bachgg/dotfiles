@@ -1,6 +1,7 @@
 #!/bin/sh
 
-DIR_PATH=$(ls -d $HOME/uai/workspace/*/ | fzf --tmux)
+PATH=$PATH:/opt/homebrew/bin
+DIR_PATH=$(ls -d $HOME/uai/workspace/*/ | fzf)
 if [ ! -z $DIR_PATH ]; then 
   DIR_PATH=$(realpath $DIR_PATH)
   DIR_NAME=$(basename $DIR_PATH)
