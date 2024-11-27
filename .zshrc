@@ -32,3 +32,4 @@ export PYENV_ROOT="$HOME/.pyen"
 eval "$(pyenv init -)"
 source /Users/jimmy/.config/op/plugins.sh
 
+source ~/.config/op/plugins.sh
