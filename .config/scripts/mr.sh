@@ -17,7 +17,7 @@ PARSED=$(echo "$MR" | jq -R '.' | jq -s '.' | jq -r 'join("")')
 REPO=$(echo $PARSED | jq -r '.[0] | "\(.references.full)"' | sed -E 's#.*/([^/]+)![0-9]+#\1#')
 
 # get `iid`s of MRs
-TITLES=$(echo $PARSED | jq -r '.[] | "!\(.iid) [\(.title)](\(.web_url)) @sre-team\\n"' | sed "s/^/\`$REPO\` /")
+TITLES=$(echo $PARSED | jq -r '.[] | "!\(.iid) [\(.title)](\(.web_url)) @sre-team \(.description)"' | sed "s/^/\`$REPO\`/")
 
 # fzf entries
 FZF_ENTRIES=$(
@@ -32,5 +32,5 @@ FZF_ENTRIES=$(
 
 SELECTED=$(echo "$FZF_ENTRIES"  | fzf --ansi --read0 | sed -n '1p')
 IID=$(echo "$SELECTED" | sed -E 's/^(![0-9]+).*$/\1/')
-echo $TITLES | grep $IID | sed -E 's/^(.+)(![0-9]+)(.*)$/\1\3\n/' | pbcopy
+echo $TITLES | grep $IID | sed -E 's/^(.+)(![0-9]+)(.*)(@sre-team)(.*)$/\1\3\4\n\5/' | pbcopy
 
