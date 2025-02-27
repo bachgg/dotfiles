@@ -21,10 +21,10 @@ require("rip-substitute").setup {
     abort = "q",
     confirm = "<CR>",
     insertModeConfirm = "<C-CR>",
-    prevSubst = "<Up>",
-    nextSubst = "<Down>",
+    prevSubstitutionInHistory = "<Up>",
+    nextSubstitutionInHistory = "<Down>",
     toggleFixedStrings = "<C-f>", -- ripgrep's `--fixed-strings`
-    toggleIgnoreCase = "<C-c>", -- ripgrep's `--ignore-case`
+    toggleIgnoreCase = "<C-c>",   -- ripgrep's `--ignore-case`
     openAtRegex101 = "R",
   },
   incrementalPreview = {
@@ -47,5 +47,7 @@ require("rip-substitute").setup {
     -- `replace` line.
     autoCaptureGroups = false,
   },
-  notificationOnSuccess = true,
+  notification = {
+    OnSuccess = true,
+  }
 }
