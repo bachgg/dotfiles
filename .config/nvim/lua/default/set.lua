@@ -25,6 +25,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 vim.opt.showmode = false
+vim.opt.list = true
+vim.opt.listchars = "eol:↵,trail:-,tab:>-,nbsp:␣"
 
 -- vim.g: global variables (g:)
 vim.g.mapleader = " "
