@@ -12,7 +12,7 @@ mr=$(glab mr list --per-page 10 --not-label renovate -F json -R $(git remote get
 
 repo=$(git remote get-url origin | sed 's_.*/__; s/\.git$//')
 
-messages=$(jq -r -n --argjson data "$mr" '$data | .[] | "!\(.iid) [\(.title)](\(.web_url)) @sre-team \(.description)"')
+messages=$(jq -r -n --argjson data "$mr" '$data | .[] | "!\(.iid) [\(.title)](\(.web_url)) @cloud-engineering \(.description)"')
 
 fzf_entries=$(jq -r -n --argjson data "$mr" '$data | .[] | "!\(.iid),\(.title),\(.author),(\(.target_branch)) ← (\(.source_branch))"' |
   awk \
@@ -23,4 +23,4 @@ fzf_entries=$(jq -r -n --argjson data "$mr" '$data | .[] | "!\(.iid),\(.title),\
 
 selected_iid=$(echo $fzf_entries  | fzf --ansi --read0 | sed -n '1p' | sed -E 's/^!([0-9]+).*$/\1/')
 
-jq -r -n --arg repo "$repo" --argjson iid "$selected_iid" --argjson data "$mr" '$data | .[] | select(.iid == $iid) | "`\($repo)` [\(.title)](\(.web_url)) @sre-team\n\(.description)"' | pbcopy
+jq -r -n --arg repo "$repo" --argjson iid "$selected_iid" --argjson data "$mr" '$data | .[] | select(.iid == $iid) | "`\($repo)` [\(.title)](\(.web_url)) @cloud-engineering\n\(.description)"' | pbcopy
