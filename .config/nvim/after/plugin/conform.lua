@@ -9,7 +9,7 @@ require("conform").setup({
     javascript = { "prettierd", "prettier" },
     javascriptreact = { "prettierd", "prettier" },
     typescript = { "prettierd", "prettier" },
-    typescriptreactl = { "prettierd", "prettier" },
+    typescriptreact = { "prettierd", "prettier" },
     terraform = { "terraform_fmt" },
     vue = { "prettierd", "prettier" }
 

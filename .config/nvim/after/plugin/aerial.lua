@@ -17,4 +17,4 @@ require("aerial").setup({
   show_guides = true
 })
 -- You probably also want to set a keymap to toggle aerial
-vim.keymap.set("n", "<C-a>", "<cmd>AerialToggle<CR>")
+vim.keymap.set("n", "<leader>ga", "<cmd>AerialToggle<CR>")
