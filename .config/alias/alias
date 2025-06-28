@@ -1,6 +1,6 @@
 export EDITOR="$(which nvim)"
 export VISUAL="$EDITOR"
-export PATH=$PATH:~/.local/bin:/sbin:/usr/local/bin
+export PATH=$PATH:~/.local/bin:/sbin:/usr/local/bin:~/.fzf/bin
 export PATH=$PATH:~/.bin:~/go/bin
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # eval "$(starship init zsh)"
@@ -41,5 +41,5 @@ git config --global oh-my-zsh.hide-info 1   # git_prompt_info
 git config --global oh-my-zsh.hide-status 1 # git_prompt_status
 git config --global oh-my-zsh.hide-dirty 1  # parse_git_dirty
 
-[ ! -L /Users/jimmy/Library/LaunchAgents/write.zellij.session.plist ] && ln -s /Users/jimmy/dotfiles/.config/alacritty/write.zellij.session.plist /Users/jimmy/Library/LaunchAgents && launchctl load /Users/jimmy/Library/LaunchAgents/write.zellij.session.plist
+# [ ! -L /Users/jimmy/Library/LaunchAgents/write.zellij.session.plist ] && ln -s /Users/jimmy/dotfiles/.config/alacritty/write.zellij.session.plist /Users/jimmy/Library/LaunchAgents && launchctl load /Users/jimmy/Library/LaunchAgents/write.zellij.session.plist
 

@@ -1,6 +1,8 @@
 #!/bin/sh
 
-PATH=$PATH:/opt/homebrew/bin
+PATH=$PATH:/opt/homebrew/bin:~/.fzf/bin
+[ -d ~/workspace ] || mkdir ~/workspace
+[ -d ~/uai/workspace ] || mkdir -p ~/uai/workspace
 DIR_PATH=$(ls -d $HOME/uai/workspace/*/ $HOME/workspace/*/ $HOME/dotfiles | fzf)
 [ -z $DIR_PATH ] && exit
 DIR_PATH=$(realpath $DIR_PATH)

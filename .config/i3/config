@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 default_border pixel
 
@@ -83,8 +83,8 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+space exec --no-startup-id "$HOME/.config/rofi/launchers/type-1/launcher.sh"
 
 # cycle workspaces
-bindsym Mod4+Tab workspace next
-bindsym Mod4+Shift+Tab workspace prev
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
 
 # brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id "backlight_control -10"
