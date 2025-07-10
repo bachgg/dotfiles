@@ -82,6 +82,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.mdx",
+  callback = function()
+    vim.bo.filetype = "markdown"
+  end,
+})
+
 require('lspconfig').eslint.setup({
   on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>es', function()
@@ -89,6 +96,9 @@ require('lspconfig').eslint.setup({
     end)
   end,
 })
+
+local util = require 'lspconfig.util'
+
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -110,15 +120,18 @@ require('mason-lspconfig').setup({
   },
   handlers = {
     lsp_zero.default_setup,
-    ts_ls = function()
-      require('lspconfig').ts_ls.setup({
-        settings = {
-          completions = {
-            completeFunctionCalls = true
-          }
-        }
-      })
-    end,
+    -- ts_ls = function()
+    --   local root_dir = util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git')()
+    --   print('heyyyyy', root_dir)
+    --   require('lspconfig').ts_ls.setup({
+    --     settings = {
+    --       completions = {
+    --         completeFunctionCalls = true
+    --       }
+    --     },
+    --     root_dir = util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git')
+    --   })
+    -- end,
     rust_analyzer = function() end
   },
 })
@@ -168,6 +181,17 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['html'].setup {
   capabilities = capabilities
 }
+
+require('lspconfig').helm_ls.setup {
+  settings = {
+    ['helm-ls'] = {
+      yamlls = {
+        path = "yaml-language-server",
+      }
+    }
+  }
+}
+require('lspconfig').yamlls.setup {}
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.gitlab-ci*.{yml,yaml}",
