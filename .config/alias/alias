@@ -42,4 +42,4 @@ git config --global oh-my-zsh.hide-status 1 # git_prompt_status
 git config --global oh-my-zsh.hide-dirty 1  # parse_git_dirty
 
 # [ ! -L /Users/jimmy/Library/LaunchAgents/write.zellij.session.plist ] && ln -s /Users/jimmy/dotfiles/.config/alacritty/write.zellij.session.plist /Users/jimmy/Library/LaunchAgents && launchctl load /Users/jimmy/Library/LaunchAgents/write.zellij.session.plist
-
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
