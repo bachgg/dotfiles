@@ -113,7 +113,7 @@ bindings = [
 history = 100000
 
 [window]
-decorations = "Buttonless"
+decorations = "None"
 opacity = 0.9
 startup_mode = "Maximized"
 dynamic_padding = true
