@@ -30,6 +30,5 @@ alias kar-server='ssh -i id_rsa_bullseye -p 32122 bach@185.228.137.28'
 export PYENV_ROOT="$HOME/.pyen"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-source /Users/jimmy/.config/op/plugins.sh
 
 source ~/.config/op/plugins.sh
