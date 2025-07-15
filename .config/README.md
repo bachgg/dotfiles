@@ -223,5 +223,5 @@ sudo systemctl start docker.socket
 usermod -a -G docker $USER
 
 # others
-niri, wl-clipboard, keyd, brillo
+niri, wl-clipboard, keyd, brillo, xdg-desktop-portal-gtk, xdg-desktop-portal-gnome, gnome-keyring
 ```
