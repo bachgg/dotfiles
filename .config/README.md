@@ -221,4 +221,7 @@ yay -S --noconfirm docker
 sudo systemctl enable docker.socket
 sudo systemctl start docker.socket
 usermod -a -G docker $USER
+
+# others
+niri, wl-clipboard, keyd, brillo
 ```
