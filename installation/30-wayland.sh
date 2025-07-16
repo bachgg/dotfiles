@@ -17,4 +17,8 @@ yay -S --noconfirm zsh
 chsh -s /usr/bin/zsh
 
 # Tools
-yay -S --noconfirm tmux fzf cmake ripgrep fd nodejs npm go unzip neovim
+yay -S --noconfirm alacritty tmux eza fzf bat lazygit fastfetch
+yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
+
+# Audio
+yay -S --noconfirm pipewire wireplumber

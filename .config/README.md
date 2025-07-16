@@ -176,7 +176,7 @@ yay -S --noconfirm polybar
 # neovim
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
-yay -S --noconfirm neovim cmake ripgrep fd tmux nodejs npm lazygit bat starship exa fastfetch
+yay -S --noconfirm neovim cmake ripgrep fd tmux nodejs npm lazygit bat starship eza fastfetch
 
 # others
 yay -S --noconfirm openssh
