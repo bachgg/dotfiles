@@ -1,1 +1,3 @@
-echo "welcome to the arch installation script"
+# curl -fsSL moppediert.github.io/dotfiles/install.sh | sh
+
+echo "--- Archlinux Setup ---"
