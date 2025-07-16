@@ -8,5 +8,7 @@ if [ ! -d "${dotfiles_dir}" ]; then
   sh -e ${dotfiles_dir}/install.sh
 else
   echo "Running installation script..."
-  sh -e ${dotfiles_dir}/installation/10-yay.sh
+  for script in $(ls ${dotfiles_dir}/installation/*); do
+    sh -e ${script}
+  done
 fi
