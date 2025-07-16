@@ -2,13 +2,13 @@
 
 set -e
 
-DOTFILES="${HOME}/dotfiles"
+dotfiles_dir="${HOME}/dotfiles"
 
-if [ ! -d "${DOTFILES}" ]; then
+if [ ! -d "${dotfiles_dir}" ]; then
   echo "Cloning script repository..."
-  pacman -Sy && pacman -S --noconfirm git
-  git clone https://github.com/moppediert/dotfiles.git ${DOTFILES}
-  sh ${DOTFILES}/install.sh
+  pacman -Sy --noconfirm git
+  git clone https://github.com/moppediert/dotfiles.git ${dotfiles_dir}
+  sh ${dotfiles_dir}/install.sh
 else
   echo "Running installation script..."
 fi
