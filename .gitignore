@@ -12,3 +12,4 @@
 .config/vivaldi*
 .config/dconf
 .config/ibus*
+alacritty.toml
