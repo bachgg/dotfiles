@@ -14,7 +14,7 @@ ln -s $HOME/dotfiles/.config/fonts/* $HOME/.local/share/fonts/
 
 # Shell
 yay -S --noconfirm zsh
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh $(whoami)
 
 # Tools
 yay -S --noconfirm alacritty tmux eza fzf bat lazygit fastfetch
