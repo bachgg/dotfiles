@@ -2,7 +2,6 @@
 
 # read -p "Wifi network: " wifi_network
 # iwctl station wlan0 connect "${wifi_network}"
-
-archinstall \
-  --config-url https://moppediert.github.io/dotfiles/user_configuration.json \
-  --creds-url https://moppediert.github.io/dotfiles/user_credentials.json
+curl -fsSLO moppediert.github.io/dotfiles/user_configuration.json
+curl -fsSLO moppediert.github.io/dotfiles/user_credentials.json
+archinstall --config user_configuration.json --creds user_credentials.json
