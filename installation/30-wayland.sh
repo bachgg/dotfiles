@@ -21,4 +21,14 @@ yay -S --noconfirm alacritty tmux eza fzf bat lazygit fastfetch
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 
 # Audio
-yay -S --noconfirm pipewire wireplumber
+yay -R --noconfirm jack2
+yay -S --noconfirm pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber wiremix
+
+# Brightness control
+yay -S --noconfirm brillo
+sudo usermod -a -G video $(whoami)
+
+# Keymap
+yay -S --noconfirm keyd
+sudo ln -sf $HOME/dotfiles/.config/keyd/default.conf /etc/keyd/
+sudo systemctl enable keyd --now
