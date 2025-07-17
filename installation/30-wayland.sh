@@ -17,7 +17,9 @@ yay -S --noconfirm zsh
 sudo chsh -s /usr/bin/zsh $(whoami)
 
 # Tools
-yay -S --noconfirm alacritty tmux eza fzf bat lazygit fastfetch
+yay -S --noconfirm alacritty
+ln -s $HOME/dotfiles/.config/alacritty/alacritty-linux.toml $HOME/dotfiles/.config/alacritty/alacritty.toml
+yay -S --noconfirm tmux eza fzf bat lazygit fastfetch
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 
 # Audio
