@@ -8,6 +8,7 @@ ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
 git -C $HOME/dotfiles remote set-url origin $(git -C $HOME/dotfiles remote get-url origin | sed 's_https://github.com/_git@github.com:_g')
 git -C $HOME/dotfiles config user.name moppediert
 git -C $HOME/dotfiles config user.email $(printf %s@%s.%s moppediert gmail com)
+git -C $HOME/dotfiles config pull.rebase false
 
 # Desktop manager
 yay -S --noconfirm ly
