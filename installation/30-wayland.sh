@@ -1,6 +1,14 @@
 # Configuration
 ln -s $HOME/dotfiles/.config/* $HOME/.config/
 
+# Add keys so ssh does not complain
+ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
+
+# Some git config
+git -C $HOME/dotfiles remote set-url origin $(git -C $HOME/dotfiles remote get-url origin | sed 's_https://github.com/_git@github.com:_g')
+git -C $HOME/dotfiles config user.name moppediert
+git -C $HOME/dotfiles config user.email $(printf %s@%s.%s moppediert gmail com)
+
 # Desktop manager
 yay -S --noconfirm ly
 sudo systemctl enable ly.service
