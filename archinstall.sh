@@ -1,6 +1,6 @@
 # iwctl station wlan0 connect wifi_name
 
-# curl -fsSL0 moppediert.github.io/dotfiles/archinstall.sh && sh -e archinstall.sh
+# curl -fsSLO moppediert.github.io/dotfiles/archinstall.sh && sh -e archinstall.sh
 
 curl -fsSLO moppediert.github.io/dotfiles/user_configuration.json
 curl -fsSLO moppediert.github.io/dotfiles/user_credentials.json
