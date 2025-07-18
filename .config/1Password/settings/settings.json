@@ -7,8 +7,10 @@
   "sshAgent.storeKeyTitles": true,
   "sshAgent.storeSshKeyTitlesResponseGiven": true,
   "sshAgent.enabled": true,
+  "developers.cliSharedLockState.enabled": true,
   "authTags": {
     "browsers.extension.enabled": "2ZvYSCDttaIZDMwM3k2PCFRB5GGPbkp/Pg1Sw6ZyZ98",
+    "developers.cliSharedLockState.enabled": "/kj8dXhCxiSn9UytNdvAJc+KxZQ2ZpduHg8gYOTP4Dc",
     "security.authenticatedUnlock.enabled": "JFsOPSvz01+R6NeMG439RnMvp8SKRpDq6DgIodhzIWM",
     "security.autolock.minutes": "Br+B2RObSs24iuBbG2zVNk5KClW8nEfHSgcFfs++s2Y",
     "sshAgent.enabled": "vYrLr5V3Rl+8Ts2kmAHjWWqIrBU8kkTZl9ZNY68ugXU",
