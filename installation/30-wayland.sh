@@ -3,6 +3,7 @@ ln -s ~/dotfiles/.config/* ~/.config/
 
 # Add keys so ssh does not complain
 yay -S --noconfirm openssh
+if [ ! -d ~/.ssh ]; then mkdir ~/.ssh; fi
 ssh-keyscan -t ed25519 github.com > ~/.ssh/known_hosts
 
 # Some git config
