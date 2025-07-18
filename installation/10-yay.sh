@@ -1,3 +1,4 @@
+# https://github.com/basecamp/omarchy/blob/master/install/1-yay.sh
 sudo pacman -S --needed --noconfirm base-devel
 
 if ! command -v yay &>/dev/null; then

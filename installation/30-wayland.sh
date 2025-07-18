@@ -1,14 +1,14 @@
 # Configuration
-ln -s $HOME/dotfiles/.config/* $HOME/.config/
+ln -s ~/dotfiles/.config/* ~/.config/
 
 # Add keys so ssh does not complain
 ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
 
 # Some git config
-git -C $HOME/dotfiles remote set-url origin $(git -C $HOME/dotfiles remote get-url origin | sed 's_https://github.com/_git@github.com:_g')
-git -C $HOME/dotfiles config user.name moppediert
-git -C $HOME/dotfiles config user.email $(printf %s@%s.%s moppediert gmail com)
-git -C $HOME/dotfiles config pull.rebase false
+git -C ~/dotfiles remote set-url origin $(git -C ~/dotfiles remote get-url origin | sed 's_https://github.com/_git@github.com:_g')
+git -C ~/dotfiles config user.name moppediert
+git -C ~/dotfiles config user.email $(printf %s@%s.%s moppediert gmail com)
+git -C ~/dotfiles config pull.rebase false
 
 # Desktop manager
 yay -S --noconfirm ly
@@ -19,7 +19,7 @@ yay -S --noconfirm niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome
 
 # Fonts
 mkdir -p ~/.local/share/fonts
-ln -s $HOME/dotfiles/.config/fonts/* $HOME/.local/share/fonts/
+ln -s ~/dotfiles/.config/fonts/* ~/.local/share/fonts/
 
 # Shell
 yay -S --noconfirm zsh
@@ -30,7 +30,7 @@ ln -sf ~/.config/.zshrc ~/.zshrc
 
 # Tools
 yay -S --noconfirm alacritty
-ln -s $HOME/dotfiles/.config/alacritty/alacritty-linux.toml $HOME/dotfiles/.config/alacritty/alacritty.toml
+ln -s ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
 yay -S --noconfirm tmux eza fzf bat lazygit fastfetch
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 
@@ -44,5 +44,5 @@ sudo usermod -a -G video $(whoami)
 
 # Keymap
 yay -S --noconfirm keyd
-sudo ln -sf $HOME/dotfiles/.config/keyd/default.conf /etc/keyd/
+sudo ln -sf ~/dotfiles/.config/keyd/default.conf /etc/keyd/
 sudo systemctl enable keyd --now
