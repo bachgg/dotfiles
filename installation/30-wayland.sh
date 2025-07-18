@@ -2,7 +2,8 @@
 ln -s ~/dotfiles/.config/* ~/.config/
 
 # Add keys so ssh does not complain
-ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
+mkdir ~/.ssh
+ssh-keyscan -t ed25519 github.com > ~/.ssh/known_hosts
 
 # Some git config
 git -C ~/dotfiles remote set-url origin $(git -C ~/dotfiles remote get-url origin | sed 's_https://github.com/_git@github.com:_g')
