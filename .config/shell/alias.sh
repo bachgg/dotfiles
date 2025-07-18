@@ -9,4 +9,4 @@ alias mr="$HOME/dotfiles/.config/scripts/mr.sh"
 alias ff="fastfetch"
 alias gg="lazygit"
 
-alias kar-server='ssh -i id_rsa_bullseye -p 32122 bach@185.228.137.28'
+alias kar-server="ssh -i id_rsa_bullseye -p 32122 $(whoami)@185.228.137.28"
