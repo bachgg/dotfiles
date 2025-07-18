@@ -39,6 +39,7 @@ sudo systemctl enable docker.socket --now
 sudo usermod -a -G docker $(whoami)
 
 # Audio
+yay -Rdd --noconfirm jack2
 yay -S --noconfirm pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber wiremix
 
 # Brightness control
