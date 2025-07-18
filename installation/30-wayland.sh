@@ -1,6 +1,9 @@
 # Configuration
 ln -s ~/dotfiles/.config/* ~/.config/
 
+# openssh for keyscan
+yay -S --noconfirm openssh
+
 # Add keys so ssh does not complain
 mkdir ~/.ssh
 ssh-keyscan -t ed25519 github.com > ~/.ssh/known_hosts
