@@ -37,6 +37,7 @@ yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 yay -S --noconfirm docker
 sudo systemctl enable docker.socket --now
 sudo usermod -a -G docker $(whoami)
+yay -S --noconfirm brave-bin
 
 # Audio
 yay -Rdd --noconfirm jack2
