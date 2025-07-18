@@ -24,6 +24,9 @@ ln -s $HOME/dotfiles/.config/fonts/* $HOME/.local/share/fonts/
 # Shell
 yay -S --noconfirm zsh
 sudo chsh -s /usr/bin/zsh $(whoami)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+ln -sf ~/.config/.zshrc ~/.zshrc
 
 # Tools
 yay -S --noconfirm alacritty
