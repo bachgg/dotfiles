@@ -15,3 +15,6 @@ fi
 
 # https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
 zvm_after_init_commands+=('source <(fzf --zsh)')
+
+# https://www.1password.community/discussions/1password/i-cant-start-wayland-native-version-of-1password-/103974
+export ELECTRON_OZONE_PLATFORM_HINT=auto

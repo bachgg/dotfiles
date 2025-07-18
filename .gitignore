@@ -5,7 +5,8 @@
 .config/pulse
 .config/htop
 .config/BraveSoftware
-.config/1Password
+.config/1Password/*
+!.config/1Password/settings
 .config/BraveSoftware
 .config/chromium
 .config/microsoft-edge-dev
