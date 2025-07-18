@@ -1,11 +1,11 @@
 alias ..="cd .."
 alias ...="cd ../.."
-alias ulogout="pkill -u bach"
+alias ulogout="pkill -u $(whoami)"
 if [ $(uname) = "Linux" ]; then alias open="xdg-open"; fi
 
 alias l="eza --long --icons --all --no-user"
 alias ktx="kubectx"
-alias mr="$HOME/dotfiles/.config/scripts/mr.sh"
+alias mr="~/dotfiles/.config/scripts/mr.sh"
 alias ff="fastfetch"
 alias gg="lazygit"
 
