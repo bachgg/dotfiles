@@ -1,5 +1,5 @@
 # Configuration
-ln -s ~/dotfiles/.config/* ~/.config/
+ln -s ~/dotfiles/.config/{*,.*} ~/.config/
 
 # Add keys so ssh does not complain
 yay -S --noconfirm openssh
@@ -33,7 +33,7 @@ ln -sf ~/.config/.zshrc ~/.zshrc
 # Tools
 yay -S --noconfirm alacritty
 ln -s ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
-yay -S --noconfirm tmux eza fzf bat lazygit fastfetch
+yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 yay -S --noconfirm docker
 sudo systemctl enable docker.socket --now
