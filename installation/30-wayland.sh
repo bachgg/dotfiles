@@ -1,7 +1,3 @@
-# Configuration
-ln -s ~/dotfiles/.config/{*,.*} ~/.config/
-ln -sf ~/dotfiles/.ssh ~/
-
 # Some git config
 git -C ~/dotfiles remote set-url origin $(git -C ~/dotfiles remote get-url origin | sed 's_https://github.com/_git@github.com:_g')
 git -C ~/dotfiles config user.name moppediert
@@ -29,7 +25,7 @@ ln -sf ~/.config/.zshrc ~/.zshrc
 # Tools
 yay -S --noconfirm alacritty
 ln -sf ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
-yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man
+yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 yay -S --noconfirm docker
 sudo systemctl enable docker.socket

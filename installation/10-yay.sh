@@ -1,5 +1,6 @@
 # Configuration
 ln -s ~/dotfiles/.config ~/
+ln -s ~/dotfiles/.ssh ~/
 
 # https://github.com/basecamp/omarchy/blob/master/install/1-yay.sh
 sudo pacman -Sy --needed --noconfirm base-devel
