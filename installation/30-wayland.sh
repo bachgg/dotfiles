@@ -3,6 +3,7 @@ git -C ~/dotfiles remote set-url origin $(git -C ~/dotfiles remote get-url origi
 git -C ~/dotfiles config user.name moppediert
 git -C ~/dotfiles config user.email $(printf %s@%s.%s moppediert gmail com)
 git -C ~/dotfiles config pull.rebase false
+ln -s ~/.config/.gitconfig ~/.gitconfig
 
 # Desktop manager
 yay -S --noconfirm ly
