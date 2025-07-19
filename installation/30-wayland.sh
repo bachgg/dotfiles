@@ -37,6 +37,7 @@ sudo systemctl enable bluetooth
 
 # Look and feel
 yay -S --noconfirm gnome-themes-extra adwaita-qt5-git adwaita-qt6-git
+yay -S --noconfirm noto-fonts noto-fonts-emoji ttf-roboto
 
 # Audio
 yay -Rdd --noconfirm jack2
