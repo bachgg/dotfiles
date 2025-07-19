@@ -18,3 +18,4 @@ alacritty.toml
 .config/user-dirs.dirs
 .config/user-dirs.locale
 .config/op/config
+.config/1Password/settings/settings.json
