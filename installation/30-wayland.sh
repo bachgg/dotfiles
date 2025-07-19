@@ -1,7 +1,6 @@
-# Add keys so ssh does not complain
-yay -S --noconfirm openssh
-if [ ! -d ~/.ssh ]; then mkdir ~/.ssh; fi
-ssh-keyscan -t ed25519 github.com > ~/.ssh/known_hosts
+# Configuration
+ln -s ~/dotfiles/.config/{*,.*} ~/.config/
+ln -sf ~/dotfiles/.ssh ~/
 
 # Some git config
 git -C ~/dotfiles remote set-url origin $(git -C ~/dotfiles remote get-url origin | sed 's_https://github.com/_git@github.com:_g')
@@ -35,7 +34,7 @@ yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 yay -S --noconfirm docker
 sudo systemctl enable docker.socket
 sudo usermod -a -G docker $(whoami)
-yay -S --noconfirm brave-bin
+yay -S --noconfirm brave-bin 1password pantheon-polkit-agent tofi
 
 # Audio
 yay -Rdd --noconfirm jack2
