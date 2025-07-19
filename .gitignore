@@ -15,3 +15,5 @@
 .config/ibus*
 alacritty.toml
 .config/go/telemetry/local
+.config/user-dirs.dirs
+.config/user-dirs.locale
