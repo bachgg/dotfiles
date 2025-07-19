@@ -15,4 +15,5 @@ fi
 
 # https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
 zvm_after_init_commands+=('source <(fzf --zsh)')
+eval "$(op completion zsh)"; compdef _op op
 

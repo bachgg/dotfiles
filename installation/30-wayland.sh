@@ -30,7 +30,7 @@ yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 yay -S --noconfirm docker
 sudo systemctl enable docker.socket
 sudo usermod -a -G docker $(whoami)
-yay -S --noconfirm brave-bin 1password pantheon-polkit-agent tofi
+yay -S --noconfirm brave-bin pantheon-polkit-agent 1password 1password-cli tofi
 
 # Look and feel
 yay -S --noconfirm gnome-themes-extra adwaita-qt5-git adwaita-qt6-git
