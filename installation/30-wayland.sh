@@ -10,7 +10,7 @@ sudo systemctl enable ly.service
 sudo ln -sf ~/dotfiles/.config/ly/config.ini /etc/ly/config.ini
 
 # Window manager
-yay -S --noconfirm niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome mako fyi nautilus
+yay -S --noconfirm niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome mako fyi
 
 # Fonts
 mkdir -p ~/.local/share/fonts
@@ -26,7 +26,7 @@ ln -sf ~/.config/.zshrc ~/.zshrc
 # Tools
 yay -S --noconfirm alacritty
 ln -sf ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
-yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh
+yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh dust jq
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 yay -S --noconfirm docker
 sudo systemctl enable docker.socket
@@ -51,3 +51,6 @@ sudo usermod -a -G video $(whoami)
 yay -S --noconfirm keyd
 sudo ln -sf ~/dotfiles/.config/keyd/default.conf /etc/keyd/
 sudo systemctl enable keyd
+
+# Desktop
+yay -S --noconfirm nautilus eog totem evince amberol
