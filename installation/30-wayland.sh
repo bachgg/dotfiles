@@ -32,6 +32,8 @@ yay -S --noconfirm docker
 sudo systemctl enable docker.socket
 sudo usermod -a -G docker $(whoami)
 yay -S --noconfirm brave-bin pantheon-polkit-agent 1password 1password-cli tofi
+yay -S --noconfirm bluez blueman
+sudo systemctl enable bluetooth
 
 # Look and feel
 yay -S --noconfirm gnome-themes-extra adwaita-qt5-git adwaita-qt6-git
