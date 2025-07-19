@@ -6,13 +6,10 @@ ln -s ~/dotfiles/.ssh ~/
 sudo pacman -Sy --needed --noconfirm base-devel
 
 if ! command -v yay &>/dev/null; then
-  cd /tmp
-  git clone https://aur.archlinux.org/yay-bin.git
-  cd yay-bin
-  makepkg -si --noconfirm
-  cd -
-  rm -rf yay-bin
-  cd ~
+  cd $(mktemp -d)
+  git clone https://aur.archlinux.org/yay-bin.git .
+  makepkg -s --noconfirm
+  sudo pacman -U --noconfirm $(ls yay-bin-[0-9]*.zst)
 
   # Add fun and color to the pacman installer
   sudo sed -i '/^\[options\]/a Color\nILoveCandy' /etc/pacman.conf
