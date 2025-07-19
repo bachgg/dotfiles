@@ -1,6 +1,3 @@
-# Configuration
-ln -s ~/dotfiles/.config/{*,.*} ~/.config/
-
 # Add keys so ssh does not complain
 yay -S --noconfirm openssh
 if [ ! -d ~/.ssh ]; then mkdir ~/.ssh; fi
@@ -32,11 +29,11 @@ ln -sf ~/.config/.zshrc ~/.zshrc
 
 # Tools
 yay -S --noconfirm alacritty
-ln -s ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
+ln -sf ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
 yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 yay -S --noconfirm docker
-sudo systemctl enable docker.socket --now
+sudo systemctl enable docker.socket
 sudo usermod -a -G docker $(whoami)
 yay -S --noconfirm brave-bin
 
@@ -51,4 +48,4 @@ sudo usermod -a -G video $(whoami)
 # Keymap
 yay -S --noconfirm keyd
 sudo ln -sf ~/dotfiles/.config/keyd/default.conf /etc/keyd/
-sudo systemctl enable keyd --now
+sudo systemctl enable keyd
