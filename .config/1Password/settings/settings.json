@@ -4,17 +4,19 @@
   "browsers.extension.enabled": true,
   "security.autolock.minutes": 60,
   "security.authenticatedUnlock.enabled": true,
+  "appearance.floatingSidebar": true,
   "sshAgent.storeKeyTitles": true,
   "sshAgent.storeSshKeyTitlesResponseGiven": true,
   "sshAgent.enabled": true,
   "developers.cliSharedLockState.enabled": true,
   "authTags": {
-    "browsers.extension.enabled": "2ZvYSCDttaIZDMwM3k2PCFRB5GGPbkp/Pg1Sw6ZyZ98",
-    "developers.cliSharedLockState.enabled": "/kj8dXhCxiSn9UytNdvAJc+KxZQ2ZpduHg8gYOTP4Dc",
-    "security.authenticatedUnlock.enabled": "JFsOPSvz01+R6NeMG439RnMvp8SKRpDq6DgIodhzIWM",
-    "security.autolock.minutes": "Br+B2RObSs24iuBbG2zVNk5KClW8nEfHSgcFfs++s2Y",
-    "sshAgent.enabled": "vYrLr5V3Rl+8Ts2kmAHjWWqIrBU8kkTZl9ZNY68ugXU",
-    "sshAgent.storeKeyTitles": "WxI5iC2JL5KFvctiDqDSVbVGCHrnUNhUoO6KzEppja0",
-    "sshAgent.storeSshKeyTitlesResponseGiven": "QYo5mJ8VVVZCx9S31BTzRb7K+Q/cyRNmd7Hmt5K+v80"
+    "appearance.floatingSidebar": "C/Ap3/jWXytTCBbRxY5wvLozd3SylOFIXtESGsttTiY",
+    "browsers.extension.enabled": "GoMIPvi/5A3nVuzY7FymqhoMPzaUULUEWyAmvoGvUr8",
+    "developers.cliSharedLockState.enabled": "f3sa0vI8v9/yXNerzCE1TbnnxEWLw0TEFpOQjYSqII8",
+    "security.authenticatedUnlock.enabled": "B0rJNdcFyIL3O8XaYZcJu5IdfJ2lC/KCeG/DPJWCOi4",
+    "security.autolock.minutes": "EeFZNsskSivf/OtDlBKjLoFYTz5GRc5RiHCA+0xa9oY",
+    "sshAgent.enabled": "/nNksn66+orsaB7fKtAtuZzEPGu79XxwJqeMV36S9Ko",
+    "sshAgent.storeKeyTitles": "QQzrGM0w0BlxMoXa2EB5v9EYOBlwZnIrGtt33hcBj7U",
+    "sshAgent.storeSshKeyTitlesResponseGiven": "QOen12WTC9+x/InGQ/f1MOcv3JC21vEPE+3qQTm+iqs"
   }
 }
