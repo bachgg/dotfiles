@@ -19,3 +19,4 @@ eval "$(op completion zsh)"; compdef _op op
 
 # https://github.com/ohmyzsh/ohmyzsh/discussions/9849
 git_prompt_info(){}
+PROMPT="%y %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
