@@ -42,7 +42,7 @@ yay -S --noconfirm noto-fonts noto-fonts-emoji ttf-roboto
 
 # Audio
 yay -Rdd --noconfirm jack2
-yay -S --noconfirm pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber wiremix
+yay -S --noconfirm pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber wiremix playerctl
 
 # Brightness control
 yay -S --noconfirm brillo
