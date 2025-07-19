@@ -32,6 +32,9 @@ sudo systemctl enable docker.socket
 sudo usermod -a -G docker $(whoami)
 yay -S --noconfirm brave-bin 1password pantheon-polkit-agent tofi
 
+# Look and feel
+yay -S --noconfirm gnome-themes-extra adwaita-qt5-git adwaita-qt6-git
+
 # Audio
 yay -Rdd --noconfirm jack2
 yay -S --noconfirm pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber wiremix
