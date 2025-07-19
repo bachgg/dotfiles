@@ -17,3 +17,5 @@ fi
 zvm_after_init_commands+=('source <(fzf --zsh)')
 eval "$(op completion zsh)"; compdef _op op
 
+# https://github.com/ohmyzsh/ohmyzsh/discussions/9849
+git_prompt_info(){}
