@@ -7,6 +7,7 @@ git -C ~/dotfiles config pull.rebase false
 # Desktop manager
 yay -S --noconfirm ly
 sudo systemctl enable ly.service
+sudo ln -sf ~/dotfiles/.config/ly/config.ini /etc/ly/config.ini
 
 # Window manager
 yay -S --noconfirm niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome
