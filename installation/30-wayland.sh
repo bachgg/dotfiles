@@ -29,8 +29,8 @@ yay -S --noconfirm alacritty
 ln -sf ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
 yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh dust jq
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
-yay -S --noconfirm docker
-sudo systemctl enable docker.socket
+yay -S --noconfirm docker docker-compose
+sudo systemctl enable docker.service docker.socket
 sudo usermod -a -G docker $(whoami)
 yay -S --noconfirm brave-bin pantheon-polkit-agent 1password 1password-cli tofi
 yay -S --noconfirm bluez bluez-utils blueman
