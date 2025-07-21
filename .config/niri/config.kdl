@@ -248,7 +248,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "/usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polkit"
-spawn-at-startup "1password"
+spawn-at-startup "1password --silent"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -279,12 +279,12 @@ window-rule {
 }
 
 window-rule {
-  match title="Alacritty"
+  match app-id="Alacritty"
   open-on-workspace "terminal"
   open-focused true
 }
 window-rule {
-  match title="Brave"
+  match app-id="brave-browser"
   open-on-workspace "browser"
   open-focused true
 }
@@ -308,7 +308,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Space hotkey-overlay-title="Run an Application: tofi" { spawn "tofi-drun"; }
     Mod+B hotkey-overlay-title="Run an Application: brave" { spawn "brave"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+backslash hotkey-overlay-title="1password Quick Access" { spawn "1password" "--quick-access"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -375,7 +375,8 @@ binds {
     // ...
 
     // And you can also move a whole workspace to another monitor:
-    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
+    Mod+Shift+Alt+H  { move-workspace-to-monitor-left; }
+    Mod+Shift+Alt+L  { move-workspace-to-monitor-left; }
     // ...
 
     Mod+Page_Down      { focus-workspace-down; }

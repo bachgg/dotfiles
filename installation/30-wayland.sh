@@ -27,7 +27,7 @@ ln -sf ~/.config/.zshrc ~/.zshrc
 # Tools
 yay -S --noconfirm alacritty
 ln -sf ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
-yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh dust jq
+yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh dust jq wev
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 yay -S --noconfirm docker docker-compose
 sudo systemctl enable docker.service docker.socket
