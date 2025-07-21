@@ -1,5 +1,8 @@
 {
   "version": 1,
+  "app.useHardwareAcceleration": true,
+  "app.theme": "dark",
+  "sshAgent.authPromptsV2.enabled": true,
   "browsers.extension.enabled": true,
   "security.autolock.minutes": 60,
   "security.authenticatedUnlock.enabled": true,
@@ -9,23 +12,19 @@
   "sshAgent.enabled": true,
   "developers.experience.enabled": true,
   "developers.experience.dismissed": true,
-  "app.theme": "dark",
-  "sshAgent.authPromptsV2.enabled": true,
-  "app.useHardwareAcceleration": true,
-  "app.formatSecureNotesUsingMarkdown": false,
   "authTags": {
     "app.formatSecureNotesUsingMarkdown": "f71V+dSNoBX09J6apQP4A6lf3yAp3KMjzF5EoZAEJJQ",
     "app.theme": "Zzg7jeOIZWbGLHjWPgBbepNElBwwA13qxr1pdefzI6k",
     "app.useHardwareAcceleration": "hkDNgYC3nH/QhbTcPeiGtkIe8aBLmf41HqUSP3P7Bec",
-    "browsers.extension.enabled": "oh904mGVGRqOztDZCZuam+JlEeonav2kww97MBEzpzo",
-    "developers.cliSharedLockState.enabled": "kaG3t0gSIgxmeEMkowOy7Uzaud3GxgYLM6CSHrMmohI",
-    "developers.experience.dismissed": "7a08PlNfJrXrXzlNZXh6nFYZ1uGqwIQb5IU10nCiG9I",
-    "developers.experience.enabled": "YHI2U1VMgH8mthawldzcPCH5P/yYmPrHnH1NnW/s35I",
-    "security.authenticatedUnlock.enabled": "Ki87Ke9bP0rdAU98t+dne+xWwGX2gBe1IhRTThs66Es",
-    "security.autolock.minutes": "SwVqrseUWBqnMf7XQikfN4d+ayDOYo5yPQQb2bCyd/Y",
+    "browsers.extension.enabled": "8jX8EbFp45+0vKIHUmUWpzxDdv0xr9od3kHGLE76j4g",
+    "developers.cliSharedLockState.enabled": "22uK7KKwyMX1sUD2giok11fXDPkPBjKOK4wiq9qsrcE",
+    "developers.experience.dismissed": "ZWx+3qlCEnDjG+a2sCPATQstufY2FMwQ2+yVYDeqk6U",
+    "developers.experience.enabled": "q1mnvIrEnl2Jwx7fJXxnJDMKDAzR+jS2vvcu5GBkUjk",
+    "security.authenticatedUnlock.enabled": "+W103NmgF2Q8X+OEsolSbjQUWdLBcO0A9JJLUQwRkw8",
+    "security.autolock.minutes": "d8ZmrLwjWn9N6kS07kWuIalvvBUeyJdsb2nZIBOe+/Y",
     "sshAgent.authPromptsV2.enabled": "YwmenEPN/CWU+DHgDf/q++2SCqEszd5YgreHGnRSFLE",
-    "sshAgent.enabled": "3iR0mH3V8+TiU1XHAfUEMkFPbCcLYd4erQqqY8+p6Ao",
-    "sshAgent.storeKeyTitles": "/5kbJKQOpR23eVxzZqw8XLNr4CYKo2O6hC2vCEDrq2w",
-    "sshAgent.storeSshKeyTitlesResponseGiven": "PTboqsQbssCeuoE7ZldYq+zv8hkxo8iDD/afUp55G/U"
+    "sshAgent.enabled": "uGjwiwgbsxnzDmTMm9GvljIvAX8CHymZoJu3wJz8LD8",
+    "sshAgent.storeKeyTitles": "+Mxh16G/9+7+YVz1tBvdFmzmyL0TFDtnHJ08nkpVZbs",
+    "sshAgent.storeSshKeyTitlesResponseGiven": "HOfHQaknOlCrmLv8536jV6YU02RAvn4OM6H9iA6UNZU"
   }
 }
