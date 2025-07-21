@@ -246,16 +246,10 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "/usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polkit"
 spawn-at-startup "1password --silent"
-
-// Uncomment this line to ask the clients to omit their client-side decorations if possible.
-// If the client will specifically ask for CSD, the request will be honored.
-// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
-// This option will also fix border/focus ring drawing behind some semitransparent windows.
-// After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+spawn-at-startup "swww-daemon"
+spawn-at-startup "~/.config/swww/randomize.sh"
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -291,6 +285,10 @@ window-rule {
 
 hotkey-overlay {
     skip-at-startup
+}
+
+clipboard {
+    disable-primary
 }
 
 binds {
