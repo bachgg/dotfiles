@@ -57,9 +57,6 @@ output "eDP-1" {
     position x=0 y=0
 }
 
-// Settings that influence how windows are positioned and sized.
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
     gaps 0
@@ -215,6 +212,7 @@ spawn-at-startup "/usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polk
 spawn-at-startup "1password" "--silent"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "~/.config/swww/randomize.sh"
+spawn-at-startup "swayidle" "-w timeout 10 'niri msg action power-off-monitors' timeout 20 'swaylock -f' before-sleep 'swaylock -f'"
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
