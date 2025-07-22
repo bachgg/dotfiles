@@ -20,3 +20,5 @@ alacritty.toml
 .config/op/config
 .config/gcloud
 .config/menus/applications-merged
+.config/Slack
+.config/spotify

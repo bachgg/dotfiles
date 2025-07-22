@@ -241,7 +241,8 @@ animations {}
 
 workspace "terminal"
 workspace "browser"
-workspace "chat"
+workspace "communication"
+workspace "media"
 
 window-rule {
   open-maximized true
@@ -252,9 +253,22 @@ window-rule {
   open-on-workspace "terminal"
   open-focused true
 }
+
 window-rule {
   match app-id="brave-browser"
   open-on-workspace "browser"
+  open-focused true
+}
+
+window-rule {
+  match app-id="Slack"
+  open-on-workspace "communication"
+  open-focused true
+}
+
+window-rule {
+  match app-id="spotify"
+  open-on-workspace "media"
   open-focused true
 }
 
@@ -291,10 +305,13 @@ binds {
 
     Mod+1 { focus-workspace "terminal"; }
     Mod+2 { focus-workspace "browser"; }
-    Mod+3 { focus-workspace "chat"; }
+    Mod+3 { focus-workspace "communication"; }
+    Mod+4 { focus-workspace "media"; }
+
     Mod+Shift+1 { move-window-to-workspace "terminal"; }
     Mod+Shift+2 { move-window-to-workspace "browser"; }
-    Mod+Shift+3 { move-window-to-workspace "chat"; }
+    Mod+Shift+3 { move-window-to-workspace "communication"; }
+    Mod+Shift+4 { move-window-to-workspace "media"; }
 
     Mod+H     { focus-column-left; }
     Mod+L     { focus-column-right; }
@@ -309,8 +326,8 @@ binds {
     Mod+M           { focus-monitor-next; }
     Mod+Shift+M     { move-workspace-to-monitor-next; }
 
-    Mod+Ctrl+J     { move-workspace-down; }
-    Mod+Ctrl+K     { move-workspace-up; }
+    Mod+W           { move-workspace-down; }
+    Mod+Shift+W     { move-workspace-up; }
 
     Mod+Tab { focus-window-previous; }
     // Mod+grave { focus-window-previous; }
@@ -335,13 +352,13 @@ binds {
     // Move the focused window between the floating and the tiling layout.
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-    Mod+Shift+4 { screenshot; }
-    Mod+Shift+5 { screenshot-window; }
-    Mod+Shift+6 { screenshot-screen; }
+    Print { screenshot; }
+    Mod+Print { screenshot-window; }
+    Mod+Shift+Print { screenshot-screen; }
 
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
-    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+Escape { quit; }
