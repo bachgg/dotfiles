@@ -1,29 +1,19 @@
 input {
     keyboard {
-        xkb {
-            // You can set rules, model, layout, variant and options.
-            // For more information, see xkeyboard-config(7).
-
-            // For example:
-            // layout "us,ru"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-        }
-
-        // Enable numlock on startup, omitting this setting disables it.
-        numlock
+        xkb {}
+        repeat-delay 179
+        repeat-rate 39
     }
 
-    // Next sections include libinput settings.
-    // Omitting settings disables them, or leaves them at their default values.
     touchpad {
         // off
         tap
         // dwt
-        // dwtp
+        dwtp
         // drag false
         // drag-lock
         natural-scroll
-        // accel-speed 0.2
+        accel-speed 0.5
         // accel-profile "flat"
         // scroll-method "two-finger"
         // disabled-on-external-mouse
@@ -40,7 +30,7 @@ input {
     trackpoint {
         // off
         // natural-scroll
-        // accel-speed 0.2
+        accel-speed 0.4
         // accel-profile "flat"
         // scroll-method "on-button-down"
         // scroll-button 273
@@ -264,12 +254,14 @@ window-rule {
   match app-id="Slack"
   open-on-workspace "communication"
   open-focused true
+  open-maximized true
 }
 
 window-rule {
   match app-id="spotify"
   open-on-workspace "media"
   open-focused true
+  open-maximized true
 }
 
 hotkey-overlay {
