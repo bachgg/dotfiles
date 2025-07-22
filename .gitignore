@@ -18,3 +18,5 @@ alacritty.toml
 .config/user-dirs.dirs
 .config/user-dirs.locale
 .config/op/config
+.config/gcloud
+.config/menus/applications-merged
