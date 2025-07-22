@@ -215,7 +215,6 @@ spawn-at-startup "/usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polk
 spawn-at-startup "1password" "--silent"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "~/.config/swww/randomize.sh"
-spawn-at-startup "waybar"
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
