@@ -7,29 +7,31 @@
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "niri/workspaces"
-  ],
-  "modules-center": [
     "niri/window"
   ],
+  // "modules-center": [
+  //   "niri/window"
+  // ],
   "modules-right": [
     "pulseaudio",
     "network",
-    "keyboard-state",
-    "niri/language",
+    // "keyboard-state",
+    // "niri/language",
     "battery",
-    "battery#bat2",
     "clock",
-    "tray"
   ],
   "keyboard-state": {
-    "numlock": true,
+    "numlock": false,
     "capslock": true,
     "format": "{name} {icon}",
     "format-icons": {
       "locked": "",
       "unlocked": ""
     }
+  },
+  "niri/window": {
+    "format": " {title}",
+    "icon": true
   },
   "mpd": {
     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -132,9 +134,6 @@
       ""
     ]
   },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -148,11 +147,11 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
+    "tooltip-format": "{essid} {ipaddr}",
+    "format-wifi": " ",
+    "format-ethernet": "{ipaddr}/{cidr}  ",
+    "format-linked": "{ifname} (No IP)  ",
+    "format-disconnected": "Disconnected ⚠ ",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {

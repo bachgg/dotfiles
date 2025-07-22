@@ -254,14 +254,14 @@ window-rule {
   match app-id="Slack"
   open-on-workspace "communication"
   open-focused true
-  open-maximized true
+  open-fullscreen true
 }
 
 window-rule {
   match app-id="spotify"
   open-on-workspace "media"
   open-focused true
-  open-maximized true
+  open-fullscreen true
 }
 
 hotkey-overlay {
