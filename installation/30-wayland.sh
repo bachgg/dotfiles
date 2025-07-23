@@ -52,3 +52,8 @@ sudo systemctl enable keyd
 
 # Desktop
 yay -S --noconfirm nautilus eog totem evince amberol swww btop
+
+# Moonlander configuration
+sudo ln -s ~/.config/etc/udev/rules.d/50-zsa.rules /etc/udev/rules.d/
+sudo groupadd plugdev
+sudo usermod -aG plugdev $(whoami)

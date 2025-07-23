@@ -1,5 +1,6 @@
 export EDITOR="$(which nvim)"
 export VISUAL="$EDITOR"
+export ZVM_VI_EDITOR="$EDITOR"
 
 if which starship 2>&1 1>&/dev/null; then
   export STARSHIP_CONFIG=~/.config/starship/starship.toml
