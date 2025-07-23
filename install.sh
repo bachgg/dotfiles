@@ -13,7 +13,7 @@ dotfiles_dir="${HOME}/dotfiles"
 
 if [ ! -d "${dotfiles_dir}" ]; then
   sudo pacman -Sy --noconfirm git
-  git clone https://github.com/moppediert/dotfiles.git ${dotfiles_dir}
+  git clone --recurse-submodules https://github.com/moppediert/dotfiles.git ${dotfiles_dir}
   sh -e ${dotfiles_dir}/install.sh
   exit 0
 fi
