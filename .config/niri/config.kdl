@@ -216,16 +216,12 @@ screenshot-path "~/screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {}
 
-workspace "terminal"
-workspace "browser"
-workspace "communication"
-workspace "media"
-workspace "mercurius"
-workspace "venus"
 workspace "terra"
-workspace "luna"
-workspace "mars"
 workspace "jupiter"
+workspace "mercurius"
+workspace "mars"
+workspace "venus"
+workspace "luna"
 workspace "saturnus"
 workspace "uranus"
 workspace "neptunus"
@@ -237,26 +233,26 @@ window-rule {
 
 window-rule {
   match app-id="Alacritty"
-  open-on-workspace "terminal"
+  open-on-workspace "terra"
   open-focused true
 }
 
 window-rule {
   match app-id="brave-browser"
-  open-on-workspace "browser"
+  open-on-workspace "jupiter"
   open-focused true
 }
 
 window-rule {
   match app-id="Slack"
-  open-on-workspace "communication"
+  open-on-workspace "mercurius"
   open-focused true
   open-fullscreen true
 }
 
 window-rule {
   match app-id="spotify"
-  open-on-workspace "media"
+  open-on-workspace "mars"
   open-focused true
   open-fullscreen true
 }
@@ -293,15 +289,25 @@ binds {
 
     Mod+Q { close-window; }
 
-    Mod+1 { focus-workspace "terminal"; }
-    Mod+2 { focus-workspace "browser"; }
-    Mod+3 { focus-workspace "communication"; }
-    Mod+4 { focus-workspace "media"; }
+    Mod+1 { focus-workspace "terra"; }
+    Mod+2 { focus-workspace "jupiter"; }
+    Mod+3 { focus-workspace "mercurius"; }
+    Mod+4 { focus-workspace "mars"; }
+    Mod+5 { focus-workspace "venus"; }
+    Mod+6 { focus-workspace "luna"; }
+    Mod+7 { focus-workspace "saturnus"; }
+    Mod+8 { focus-workspace "uranus"; }
+    Mod+9 { focus-workspace "neptunus"; }
 
-    Mod+Shift+1 { move-window-to-workspace "terminal"; }
-    Mod+Shift+2 { move-window-to-workspace "browser"; }
-    Mod+Shift+3 { move-window-to-workspace "communication"; }
-    Mod+Shift+4 { move-window-to-workspace "media"; }
+    Mod+Shift+1 { move-window-to-workspace "terra"; }
+    Mod+Shift+2 { move-window-to-workspace "jupiter"; }
+    Mod+Shift+3 { move-window-to-workspace "mercurius"; }
+    Mod+Shift+4 { move-window-to-workspace "mars"; }
+    Mod+Shift+5 { move-window-to-workspace "venus"; }
+    Mod+Shift+6 { move-window-to-workspace "luna"; }
+    Mod+Shift+7 { move-window-to-workspace "saturnus"; }
+    Mod+Shift+8 { move-window-to-workspace "uranus"; }
+    Mod+Shift+9 { move-window-to-workspace "neptunus"; }
 
     Mod+H     { focus-column-left; }
     Mod+L     { focus-column-right; }
