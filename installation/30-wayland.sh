@@ -13,10 +13,6 @@ sudo ln -sf ~/dotfiles/.config/ly/config.ini /etc/ly/config.ini
 # Window manager
 yay -S --noconfirm niri xdg-desktop-portal-gtk xdg-desktop-portal-gnome mako fyi swaylock
 
-# Fonts
-mkdir -p ~/.local/share/fonts
-ln -s ~/dotfiles/.config/fonts/* ~/.local/share/fonts/
-
 # Shell
 yay -S --noconfirm zsh
 sudo chsh -s /usr/bin/zsh $(whoami)
@@ -39,7 +35,7 @@ systemctl --user enable mpris-proxy
 
 # Look and feel
 yay -S --noconfirm gnome-themes-extra adwaita-qt5-git adwaita-qt6-git
-yay -S --noconfirm noto-fonts noto-fonts-emoji ttf-roboto
+yay -S --noconfirm noto-fonts noto-fonts-emoji ttf-roboto ttf-jetbrains-mono-nerd
 
 # Audio
 yay -Rdd --noconfirm jack2
