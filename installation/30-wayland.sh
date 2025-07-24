@@ -29,7 +29,7 @@ yay -S --noconfirm docker docker-compose
 sudo systemctl enable docker.service docker.socket
 sudo usermod -a -G docker $(whoami)
 yay -S --noconfirm brave-bin pantheon-polkit-agent 1password 1password-cli tofi
-yay -S --noconfirm bluez bluez-utils blueman
+yay -S --noconfirm bluez bluez-utils
 sudo systemctl enable bluetooth
 systemctl --user enable mpris-proxy
 
@@ -51,7 +51,9 @@ sudo ln -sf ~/dotfiles/.config/keyd/default.conf /etc/keyd/
 sudo systemctl enable keyd
 
 # Desktop
-yay -S --noconfirm nautilus eog totem evince amberol swww btop
+yay -S --noconfirm nautilus eog totem evince amberol swww btop NetworkManager
+sudo systemctl enable NetworkManager
+yay -S --noconfirm switchboard switchboard-plug-bluetooth switchboard-plug-network switchboard-plug-sound
 
 # Moonlander configuration
 sudo ln -s ~/.config/etc/udev/rules.d/50-zsa.rules /etc/udev/rules.d/
