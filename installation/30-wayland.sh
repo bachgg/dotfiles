@@ -29,7 +29,7 @@ yay -S --noconfirm docker docker-compose
 sudo systemctl enable docker.service docker.socket
 sudo usermod -a -G docker $(whoami)
 yay -S --noconfirm brave-bin pantheon-polkit-agent 1password 1password-cli tofi
-yay -S --noconfirm bluez bluez-utils
+yay -S --noconfirm bluez bluez-utils blueman
 sudo systemctl enable bluetooth
 systemctl --user enable mpris-proxy
 
