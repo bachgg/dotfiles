@@ -42,22 +42,22 @@ x = 0
 y = 4
 
 [font.bold]
-family = "JetBrainsMonoNL Nerd Font"
+family = "JetBrainsMono Nerd Font"
 # family = "MesloLGS Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMonoNL Nerd Font"
+family = "JetBrainsMono Nerd Font"
 # family = "MesloLGS Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMonoNL Nerd Font"
+family = "JetBrainsMono Nerd Font"
 # family = "MesloLGS Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMonoNL Nerd Font"
+family = "JetBrainsMono Nerd Font"
 # family = "MesloLGS Nerd Font"
 style = "Regular"
 
