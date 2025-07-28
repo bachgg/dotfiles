@@ -1,0 +1,21 @@
+command = /opt/homebrew/bin/tmux -- new-session -s ">" -A
+font-size = 18
+fullscreen = true
+macos-icon = paper
+macos-non-native-fullscreen = visible-menu
+macos-option-as-alt = true
+theme = Monokai Remastered
+
+keybind = alt+e=text:\x01e
+keybind = alt+g=text:\x01g
+keybind = alt+s=text:\x01s
+keybind = alt+t=text:\x01t
+keybind = alt+u=text:\x01u
+
+keybind = alt+1=text:\x01\x31
+keybind = alt+2=text:\x01\x32
+keybind = alt+3=text:\x01\x33
+keybind = alt+4=text:\x01\x34
+keybind = alt+5=text:\x01\x35
+keybind = alt+tab=text:\x01\x09
+
