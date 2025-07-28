@@ -5,6 +5,7 @@ macos-icon = paper
 macos-non-native-fullscreen = visible-menu
 macos-option-as-alt = true
 theme = Monokai Remastered
+title = Terminal
 
 keybind = alt+e=text:\x01e
 keybind = alt+g=text:\x01g
