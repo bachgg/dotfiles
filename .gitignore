@@ -22,3 +22,4 @@ alacritty.toml
 .config/menus/applications-merged
 .config/Slack
 .config/spotify
+.config/swiftpm
