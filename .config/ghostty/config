@@ -14,7 +14,7 @@ keybind = alt+s=text:\x1bws
 keybind = alt+t=text:\x1bwt
 keybind = alt+u=text:\x1bwu
 keybind = alt+r=text:\x1bwr
-keybind = alt+c=text:\x1bw\x03
+keybind = alt+c=text:\x1bwc
 keybind = alt+j=text:\x1bwj
 keybind = alt+h=text:\x1bwh
 keybind = alt+l=text:\x1bwl
