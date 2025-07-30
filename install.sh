@@ -1,8 +1,8 @@
-# sh <(curl -fsSL moppediert.github.io/dotfiles/install.sh)
+# sh <(curl -fsSL bachgg.github.io/dotfiles/install.sh)
 
 if [ -d /run/archiso ]; then
-  curl -fsSLO moppediert.github.io/dotfiles/user_configuration.json
-  curl -fsSLO moppediert.github.io/dotfiles/user_credentials.json
+  curl -fsSLO bachgg.github.io/dotfiles/user_configuration.json
+  curl -fsSLO bachgg.github.io/dotfiles/user_credentials.json
   echo "Archinstall password: "
   read -s archinstall_password
   archinstall --config user_configuration.json --creds user_credentials.json --creds-decryption-key "${archinstall_password}"
@@ -13,7 +13,7 @@ dotfiles_dir="${HOME}/dotfiles"
 
 if [ ! -d "${dotfiles_dir}" ]; then
   sudo pacman -Sy --noconfirm git
-  git clone --recurse-submodules https://github.com/moppediert/dotfiles.git ${dotfiles_dir}
+  git clone --recurse-submodules https://github.com/bachgg/dotfiles.git ${dotfiles_dir}
   sh -e ${dotfiles_dir}/install.sh
   exit 0
 fi

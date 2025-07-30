@@ -1,7 +1,7 @@
 # Some git config
 git -C ~/dotfiles remote set-url origin $(git -C ~/dotfiles remote get-url origin | sed 's_https://github.com/_git@github.com:_g')
-git -C ~/dotfiles config user.name moppediert
-git -C ~/dotfiles config user.email $(printf %s@%s.%s moppediert gmail com)
+git -C ~/dotfiles config user.name bachgg
+git -C ~/dotfiles config user.email $(printf %s@%s.%s online bach gg)
 git -C ~/dotfiles config pull.rebase false
 ln -s ~/.config/.gitconfig ~/.gitconfig
 

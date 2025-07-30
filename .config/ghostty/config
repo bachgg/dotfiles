@@ -1,4 +1,4 @@
-command = /opt/homebrew/bin/tmux -- new-session -s ">" -A
+command = /opt/homebrew/bin/tmux -- new-session -s "👻" -A
 font-size = 18
 fullscreen = true
 macos-icon = paper
