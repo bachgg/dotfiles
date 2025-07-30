@@ -1,4 +1,5 @@
 brew "eza"
+brew "bat"
 brew "fzf"
 brew "git"
 brew "go"

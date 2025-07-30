@@ -9,6 +9,7 @@ macos-option-as-alt = true
 title = Terminal
 
 keybind = alt+e=text:\x1bwe
+keybind = alt+`=text:\x1bwe
 keybind = alt+g=text:\x1bwg
 keybind = alt+s=text:\x1bws
 keybind = alt+t=text:\x1bwt
