@@ -1,0 +1,31 @@
+command = /opt/homebrew/bin/tmux -- new-session -s "👻" -A
+font-size = 18
+fullscreen = true
+macos-icon = paper
+macos-non-native-fullscreen = visible-menu
+macos-option-as-alt = true
+
+# theme = Monokai Remastered
+title = Terminal
+
+# keybind = alt+c=text:\x1bwc
+# keybind = alt+e=text:\x1bwe
+# keybind = alt+g=text:\x1bwg
+# keybind = alt+h=text:\x1bwh
+# keybind = alt+j=text:\x1bwj
+# keybind = alt+k=text:\x1bwk
+# keybind = alt+l=text:\x1bwl
+# keybind = alt+r=text:\x1bwr
+# keybind = alt+s=text:\x1bws
+# keybind = alt+t=text:\x1bwt
+# keybind = alt+u=text:\x1bwu
+# 
+# keybind = alt+grave_accent=text:\x1bwe
+# keybind = alt+semicolon=text:\x1bw\x3a
+# 
+# keybind = alt+1=text:\x1bw1
+# keybind = alt+2=text:\x1bw2
+# keybind = alt+3=text:\x1bw3
+# keybind = alt+4=text:\x1bw4
+# keybind = alt+5=text:\x1bw5
+# keybind = alt+tab=text:\x1bw\t

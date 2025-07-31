@@ -49,51 +49,44 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 
-[keyboard]
-bindings = [
-  { key = "Return", mods = "Shift", chars = "\u001B[13;2u" },
-  { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
-
-  { key = "V", mods = "Super", action = "Paste" },
-  { key = "C", mods = "Super", action = "Copy" },
-  { key = "V", mods = "Control", action = "ReceiveChar" },
-
-  # panes
-  { key = "P", mods = "Command", chars = "\u0001\u0070" },
-  { key = "P", mods = "Command|Shift", chars = "\u0001\u0050" },
-  { key = "H", mods = "Command", chars = "\u0001\u0008" },
-  { key = "H", mods = "Command|Alt", chars = "\u0001\u0068" },
-  { key = "J", mods = "Command", chars = "\u0001\u000a" },
-  { key = "J", mods = "Command|Alt", chars = "\u0001\u006a" },
-  { key = "J", mods = "Command|Shift", chars = "\u0001\u004a" },
-  { key = "K", mods = "Command", chars = "\u0001\u000b" },
-  { key = "K", mods = "Command|Alt", chars = "\u0001\u006b" },
-  { key = "K", mods = "Command|Shift", chars = "\u0001\u004b" },
-  { key = "L", mods = "Command", chars = "\u0001\u000c" },
-  { key = "L", mods = "Command|Alt", chars = "\u0001\u006c" },
-
-  # windows
-  { key = "T", mods = "Command", chars = "\u0001\u0014" },
-  { key = "1", mods = "Command", chars = "\u0001\u0031" },
-  { key = "2", mods = "Command", chars = "\u0001\u0032" },
-  { key = "3", mods = "Command", chars = "\u0001\u0033" },
-  { key = "4", mods = "Command", chars = "\u0001\u0034" },
-  { key = "5", mods = "Command", chars = "\u0001\u0035" },
-  { key = "6", mods = "Command", chars = "\u0001\u0036" },
-  { key = "7", mods = "Command", chars = "\u0001\u0037" },
-  { key = "8", mods = "Command", chars = "\u0001\u0038" },
-  { key = "9", mods = "Command", chars = "\u0001\u0039" },
-  { key = "A", mods = "Command", chars = "\u0001\u0001" },
-
-  # break pane into new window
-  { key = "T", mods = "Command|Shift", chars = "\u0001\u0074" },
-
-  # sessions
-  { key = "S", mods = "Command", chars = "\u0001\u0073" },
-  { key = "E", mods = "Command", chars = "\u0001\u0065" },
-
-  { key = "U", mods = "Command", chars = "\u0001\u0075" },
-]
+# [keyboard]
+# bindings = [
+#   { key = "T", mods = "Alt", chars = "\u001Bwt" },
+#   { key = "E", mods = "Alt", chars = "\u001Bwe" },
+#   { key = "U", mods = "Alt", chars = "\u001Bwu" },
+#
+#   { key = "Return", mods = "Shift", chars = "\u001B[13;2u" },
+#   { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
+#
+#   { key = "V", mods = "Super", action = "Paste" },
+#   { key = "C", mods = "Super", action = "Copy" },
+#   { key = "V", mods = "Control", action = "ReceiveChar" },
+#
+#   # panes
+#   { key = "P", mods = "Command", chars = "\u2211\u0070" },
+#   { key = "P", mods = "Command|Shift", chars = "\u2211\u0050" },
+#   { key = "H", mods = "Command", chars = "\u2211\u0008" },
+#   { key = "H", mods = "Command|Alt", chars = "\u2211\u0068" },
+#   { key = "J", mods = "Command", chars = "\u2211\u000a" },
+#   { key = "J", mods = "Command|Alt", chars = "\u2211\u006a" },
+#   { key = "J", mods = "Command|Shift", chars = "\u2211\u004a" },
+#   { key = "K", mods = "Command", chars = "\u2211\u000b" },
+#   { key = "K", mods = "Command|Alt", chars = "\u2211\u006b" },
+#   { key = "K", mods = "Command|Shift", chars = "\u2211\u004b" },
+#   { key = "L", mods = "Command", chars = "\u2211\u000c" },
+#   { key = "L", mods = "Command|Alt", chars = "\u2211\u006c" },
+#
+#   # windows
+#   { key = "1", mods = "Alt", chars = "\u001Bw1" },
+#   { key = "2", mods = "Alt", chars = "\u001Bw2" },
+#   { key = "3", mods = "Alt", chars = "\u001Bw3" },
+#   { key = "4", mods = "Alt", chars = "\u001Bw4" },
+#   { key = "5", mods = "Alt", chars = "\u001Bw5" },
+#   { key = "6", mods = "Alt", chars = "\u001Bw6" },
+#   { key = "7", mods = "Alt", chars = "\u001Bw7" },
+#   { key = "8", mods = "Alt", chars = "\u001Bw8" },
+#   { key = "9", mods = "Alt", chars = "\u001Bw9" },
+# ]
 
 
 [scrolling]
