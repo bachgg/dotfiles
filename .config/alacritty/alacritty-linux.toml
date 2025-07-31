@@ -111,4 +111,4 @@ blur = true
 
 [terminal.shell]
 program = "/sbin/tmux"
-args = ["new-session", "-s", "DEFAULT", "-A"]
+args = ["new-session", "-s", "👻", "-A"]

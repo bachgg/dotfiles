@@ -108,4 +108,4 @@ blur = true
 
 [terminal.shell]
 program = "/opt/homebrew/bin/tmux"
-args = ["new-session", "-s", "DEFAULT", "-A"]
+args = ["new-session", "-s", "👻", "-A"]
