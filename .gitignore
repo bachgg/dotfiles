@@ -23,3 +23,4 @@ alacritty.toml
 .config/Slack
 .config/spotify
 .config/swiftpm
+.config/ghostty/config

@@ -21,8 +21,9 @@ git clone https://github.com/jeffreytse/zsh-vi-mode ~/.oh-my-zsh/custom/plugins/
 ln -sf ~/.config/.zshrc ~/.zshrc
 
 # Tools
-yay -S --noconfirm alacritty
+yay -S --noconfirm alacritty ghostty
 ln -sf ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
+ln -sf ~/dotfiles/.config/ghostty/config-linux ~/dotfiles/.config/ghostty/config
 yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh dust jq wev
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim
 yay -S --noconfirm docker docker-compose
