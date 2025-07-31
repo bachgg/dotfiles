@@ -1,5 +1,5 @@
 command = /sbin/tmux -- new-session -s "👻" -A
-font-size = 18
+font-size = 16
 fullscreen = true
 macos-icon = paper
 macos-non-native-fullscreen = visible-menu
