@@ -21,3 +21,10 @@ eval "$(op completion zsh)"; compdef _op op
 # https://github.com/ohmyzsh/ohmyzsh/discussions/9849
 git_prompt_info(){}
 PROMPT="%y %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
+
+# gardenctl session
+[ -n "$GCTL_SESSION_ID" ] || [ -n "$TERM_SESSION_ID" ] || export GCTL_SESSION_ID=$(uuidgen)
+
+# [ -e ~/.kube ] || mkdir ~/.kube
+# [ -e ~/.garden/gardenctl-v2.yaml ] || ([ -e ~/.kube/kubeconfig-garden-codesphere.yaml ] && gardenctl config set-garden codesphere --kubeconfig ~/.kube/kubeconfig-garden-codesphere.yaml)
+# KUBECONFIG=$(ls -1 ~/.kube/kubeconfig-garden* | tr '\n' ':') kubectl config view --merge --flatten > ~/.kube/config
