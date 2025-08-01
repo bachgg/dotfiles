@@ -225,10 +225,16 @@ workspace "luna"
 workspace "saturnus"
 workspace "uranus"
 workspace "neptunus"
-workspace "pluto"
 
 window-rule {
   open-maximized true
+}
+
+window-rule {
+  match app-id="1Password"
+  open-on-workspace "neptunus"
+  open-focused true
+  open-fullscreen false
 }
 
 window-rule {
