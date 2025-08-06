@@ -214,7 +214,11 @@ screenshot-path "~/screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
 // Animation settings.
 // The wiki explains how to configure individual animations:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
-animations {}
+animations {
+  workspace-switch {
+    duration-ms 0
+  }
+}
 
 workspace "terra"
 workspace "jupiter"
@@ -354,8 +358,8 @@ binds {
     // Move the focused window between the floating and the tiling layout.
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-    Print { screenshot; }
-    Mod+Print { screenshot-window; }
+    Mod+S { screenshot; }
+    Mod+Shift+S { screenshot-window; }
     Mod+Shift+Print { screenshot-screen; }
 
     // The allow-inhibiting=false property can be applied to other binds as well,
