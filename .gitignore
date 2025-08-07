@@ -24,3 +24,5 @@ alacritty.toml
 .config/spotify
 .config/swiftpm
 .config/ghostty/config
+.config/op/plugins/used_items
+.config/op/plugins/gh.json
