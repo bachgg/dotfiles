@@ -33,6 +33,7 @@ yay -S --noconfirm brave-bin pantheon-polkit-agent 1password 1password-cli tofi
 yay -S --noconfirm bluez bluez-utils blueman
 sudo systemctl enable bluetooth
 systemctl --user enable mpris-proxy
+yay -S --noconfirm bind
 
 # Look and feel
 yay -S --noconfirm gnome-themes-extra adwaita-qt5-git adwaita-qt6-git
