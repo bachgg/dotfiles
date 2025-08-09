@@ -146,6 +146,7 @@ dead-link = "error"
 ls = "zk list $@"
 e = 'zk edit --interactive "$@"'
 n = 'zk new --title "$*"'
+p = 'git -C ~/zk add . && git -C ~/zk commit -m "sync" && git -C ~/zk push'
 
 # Edit the last modified note.
 #editlast = "zk edit --limit 1 --sort modified- $@"
