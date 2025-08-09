@@ -45,21 +45,8 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
-// niri msg outputs
-// Coordiate system: x right y down; monitor coordinate is at top left
-output "HDMI-A-2" {
-  position x=-760 y=-1440
-}
-
-output "eDP-1" {
-    scale 1
-    transform "normal"
-    position x=0 y=0
-}
-
 layout {
-    // Set gaps around windows in logical pixels.
-    gaps 0
+    gaps 16
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -190,14 +177,9 @@ layout {
         color "#0007"
     }
 
-    // Struts shrink the area occupied by windows, similarly to layer-shell panels.
-    // You can think of them as a kind of outer gaps. They are set in logical pixels.
-    // Left and right struts will cause the next window to the side to always be visible.
-    // Top and bottom struts will simply add outer gaps in addition to the area occupied by
-    // layer-shell panels and regular gaps.
     struts {
-        left 0
-        right 0
+        left 32
+        right 32
         top 0
         bottom 0
     }
@@ -209,62 +191,49 @@ spawn-at-startup "swww-daemon"
 spawn-at-startup "~/.config/swww/randomize.sh"
 spawn-at-startup "swayidle" "-w timeout 10 'niri msg action power-off-monitors' timeout 20 'swaylock -f' before-sleep 'swaylock -f'"
 
+spawn-at-startup "alacritty"
+spawn-at-startup "brave"
+spawn-at-startup "slack"
+
 screenshot-path "~/screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
 
-// Animation settings.
-// The wiki explains how to configure individual animations:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
   workspace-switch {
     duration-ms 0
   }
 }
 
-workspace "terra"
-workspace "jupiter"
-workspace "mercurius"
-workspace "mars"
-workspace "venus"
-workspace "luna"
-workspace "saturnus"
-workspace "uranus"
-workspace "neptunus"
+workspace "default"
+workspace "tools"
 
 window-rule {
-  open-maximized true
+  open-maximized false
 }
 
 window-rule {
   match app-id="1Password"
-  open-on-workspace "neptunus"
+  exclude title="QuickAccess - 1Password" 
   open-focused true
   open-fullscreen false
+  // open-on-workspace "tools"
+  block-out-from "screencast"
 }
 
 window-rule {
   match app-id="Alacritty"
-  open-on-workspace "terra"
   open-focused true
+  open-maximized true
 }
 
 window-rule {
   match app-id="brave-browser"
-  open-on-workspace "jupiter"
   open-focused true
+  open-maximized true
 }
 
-window-rule {
-  match app-id="Slack"
-  open-on-workspace "mercurius"
-  open-focused true
-  open-fullscreen true
-}
-
-window-rule {
-  match app-id="spotify"
-  open-on-workspace "mars"
-  open-focused true
-  open-fullscreen true
+layer-rule {
+    match namespace="^notifications$"
+    block-out-from "screencast"
 }
 
 hotkey-overlay {
@@ -283,10 +252,10 @@ gestures {
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: tofi" { spawn "tofi-drun"; }
-    Mod+B hotkey-overlay-title="Run an Application: brave" { spawn "brave"; }
-    Mod+backslash hotkey-overlay-title="1password Quick Access" { spawn "1password" "--quick-access"; }
+    // Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Run an Application: tofi" { spawn "tofi-drun"; }
+    // Mod+B hotkey-overlay-title="Run an Application: brave" { spawn "brave"; }
+    Mod+backslash hotkey-overlay-title="2password Quick Access" { spawn "1password" "--quick-access"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -299,28 +268,8 @@ binds {
 
     Mod+Q { close-window; }
 
-    Mod+1 { focus-workspace "terra"; }
-    Mod+2 { focus-workspace "jupiter"; }
-    Mod+3 { focus-workspace "mercurius"; }
-    Mod+4 { focus-workspace "mars"; }
-    Mod+5 { focus-workspace "venus"; }
-    Mod+6 { focus-workspace "luna"; }
-    Mod+7 { focus-workspace "saturnus"; }
-    Mod+8 { focus-workspace "uranus"; }
-    Mod+9 { focus-workspace "neptunus"; }
-
-    Mod+Shift+1 { move-window-to-workspace "terra"; }
-    Mod+Shift+2 { move-window-to-workspace "jupiter"; }
-    Mod+Shift+3 { move-window-to-workspace "mercurius"; }
-    Mod+Shift+4 { move-window-to-workspace "mars"; }
-    Mod+Shift+5 { move-window-to-workspace "venus"; }
-    Mod+Shift+6 { move-window-to-workspace "luna"; }
-    Mod+Shift+7 { move-window-to-workspace "saturnus"; }
-    Mod+Shift+8 { move-window-to-workspace "uranus"; }
-    Mod+Shift+9 { move-window-to-workspace "neptunus"; }
-
-    Mod+H     { focus-column-left; }
-    Mod+L     { focus-column-right; }
+    Mod+H     { focus-column-left-or-last; }
+    Mod+L     { focus-column-right-or-first; }
     Mod+J     { focus-window-or-workspace-down; }
     Mod+K     { focus-window-or-workspace-up; }
 
