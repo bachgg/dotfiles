@@ -10,3 +10,4 @@ alias ff="fastfetch"
 alias gg="lazygit"
 
 alias kar-server="ssh -i id_rsa_bullseye -p 32122 $(whoami)@185.228.137.28"
+alias kn="ktx && k9s -A --logoless --splashless"
