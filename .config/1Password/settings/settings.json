@@ -12,7 +12,9 @@
   "developers.cliSharedLockState.enabled": true,
   "developers.experience.enabled": true,
   "developers.experience.dismissed": true,
+  "app.SkipArchiveAlert": true,
   "authTags": {
+    "app.SkipArchiveAlert": "gCyijP6xkJIXlO4VuUhXTTloVzWArJQHTpxoPS2iKQk",
     "app.formatSecureNotesUsingMarkdown": "f71V+dSNoBX09J6apQP4A6lf3yAp3KMjzF5EoZAEJJQ",
     "app.theme": "Zzg7jeOIZWbGLHjWPgBbepNElBwwA13qxr1pdefzI6k",
     "app.useHardwareAcceleration": "hkDNgYC3nH/QhbTcPeiGtkIe8aBLmf41HqUSP3P7Bec",

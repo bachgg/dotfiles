@@ -53,7 +53,7 @@ sudo ln -sf ~/dotfiles/.config/keyd/default.conf /etc/keyd/
 sudo systemctl enable keyd
 
 # Desktop
-yay -S --noconfirm nautilus eog totem evince amberol swww btop networkmanager
+yay -S --noconfirm nautilus eog totem evince amberol swww btop networkmanager satty
 sudo systemctl enable NetworkManager
 yay -S --noconfirm switchboard switchboard-plug-bluetooth switchboard-plug-network switchboard-plug-sound gnome-settings-daemon
 
