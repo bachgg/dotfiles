@@ -2,13 +2,6 @@
 dir = "~/zk"
 
 [note]
-# language = "en"
-
-# The default title used for new note, if no `--title` flag is provided.
-#default-title = "Untitled"
-
-# Template used to generate a note's filename, without extension.
-#filename = "{{id}}"
 
 # The file extension used for the notes.
 #extension = "md"
