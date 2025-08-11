@@ -129,6 +129,14 @@ window-rule {
   open-focused true
 }
 
+window-rule {
+  match title="^Meet.+$"
+  open-floating true
+  default-column-width { proportion 0.2; }
+  default-window-height { proportion 0.5; }
+  default-floating-position x=0 y=0 relative-to="top-right"
+}
+
 layer-rule {
     match namespace="^notifications$"
     block-out-from "screencast"
@@ -186,15 +194,11 @@ binds {
     Mod+W           { move-workspace-down; }
     Mod+Shift+W     { move-workspace-up; }
 
-    // Mod+Tab { focus-window-previous; }
-    // Mod+grave { focus-window-previous; }
-
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+Shift+F { fullscreen-window; }
 
-    // Center all fully visible columns on screen.
     Mod+C { center-visible-columns; }
 
     Mod+Minus { set-column-width "-10%"; }
@@ -205,22 +209,13 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
     Mod+Shift+0 { set-window-height "100%"; }
 
-    // Move the focused window between the floating and the tiling layout.
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     Mod+S { screenshot; }
     Mod+Shift+S { screenshot-window; }
     Mod+Shift+Print { screenshot-screen; }
 
-    // The allow-inhibiting=false property can be applied to other binds as well,
-    // which ensures niri always processes them, even when an inhibitor is active.
-    // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-    // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Ctrl+Q { spawn "swaylock"; }
     Mod+Shift+Escape { quit; }
-
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
