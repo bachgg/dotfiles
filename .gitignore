@@ -26,3 +26,4 @@ alacritty.toml
 .config/ghostty/config
 .config/op/plugins/used_items
 .config/op/plugins/gh.json
+.config/environment.d/iswork.conf
