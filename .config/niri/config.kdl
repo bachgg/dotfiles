@@ -45,20 +45,23 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+output "eDP-1" {
+    scale 1.0
+}
+
 layout {
-    gaps 16
+    gaps 0
 
     // on-overflow, always, off
     center-focused-column "on-overflow"
     always-center-single-column
 
     preset-column-widths {
-        proportion 0.9
         proportion 1.0
         proportion 0.5
     }
 
-    default-column-width { proportion 0.9; }
+    default-column-width { proportion 1.0; }
 
     focus-ring {
         off
@@ -91,14 +94,15 @@ screenshot-path "~/screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
 
 animations {
   workspace-switch {
+    off
     // duration-ms 0
   }
   window-movement {
-    // off
+    off
   }
   horizontal-view-movement {
-    // off
-    spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    off
+    // spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
   }
 }
 
@@ -157,6 +161,9 @@ gestures {
 }
 
 binds {
+    Mod+U { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.title == \"Alacritty\") | .id')"; }
+    Mod+E { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"brave-browser\") | .id')"; }
+
     Mod+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
     Mod+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
     // Mod+Grave repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.workspace" ; }

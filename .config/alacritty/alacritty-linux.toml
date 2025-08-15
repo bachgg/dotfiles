@@ -57,8 +57,6 @@ bindings = [
   { key = "3", mods = "Super", chars = "\u001B3" },
   { key = "4", mods = "Super", chars = "\u001B4" },
   { key = "5", mods = "Super", chars = "\u001B5" },
-#
-  { key = "U", mods = "Super", chars = "\u001Bu" },
 ]
 
 
