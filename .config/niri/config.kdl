@@ -161,8 +161,8 @@ gestures {
 }
 
 binds {
-    Mod+U { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.title == \"Alacritty\") | .id')"; }
-    Mod+E { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"brave-browser\") | .id')"; }
+    Mod+E { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"Alacritty\") | .id')"; }
+    Mod+U { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"brave-browser\") | .id')"; }
 
     Mod+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
     Mod+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
@@ -185,6 +185,7 @@ binds {
 
     Mod+Q { close-window; }
 
+    Mod+F { toggle-window-floating; }
     Mod+H     { focus-column-left-or-last; }
     Mod+L     { focus-column-right-or-first; }
     Mod+J     { focus-window-or-workspace-down; }
