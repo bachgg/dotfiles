@@ -11,7 +11,7 @@ sudo systemctl enable ly.service
 sudo ln -sf ~/dotfiles/.config/ly/config.ini /etc/ly/config.ini
 
 # Window manager
-yay -S --noconfirm niri niriswitcher xdg-desktop-portal-gtk xdg-desktop-portal-gnome mako fyi swaylock
+yay -S --noconfirm niri niriswitcher xdg-desktop-portal-gtk xdg-desktop-portal-gnome mako fyi swaylock swayidle grim
 
 # Shell
 yay -S --noconfirm zsh

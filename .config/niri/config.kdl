@@ -83,7 +83,7 @@ spawn-at-startup "/usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polk
 spawn-at-startup "1password" "--silent"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "~/.config/swww/randomize.sh"
-spawn-at-startup "swayidle" "-w timeout 10 'niri msg action power-off-monitors' timeout 20 'swaylock -f' before-sleep 'swaylock -f'"
+spawn-at-startup "swayidle" "-w timeout 10 'niri msg action power-off-monitors' timeout 20 '~/.config/scripts/lock.sh' before-sleep '~/.config/scripts/lock.sh'"
 spawn-at-startup "niriswitcher"
 
 spawn-at-startup "alacritty"
@@ -224,7 +224,7 @@ binds {
     Mod+Shift+S { screenshot-window; }
     Mod+Shift+Print { screenshot-screen; }
 
-    Mod+Ctrl+Q { spawn "swaylock"; }
+    Mod+Ctrl+Q { spawn "~/.config/scripts/lock.sh"; }
     Mod+Shift+Escape { quit; }
     Mod+Shift+P { power-off-monitors; }
 }
