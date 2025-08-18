@@ -27,3 +27,4 @@ alacritty.toml
 .config/op/plugins/used_items
 .config/op/plugins/gh.json
 .config/environment.d/iswork.conf
+.config/drata-agent
