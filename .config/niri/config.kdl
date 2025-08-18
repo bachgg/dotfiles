@@ -161,11 +161,12 @@ gestures {
 }
 
 binds {
-    Mod+E { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"Alacritty\") | .id')"; }
-    Mod+U { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"brave-browser\") | .id')"; }
+    Mod+Tab { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"Alacritty\") | .id')"; }
+    Mod+apostrophe { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"brave-browser\") | .id')"; }
+    Mod+comma { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"Slack\") | .id')"; }
 
-    Mod+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
-    Mod+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
+    // Mod+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
+    // Mod+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
     // Mod+Grave repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.workspace" ; }
     // Mod+Shift+Grave repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.workspace" ; }
 
