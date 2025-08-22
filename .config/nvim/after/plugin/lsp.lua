@@ -198,3 +198,5 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "yaml.gitlab"
   end,
 })
+
+require('typescript-tools').setup({})
