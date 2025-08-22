@@ -5,6 +5,6 @@ if [ "$1" = "build" ]; then
 fi
 
 docker run -it \
-  -v $PWD/install.sh:/home/me/install.sh \
-  -v $PWD:/home/me/dotfiles \
+  -v "$PWD/install.sh:/home/me/install.sh" \
+  -v "$PWD:/home/me/dotfiles" \
   mearch:latest
