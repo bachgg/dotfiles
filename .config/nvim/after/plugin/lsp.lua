@@ -99,7 +99,6 @@ require('lspconfig').eslint.setup({
 
 local util = require 'lspconfig.util'
 
-
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
@@ -110,13 +109,13 @@ require('mason-lspconfig').setup({
     'cssls',
     'jsonls',
     'marksman',
-    'sqlls',
+    -- 'sqlls',
     'tflint',
     'yamlls',
     'tailwindcss',
-    'ts_ls',
+    -- 'ts_ls',
     'vimls',
-    'volar',
+    -- 'volar',
   },
   handlers = {
     lsp_zero.default_setup,
@@ -199,17 +198,3 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "yaml.gitlab"
   end,
 })
-
-require("lspconfig").basedpyright.setup {
-  settings = {
-    basedpyright = {
-      disableOrganizeImports = true, -- Using Ruff
-    },
-    python = {
-      analysis = {
-        ignore = { '*' }, -- Using Ruff
-      },
-    },
-  },
-  capabilities = capabilities
-}

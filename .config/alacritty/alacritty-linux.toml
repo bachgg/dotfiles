@@ -26,7 +26,7 @@ foreground = "0xabb2bf"
 TERM = "xterm-256color"
 
 [font]
-size = 16.5
+size = 15
 
 [font.bold]
 family = "monospace"
