@@ -89,13 +89,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
-require('lspconfig').eslint.setup({
-  on_attach = function(client, bufnr)
-    vim.keymap.set('n', '<leader>es', function()
-      vim.api.nvim_command('EslintFixAll')
-    end)
-  end,
-})
+-- require('lspconfig').eslint.setup({
+--   on_attach = function(client, bufnr)
+--     vim.keymap.set('n', '<leader>es', function()
+--       vim.api.nvim_command('EslintFixAll')
+--     end)
+--   end,
+-- })
 
 local util = require 'lspconfig.util'
 

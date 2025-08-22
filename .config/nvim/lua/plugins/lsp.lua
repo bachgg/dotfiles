@@ -8,9 +8,9 @@ return {
   { 'hrsh7th/cmp-buffer' },
   { 'L3MON4D3/LuaSnip' },
   { 'towolf/vim-helm',                  ft = 'helm' },
-{
-  "pmizio/typescript-tools.nvim",
-  dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  opts = {},
-}
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  }
 }
