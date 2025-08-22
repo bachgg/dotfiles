@@ -1,5 +1,27 @@
 return {
   { 'williamboman/mason.nvim' },
+  {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    opts = {
+      ensure_installed = {
+        'bashls',
+        'cssls',
+        'helm_ls',
+        'jsonls',
+        'lemminx',
+        'lua_ls',
+        'marksman',
+        'rust_analyzer',
+        'shellcheck',
+        'shfmt',
+        'sqlls',
+        'tailwindcss',
+        'tflint',
+        'vimls',
+        'yamlls',
+      },
+    }
+  },
   { 'williamboman/mason-lspconfig.nvim' },
   { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
   { 'neovim/nvim-lspconfig' },

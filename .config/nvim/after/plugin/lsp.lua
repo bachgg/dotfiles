@@ -101,22 +101,6 @@ local util = require 'lspconfig.util'
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {
-    'lemminx',
-    'rust_analyzer',
-    'lua_ls',
-    'bashls',
-    'cssls',
-    'jsonls',
-    'marksman',
-    -- 'sqlls',
-    'tflint',
-    'yamlls',
-    'tailwindcss',
-    -- 'ts_ls',
-    'vimls',
-    -- 'volar',
-  },
   handlers = {
     lsp_zero.default_setup,
     -- ts_ls = function()
