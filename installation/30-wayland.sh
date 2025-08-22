@@ -55,6 +55,7 @@ sudo systemctl enable keyd
 # Desktop
 yay -S --noconfirm nautilus eog totem evince amberol swww btop networkmanager satty
 sudo systemctl enable NetworkManager
+sudo systemctl disable systemd-networkd.service NetworkManager-wait-online.service # To decrease boot time
 yay -S --noconfirm switchboard switchboard-plug-bluetooth switchboard-plug-network switchboard-plug-sound gnome-settings-daemon
 
 # Moonlander configuration
