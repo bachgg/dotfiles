@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 if [ "$(uname)" = "Darwin" ]; then PATH=${PATH}:/opt/homebrew/bin:~/.fzf/bin; fi
 DIR_PATH=$(find \
   ~/dotfiles \
