@@ -83,7 +83,6 @@ spawn-at-startup "/usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polk
 spawn-at-startup "1password" "--silent"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "~/.config/swww/randomize.sh"
-spawn-at-startup "swayidle" "-w timeout 601 'niri msg action power-off-monitors' timeout 600 '~/.config/scripts/lock.sh' before-sleep '~/.config/scripts/lock.sh'"
 spawn-at-startup "niriswitcher"
 
 spawn-at-startup "alacritty"
@@ -161,9 +160,9 @@ gestures {
 }
 
 binds {
-    Mod+Tab { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"Alacritty\") | .id')"; }
-    Mod+apostrophe { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"brave-browser\") | .id')"; }
-    Mod+comma { spawn "/bin/sh" "-c" "niri msg action focus-window --id=$(niri msg --json windows | jq -c '.[] | select(.app_id == \"Slack\") | .id')"; }
+    Mod+Tab { spawn "~/.config/scripts/switcher.sh" "Alacritty"; }
+    Mod+apostrophe { spawn "~/.config/scripts/switcher.sh" "brave-browser"; }
+    Mod+comma { spawn "~/.config/scripts/switcher.sh" "Slack"; }
 
     // Mod+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
     // Mod+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
