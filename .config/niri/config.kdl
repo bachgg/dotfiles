@@ -45,9 +45,9 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
-output "eDP-1" {
-    scale 1.0
-}
+// output "eDP-1" {
+//     scale 1.0
+// }
 
 layout {
     gaps 0
@@ -93,14 +93,14 @@ screenshot-path "~/screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
 
 animations {
   workspace-switch {
-    off
-    // duration-ms 0
+    // off
+    // spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
   }
   window-movement {
-    off
+    // off
   }
   horizontal-view-movement {
-    off
+    // off
     // spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
   }
 }
