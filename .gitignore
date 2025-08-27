@@ -29,3 +29,4 @@ alacritty.toml
 .config/environment.d/iswork.conf
 .config/drata-agent
 .config/1Password/settings/settings.json
+.config/helm
