@@ -55,9 +55,9 @@ if not configs.protols then
   }
 end
 
-require('lspconfig').protols.setup {}
+vim.lsp.config('protols', {})
 
-require('lspconfig').lua_ls.setup {
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       runtime = {
@@ -73,7 +73,7 @@ require('lspconfig').lua_ls.setup {
       },
     }
   }
-}
+})
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.launch",
@@ -161,20 +161,47 @@ cmp.setup({
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig')['html'].setup {
+vim.lsp.config('html', {
   capabilities = capabilities
-}
+})
 
-require('lspconfig').helm_ls.setup {
+vim.lsp.config('helm_ls', {
   settings = {
     ['helm-ls'] = {
       yamlls = {
         path = "yaml-language-server",
+        redhat = {
+          telemetry = {
+            enabled = false
+          }
+        },
+        yaml = {
+          format = {
+            enable = false,
+            bracketSpacing = false
+          }
+        }
       }
     }
   }
-}
-require('lspconfig').yamlls.setup {}
+})
+
+vim.lsp.config('yamlls', {
+  settings = {
+    path = "yaml-language-server",
+    redhat = {
+      telemetry = {
+        enabled = false
+      }
+    },
+    yaml = {
+      format = {
+        enable = true,
+        bracketSpacing = false
+      }
+    }
+  }
+})
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.gitlab-ci*.{yml,yaml}",
