@@ -11,7 +11,7 @@ return {
         'lemminx',
         'lua_ls',
         'marksman',
-        'rust_analyzer',
+        -- 'rust_analyzer',
         'shellcheck',
         'shfmt',
         'sqlls',

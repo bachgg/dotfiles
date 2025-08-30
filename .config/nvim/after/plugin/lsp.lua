@@ -1,35 +1,33 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  local opts = {
-    buffer = bufnr,
-  }
-  lsp_zero.default_keymaps(
-    {
-      buffer = bufnr,
-      exclude = { 'K' }
-    }
-  )
+  -- local opts = {
+  --   buffer = bufnr,
+  -- }
+  -- lsp_zero.default_keymaps(
+  --   {
+  --     buffer = bufnr,
+  --     exclude = { 'K' }
+  --   }
+  -- )
+  local map = function(mode, l, r, opts)
+    opts = opts or {}
+    opts.silent = true
+    opts.buffer = bufnr
+    vim.keymap.set(mode, l, r, opts)
+  end
 
-  vim.keymap.set('n', 'L', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-
-  -- vim.keymap.set('n', 'ga', function()
-  --   vim.lsp.buf.code_action()
-  -- end, opts)
-
-  vim.keymap.set('n', 'gn', function()
-    vim.diagnostic.goto_next()
-  end, opts)
-
-  vim.keymap.set('n', 'gp', function()
-    vim.diagnostic.goto_prev()
-  end, opts)
-
-  vim.keymap.set('n', '<C-y>', function()
-    vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
+  map('n', 'L', function()
+    vim.lsp.buf.hover({
+      border = "single",
+      max_height = 20,
+      max_width = 130,
+    })
   end)
+
+  map('n', 'gn', function() vim.diagnostic.jump({ count = 1, float = true }) end)
+  map('n', 'gN', function() vim.diagnostic.jump({ count = -1, float = true }) end)
+  map('n', '<C-y>', function() vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" }) end)
 end)
 
 lsp_zero.set_sign_icons({
@@ -100,24 +98,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 local util = require 'lspconfig.util'
 
 require('mason').setup({})
-require('mason-lspconfig').setup({
-  handlers = {
-    lsp_zero.default_setup,
-    -- ts_ls = function()
-    --   local root_dir = util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git')()
-    --   print('heyyyyy', root_dir)
-    --   require('lspconfig').ts_ls.setup({
-    --     settings = {
-    --       completions = {
-    --         completeFunctionCalls = true
-    --       }
-    --     },
-    --     root_dir = util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git')
-    --   })
-    -- end,
-    rust_analyzer = function() end
-  },
-})
+require('mason-lspconfig').setup({})
 
 local cmp = require('cmp')
 

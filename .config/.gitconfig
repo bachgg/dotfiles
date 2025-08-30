@@ -6,3 +6,14 @@
 	gpgsign = true
 [user]
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGMWO5OPnbJWHsumjAyAva2UHf5MPU75SD6Ur1ieeVac
+[core]
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  dark = true      # or light = true, or omit for auto-detection
+  features = arctic-fox
+
+[include]
+    path = ~/.config/delta/themes.gitconfig

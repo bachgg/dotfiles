@@ -162,6 +162,7 @@ gestures {
 binds {
     Mod+Tab { spawn "~/.config/scripts/switcher.sh" "Alacritty"; }
     Mod+apostrophe { spawn "~/.config/scripts/switcher.sh" "brave-browser"; }
+    Mod+grave { spawn "~/.config/scripts/switcher.sh" "brave-browser"; }
     Mod+comma { spawn "~/.config/scripts/switcher.sh" "Slack"; }
 
     // Mod+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
