@@ -1,1 +1,1 @@
-yay -S --noconfirm typescript
+yay -S --noconfirm typescript rust
