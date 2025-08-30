@@ -8,5 +8,11 @@ target_window="$(jq -r -n \
   --argjson windows "${windows}" \
   --arg app_id "${app_id}" \
   --argjson active_workspace "${active_workspace}" \
-  '$windows | .[] | select(.app_id == $app_id) | select(.workspace_id == $active_workspace) | .id')"
+  '$windows
+     | map(select(
+       .app_id == $app_id and
+       .workspace_id == $active_workspace and
+       .is_floating == false))
+     | .[0].id')"
+
 niri msg action focus-window --id="${target_window}"
