@@ -12,7 +12,8 @@ return {
       typescript = { "biome", "prettierd", "prettier" },
       typescriptreact = { "biome", "prettierd", "prettier" },
       terraform = { "terraform_fmt" },
-      vue = { "prettierd", "prettier" }
+      vue = { "prettierd", "prettier" },
+      kdl = { "kdlfmt" }
     },
     format_on_save = {
       -- These options will be passed to conform.format()
