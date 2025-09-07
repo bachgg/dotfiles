@@ -24,7 +24,7 @@ ln -sf ~/.config/.zshrc ~/.zshrc
 yay -S --noconfirm alacritty ghostty
 ln -sf ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
 ln -sf ~/dotfiles/.config/ghostty/config-linux ~/dotfiles/.config/ghostty/config
-yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh dust jq wev git-delta github-cli k3sup
+yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh dust jq go-yq wev git-delta github-cli k3sup
 yay -S --noconfirm cmake ripgrep fd nodejs npm go unzip neovim rust-analyzer
 yay -S --noconfirm docker docker-compose
 sudo systemctl enable docker.service docker.socket
