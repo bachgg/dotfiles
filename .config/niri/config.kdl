@@ -118,13 +118,14 @@ window-rule {
 window-rule {
     match title="^Meet.+$"
     open-floating true
+    open-focused false
     default-column-width {
-        proportion 0.2
+        proportion 0.15
     }
     default-window-height {
-        proportion 0.5
+        proportion 0.8
     }
-    default-floating-position x=0 y=0 relative-to="top-right"
+    default-floating-position x=0 y=0 relative-to="bottom-right"
 }
 layer-rule {
     match namespace="^notifications$"
