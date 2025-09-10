@@ -16,10 +16,6 @@ local function my_on_attach(bufnr)
   -- custom mappings
   vim.keymap.set("n", "<S-CR>", api.node.open.vertical, opts("Up"))
   vim.keymap.set("n", "<C-CR>", api.tree.change_root_to_node, opts("CD"))
-  vim.keymap.set("n", "<leader>gg", function()
-    local script = vim.fn.expand("$HOME") .. "/.config/scripts/remote_github_file_url.sh"
-    vim.fn.system { script, api.tree.get_node_under_cursor().absolute_path }
-  end)
 end
 
 require("nvim-tree").setup({
