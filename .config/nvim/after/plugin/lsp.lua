@@ -1,19 +1,18 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-  -- local opts = {
-  --   buffer = bufnr,
-  -- }
-  -- lsp_zero.default_keymaps(
-  --   {
-  --     buffer = bufnr,
-  --     exclude = { 'K' }
-  --   }
-  -- )
-  local map = function(mode, l, r, opts)
-    opts = opts or {}
-    opts.silent = true
-    opts.buffer = bufnr
+  local opts = {
+    buffer = bufnr,
+    silent = true
+  }
+
+  lsp_zero.default_keymaps(
+    {
+      buffer = bufnr,
+      exclude = { 'K' }
+    }
+  )
+  local map = function(mode, l, r)
     vim.keymap.set(mode, l, r, opts)
   end
 
@@ -24,7 +23,6 @@ lsp_zero.on_attach(function(client, bufnr)
       max_width = 130,
     })
   end)
-
   map('n', 'gn', function() vim.diagnostic.jump({ count = 1, float = true }) end)
   map('n', 'gN', function() vim.diagnostic.jump({ count = -1, float = true }) end)
   map('n', '<C-y>', function() vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" }) end)
