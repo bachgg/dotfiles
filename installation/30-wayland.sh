@@ -62,3 +62,6 @@ yay -S --noconfirm switchboard switchboard-plug-bluetooth switchboard-plug-netwo
 sudo ln -s ~/.config/etc/udev/rules.d/50-zsa.rules /etc/udev/rules.d/
 sudo groupadd plugdev
 sudo usermod -aG plugdev "$(whoami)"
+
+# More stuff
+yay -S --noconfirm ruby gum
