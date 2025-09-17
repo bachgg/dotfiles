@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if op --version 1>/dev/null 2>&1; then
   clickup_token="$(op read --account Codesphere "op://Employee/Clickup/token")"
@@ -20,4 +21,4 @@ my_tasks="$(jq -r -n --argjson tasks "$clickup_tasks" \
 
 task_id="$(echo "$my_tasks" | fzf --ansi | awk '{print $1}')"
 
-gh pr create -b CU-"$task_id" -e
+EDITOR=$(which nvim) gh pr create -b CU-"$task_id" -e
