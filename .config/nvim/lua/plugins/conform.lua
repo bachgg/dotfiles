@@ -5,7 +5,7 @@ return {
       stop_after_first = true
     },
     formatters_by_ft = {
-      json = { "prettierd", "prettier" },
+      json = { "biome", "prettierd", "prettier" },
       lua = { "stylua" },
       javascript = { "biome", "prettierd", "prettier" },
       javascriptreact = { "biome", "prettierd", "prettier" },
