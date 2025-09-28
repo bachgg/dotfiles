@@ -1,7 +1,7 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias ulogout="pkill -u $(whoami)"
-if [ $(uname) = "Linux" ]; then alias open="xdg-open"; fi
+if [ "$(uname)" = "Linux" ]; then alias open="xdg-open"; fi
 
 alias l="eza --long --icons --all --no-user"
 alias ktx="kubectx"
