@@ -19,6 +19,8 @@ zvm_after_init_commands+=('source <(fzf --zsh)')
 eval "$(op completion zsh)"
 compdef _op op
 
+export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+
 # https://github.com/ohmyzsh/ohmyzsh/discussions/9849
 # git_prompt_info() {}
 PROMPT="%y %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
