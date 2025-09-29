@@ -64,4 +64,4 @@ sudo groupadd plugdev
 sudo usermod -aG plugdev "$(whoami)"
 
 # More stuff
-yay -S --noconfirm ruby gum
+yay -S --noconfirm ruby gum biome
