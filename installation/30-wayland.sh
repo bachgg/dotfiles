@@ -17,11 +17,11 @@ yay -S --noconfirm niri niriswitcher xdg-desktop-portal-gtk xdg-desktop-portal-g
 yay -S --noconfirm zsh
 sudo chsh -s /usr/bin/zsh "$(whoami)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-git clone https://github.com/jeffreytse/zsh-vi-mode ~/.oh-my-zsh/custom/plugins/zsh-vi-mode
+yay -S --noconfirm zsh-vi-mode
 ln -sf ~/.config/.zshrc ~/.zshrc
 
 # Tools
-yay -S --noconfirm alacritty ghostty
+yay -S --noconfirm alacritty
 ln -sf ~/dotfiles/.config/alacritty/alacritty-linux.toml ~/dotfiles/.config/alacritty/alacritty.toml
 ln -sf ~/dotfiles/.config/ghostty/config-linux ~/dotfiles/.config/ghostty/config
 yay -S --noconfirm tmux eza fzf bat lazygit fastfetch man openssh dust jq go-yq wev git-delta github-cli k3sup
