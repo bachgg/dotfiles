@@ -17,7 +17,7 @@ yay -S --noconfirm niri niriswitcher xdg-desktop-portal-gtk xdg-desktop-portal-g
 yay -S --noconfirm zsh
 sudo chsh -s /usr/bin/zsh "$(whoami)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-yay -S --noconfirm zsh-vi-mode
+yay -S --noconfirm zsh-vi-mode zsh-fast-syntax-highlighting
 ln -sf ~/.config/.zshrc ~/.zshrc
 
 # Tools

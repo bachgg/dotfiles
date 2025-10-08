@@ -33,4 +33,5 @@ PROMPT="%y %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{
 
 export N_PREFIX=~/.local/
 if [ -d /usr/share/zsh/plugins/zsh-vi-mode ]; then source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh; fi
-if [ -d /usr/share/zsh/plugins/zsh-syntax-highlighting ]; then source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; fi
+if [ -d /usr/share/zsh/plugins/fast-syntax-highlighting ]; then source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh; fi
+
