@@ -4,9 +4,10 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     opts = {
       ensure_installed = {
-        'bashls',
+        'bash-language-server',
         'cssls',
         'helm_ls',
+        'harper-ls',
         'jsonls',
         'lemminx',
         'lua_ls',
@@ -17,6 +18,7 @@ return {
         'sqlls',
         'tailwindcss',
         'tflint',
+        'tombi',
         'vimls',
         'yamlls',
       },

@@ -1,3 +1,4 @@
+#!/usr/bin/env -a zsh
 alias ..="cd .."
 alias ...="cd ../.."
 alias ulogout="pkill -u \$(whoami)"

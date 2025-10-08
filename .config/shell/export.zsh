@@ -1,3 +1,4 @@
+#!/usr/bin/env -a zsh
 EDITOR="$(which nvim)" && export "EDITOR"
 export VISUAL="$EDITOR"
 export ZVM_VI_EDITOR="$EDITOR"
@@ -14,10 +15,10 @@ if which op 2>&1 1>&/dev/null && [ -f ~/.config/op/plugins.sh ]; then source "$H
 
 # https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
 zvm_after_init_commands+=('source <(fzf --zsh)')
-eval "$(op completion zsh)"
-compdef _op op
+# eval "$(op completion zsh)"
+# compdef _op op
 
-export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+export ZVM_SYSTEM_CLIPBOARD_ENABLED=false
 
 # https://github.com/ohmyzsh/ohmyzsh/discussions/9849
 # git_prompt_info() {}
@@ -32,3 +33,4 @@ PROMPT="%y %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{
 
 export N_PREFIX=~/.local/
 if [ -d /usr/share/zsh/plugins/zsh-vi-mode ]; then source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh; fi
+if [ -d /usr/share/zsh/plugins/zsh-syntax-highlighting ]; then source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; fi

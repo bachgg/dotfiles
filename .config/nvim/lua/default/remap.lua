@@ -29,9 +29,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "p", "\"_dP")
 
 -- copy to system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<C-y>", "\"+y")
+vim.keymap.set("v", "<C-y>", "\"+y")
+vim.keymap.set("n", "<C-Y>", "\"+Y")
 
 -- delete to void register
 vim.keymap.set("n", "<leader>d", "\"_d")
