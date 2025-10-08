@@ -1,4 +1,4 @@
-#!/usr/bin/env -a zsh
+#!/usr/bin/env -S zsh
 EDITOR="$(which nvim)" && export "EDITOR"
 export VISUAL="$EDITOR"
 export ZVM_VI_EDITOR="$EDITOR"
