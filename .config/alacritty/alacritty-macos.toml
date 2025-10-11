@@ -55,8 +55,8 @@ style = "Regular"
 #   { key = "E", mods = "Alt", chars = "\u001Bwe" },
 #   { key = "U", mods = "Alt", chars = "\u001Bwu" },
 #
-#   { key = "Return", mods = "Shift", chars = "\u001B[13;2u" },
-#   { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
+  # { key = "Return", mods = "Shift", chars = "\u001B[13;2u" },
+  # { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
 #
 #   { key = "V", mods = "Super", action = "Paste" },
 #   { key = "C", mods = "Super", action = "Copy" },
