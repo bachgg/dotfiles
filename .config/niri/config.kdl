@@ -1,10 +1,11 @@
 input {
     keyboard {
-        xkb {}
+        xkb {
+
+        }
         repeat-delay 179
         repeat-rate 39
     }
-
     touchpad {
         // off
         tap
@@ -14,60 +15,55 @@ input {
         // drag-lock
         natural-scroll
         accel-speed 0.5
-        // accel-profile "flat"
+ // accel-profile "flat"
         // scroll-method "two-finger"
         // disabled-on-external-mouse
     }
-
     mouse {
-        // off
+ // off
         // natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "no-scroll"
-    }
 
+    }
     trackpoint {
         // off
         // natural-scroll
         accel-speed 0.4
-        // accel-profile "flat"
+ // accel-profile "flat"
         // scroll-method "on-button-down"
         // scroll-button 273
         // middle-emulation
     }
-
-    // Uncomment this to make the mouse warp to the center of newly focused windows.
+ // Uncomment this to make the mouse warp to the center of newly focused windows.
     // warp-mouse-to-focus
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
     // focus-follows-mouse max-scroll-amount="0%"
 }
-
+// output "eDP-1" {
+//     scale 1.0
+// }
 layout {
-    gaps 16
-
+    gaps 0
     // on-overflow, always, off
     center-focused-column "on-overflow"
     always-center-single-column
-
     preset-column-widths {
-        proportion 0.9
         proportion 1.0
         proportion 0.5
     }
-
-    default-column-width { proportion 0.9; }
-
+    default-column-width {
+        proportion 1.0
+    }
     focus-ring {
         off
     }
-
     border {
         off
     }
-
     struts {
         left 0
         right 0
@@ -75,147 +71,246 @@ layout {
         bottom 0
     }
 }
-
 spawn-at-startup "/usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polkit"
 spawn-at-startup "1password" "--silent"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "~/.config/swww/randomize.sh"
-spawn-at-startup "swayidle" "-w timeout 10 'niri msg action power-off-monitors' timeout 20 'swaylock -f' before-sleep 'swaylock -f'"
 spawn-at-startup "niriswitcher"
-
 spawn-at-startup "alacritty"
 spawn-at-startup "brave"
 spawn-at-startup "slack"
-
 screenshot-path "~/screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
-
 animations {
-  workspace-switch {
-    // duration-ms 0
-  }
-  window-movement {
-    // off
-  }
-  horizontal-view-movement {
-    // off
-    spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
-  }
+    workspace-switch {
+        off
+ // spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+    window-movement {
+        off
+    }
+    horizontal-view-movement {
+        off
+ // spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
 }
-
 window-rule {
-  open-maximized false
+    open-maximized false
 }
-
 window-rule {
-  match app-id="gg.bach.nirictx"
-  open-floating true
+    match app-id="gg.bach.nirictx"
+    open-floating true
 }
-
 window-rule {
-  match app-id="1Password"
-  exclude title="QuickAccess - 1Password" 
-  open-focused true
-  open-fullscreen false
-  block-out-from "screencast"
+    match app-id="1Password"
+    exclude title="QuickAccess - 1Password"
+    open-focused true
+    open-fullscreen false
+    block-out-from "screencast"
 }
-
 window-rule {
-  match app-id="Alacritty"
-  open-focused true
+    match app-id="Alacritty"
+    open-focused true
 }
-
 window-rule {
-  match app-id="brave-browser"
-  open-focused true
+    match app-id="brave-browser"
+    open-focused true
 }
-
 window-rule {
-  match title="^Meet.+$"
-  open-floating true
-  default-column-width { proportion 0.2; }
-  default-window-height { proportion 0.5; }
-  default-floating-position x=0 y=0 relative-to="top-right"
+    match title="^Meet.+$"
+    open-floating true
+    open-focused false
+    default-column-width {
+        proportion 0.15
+    }
+    default-window-height {
+        proportion 0.8
+    }
+    default-floating-position x=0 y=0 relative-to="bottom-right"
 }
-
 layer-rule {
     match namespace="^notifications$"
     block-out-from "screencast"
 }
-
 hotkey-overlay {
-  skip-at-startup
+    skip-at-startup
 }
-
 clipboard {
     disable-primary
 }
-
 gestures {
-  hot-corners {
-    off
-  }
+    hot-corners {
+        off
+    }
 }
-
 binds {
-    Mod+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
-    Mod+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
+    Mod+Tab {
+        spawn "~/.config/scripts/switcher.sh" "Alacritty"
+    }
+    Alt+Tab {
+        spawn "~/.config/scripts/switcher.sh" "Alacritty"
+    }
+    Mod+apostrophe {
+        spawn "~/.config/scripts/switcher.sh" "brave-browser"
+    }
+    Alt+apostrophe {
+        spawn "~/.config/scripts/switcher.sh" "brave-browser"
+    }
+    Mod+grave {
+        spawn "~/.config/scripts/switcher.sh" "brave-browser"
+    }
+    Alt+grave {
+        spawn "~/.config/scripts/switcher.sh" "brave-browser"
+    }
+    Mod+comma {
+        spawn "~/.config/scripts/switcher.sh" "Slack"
+    }
+    Mod+p {
+        spawn "~/.config/scripts/switcher.sh" "1Password"
+    }
+    // Mod+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
+    // Mod+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
     // Mod+Grave repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.workspace" ; }
     // Mod+Shift+Grave repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.workspace" ; }
-
-    Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+Return hotkey-overlay-title="Run an Application: tofi" { spawn "tofi-drun"; }
-    Mod+Space hotkey-overlay-title="Run an Application: tofi" { spawn "tofi-drun"; }
-    Mod+backslash hotkey-overlay-title="2password Quick Access" { spawn "1password" "--quick-access"; }
-
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86MonBrightnessDown allow-when-locked=true {spawn "brillo" "-U 10";}
-    XF86MonBrightnessUp allow-when-locked=true {spawn "brillo" "-A 10";}
-
-    Mod+Escape repeat=false { toggle-overview; }
-
-    Mod+Q { close-window; }
-
-    Mod+H     { focus-column-left-or-last; }
-    Mod+L     { focus-column-right-or-first; }
-    Mod+J     { focus-window-or-workspace-down; }
-    Mod+K     { focus-window-or-workspace-up; }
-
-    Mod+Shift+H     { move-column-left; }
-    Mod+Shift+L     { move-column-right; }
-    Mod+Shift+J     { move-window-down-or-to-workspace-down; }
-    Mod+Shift+K     { move-window-up-or-to-workspace-up; }
-
-    Mod+M           { focus-monitor-next; }
-    Mod+Shift+M     { move-workspace-to-monitor-next; }
-
-    Mod+W           { move-workspace-down; }
-    Mod+Shift+W     { move-workspace-up; }
-
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
-    Mod+Shift+F { fullscreen-window; }
-
-    Mod+C { center-visible-columns; }
-
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
-    Mod+0 { set-column-width "100%"; }
-
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
-    Mod+Shift+0 { set-window-height "100%"; }
-
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-
-    Mod+S { screenshot; }
-    Mod+Shift+S { screenshot-window; }
-    Mod+Shift+Print { screenshot-screen; }
-
-    Mod+Ctrl+Q { spawn "swaylock"; }
-    Mod+Shift+Escape { quit; }
-    Mod+Shift+P { power-off-monitors; }
+    Mod+Shift+Slash {
+        show-hotkey-overlay
+    }
+    Mod+Return hotkey-overlay-title="Run an Application: tofi" {
+        spawn "tofi-drun"
+    }
+    Mod+Space hotkey-overlay-title="Run an Application: tofi" {
+        spawn "tofi-drun"
+    }
+    Mod+backslash hotkey-overlay-title="2password Quick Access" {
+        spawn "1password" "--quick-access"
+    }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn "sh" "-c" "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 0.05+ && fyi $(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "sh" "-c" "wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 0.05- && fyi $(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"
+    }
+    XF86AudioNext allow-when-locked=true {
+        spawn "playerctl" "next"
+    }
+    XF86AudioPrev allow-when-locked=true {
+        spawn "playerctl" "previous"
+    }
+    XF86AudioPlay allow-when-locked=true {
+        spawn "playerctl" "play-pause"
+    }
+    XF86AudioPause allow-when-locked=true {
+        spawn "playerctl" "play-pause"
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "brillo" "-U 10"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "brillo" "-A 10"
+    }
+    Mod+Escape repeat=false {
+        toggle-overview
+    }
+    Mod+Shift+Q {
+        close-window
+    }
+    Mod+F {
+        toggle-window-floating
+    }
+    Mod+H {
+        focus-column-left-or-last
+    }
+    Mod+L {
+        focus-column-right-or-first
+    }
+    Mod+J {
+        focus-window-or-workspace-down
+    }
+    Mod+K {
+        focus-window-or-workspace-up
+    }
+    Mod+Shift+H {
+        move-column-left
+    }
+    Mod+Shift+L {
+        move-column-right
+    }
+    Mod+Shift+J {
+        move-window-down-or-to-workspace-down
+    }
+    Mod+Shift+K {
+        move-window-up-or-to-workspace-up
+    }
+    Mod+M {
+        focus-monitor-next
+    }
+    Mod+Shift+M {
+        move-workspace-to-monitor-next
+    }
+    Mod+W {
+        move-workspace-down
+    }
+    Mod+Shift+W {
+        move-workspace-up
+    }
+    Mod+R {
+        switch-preset-column-width
+    }
+    Mod+Shift+R {
+        switch-preset-window-height
+    }
+    Mod+Ctrl+R {
+        reset-window-height
+    }
+    Mod+Shift+F {
+        fullscreen-window
+    }
+    Mod+C {
+        center-visible-columns
+    }
+    Mod+Minus {
+        set-column-width "-10%"
+    }
+    Mod+Equal {
+        set-column-width "+10%"
+    }
+    Mod+0 {
+        set-column-width "100%"
+    }
+    Mod+Shift+Minus {
+        set-window-height "-10%"
+    }
+    Mod+Shift+Equal {
+        set-window-height "+10%"
+    }
+    Mod+Shift+0 {
+        set-window-height "100%"
+    }
+    Mod+Shift+V {
+        switch-focus-between-floating-and-tiling
+    }
+    Mod+S {
+        screenshot
+    }
+    Mod+Shift+S {
+        screenshot-window
+    }
+    Mod+Shift+Print {
+        screenshot-screen
+    }
+    Mod+Ctrl+Q {
+        spawn "~/.config/scripts/lock.sh"
+    }
+    Mod+Shift+Escape {
+        quit
+    }
+    Mod+Shift+P {
+        power-off-monitors
+    }
 }
+

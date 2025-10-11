@@ -1,35 +1,31 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
   local opts = {
     buffer = bufnr,
+    silent = true
   }
+
   lsp_zero.default_keymaps(
     {
       buffer = bufnr,
       exclude = { 'K' }
     }
   )
+  local map = function(mode, l, r)
+    vim.keymap.set(mode, l, r, opts)
+  end
 
-  vim.keymap.set('n', 'L', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-
-  -- vim.keymap.set('n', 'ga', function()
-  --   vim.lsp.buf.code_action()
-  -- end, opts)
-
-  vim.keymap.set('n', 'gn', function()
-    vim.diagnostic.goto_next()
-  end, opts)
-
-  vim.keymap.set('n', 'gp', function()
-    vim.diagnostic.goto_prev()
-  end, opts)
-
-  vim.keymap.set('n', '<C-y>', function()
-    vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
+  map('n', 'L', function()
+    vim.lsp.buf.hover({
+      border = "single",
+      max_height = 20,
+      max_width = 130,
+    })
   end)
+  map('n', 'gn', function() vim.diagnostic.jump({ count = 1, float = true }) end)
+  map('n', 'gN', function() vim.diagnostic.jump({ count = -1, float = true }) end)
+  map('n', '<C-y>', function() vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" }) end)
 end)
 
 lsp_zero.set_sign_icons({
@@ -55,9 +51,9 @@ if not configs.protols then
   }
 end
 
-require('lspconfig').protols.setup {}
+vim.lsp.config('protols', {})
 
-require('lspconfig').lua_ls.setup {
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       runtime = {
@@ -73,7 +69,7 @@ require('lspconfig').lua_ls.setup {
       },
     }
   }
-}
+})
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.launch",
@@ -89,52 +85,18 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
-require('lspconfig').eslint.setup({
-  on_attach = function(client, bufnr)
-    vim.keymap.set('n', '<leader>es', function()
-      vim.api.nvim_command('EslintFixAll')
-    end)
-  end,
-})
+-- require('lspconfig').eslint.setup({
+--   on_attach = function(client, bufnr)
+--     vim.keymap.set('n', '<leader>es', function()
+--       vim.api.nvim_command('EslintFixAll')
+--     end)
+--   end,
+-- })
 
 local util = require 'lspconfig.util'
 
-
 require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'lemminx',
-    'rust_analyzer',
-    'lua_ls',
-    'bashls',
-    'cssls',
-    'jsonls',
-    'marksman',
-    'sqlls',
-    'tflint',
-    'yamlls',
-    'tailwindcss',
-    'ts_ls',
-    'vimls',
-    'volar',
-  },
-  handlers = {
-    lsp_zero.default_setup,
-    -- ts_ls = function()
-    --   local root_dir = util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git')()
-    --   print('heyyyyy', root_dir)
-    --   require('lspconfig').ts_ls.setup({
-    --     settings = {
-    --       completions = {
-    --         completeFunctionCalls = true
-    --       }
-    --     },
-    --     root_dir = util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git')
-    --   })
-    -- end,
-    rust_analyzer = function() end
-  },
-})
+require('mason-lspconfig').setup({})
 
 local cmp = require('cmp')
 
@@ -178,20 +140,47 @@ cmp.setup({
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig')['html'].setup {
+vim.lsp.config('html', {
   capabilities = capabilities
-}
+})
 
-require('lspconfig').helm_ls.setup {
+vim.lsp.config('helm_ls', {
   settings = {
     ['helm-ls'] = {
       yamlls = {
         path = "yaml-language-server",
+        redhat = {
+          telemetry = {
+            enabled = false
+          }
+        },
+        yaml = {
+          format = {
+            enable = false,
+            bracketSpacing = false
+          }
+        }
       }
     }
   }
-}
-require('lspconfig').yamlls.setup {}
+})
+
+vim.lsp.config('yamlls', {
+  settings = {
+    path = "yaml-language-server",
+    redhat = {
+      telemetry = {
+        enabled = false
+      }
+    },
+    yaml = {
+      format = {
+        enable = true,
+        bracketSpacing = false
+      }
+    }
+  }
+})
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.gitlab-ci*.{yml,yaml}",
@@ -200,16 +189,4 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
-require("lspconfig").basedpyright.setup {
-  settings = {
-    basedpyright = {
-      disableOrganizeImports = true, -- Using Ruff
-    },
-    python = {
-      analysis = {
-        ignore = { '*' }, -- Using Ruff
-      },
-    },
-  },
-  capabilities = capabilities
-}
+require('typescript-tools').setup({})

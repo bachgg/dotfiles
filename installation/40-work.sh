@@ -4,5 +4,8 @@ yay -S --noconfirm \
   google-cloud-cli google-cloud-cli-gke-gcloud-auth-plugin \
   minikube \
   helm \
-  slack-bin
+  slack-bin \
+  yarn \
+  nodejs-n
 
+helm plugin install https://github.com/databus23/helm-diff
