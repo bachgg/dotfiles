@@ -1,11 +1,11 @@
 [gpg]
-	format = ssh
+  format = ssh
 [gpg "ssh"]
-	program = /opt/1Password/op-ssh-sign
+  program = /opt/1Password/op-ssh-sign
 [commit]
-	gpgsign = true
+  gpgsign = true
 [user]
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGMWO5OPnbJWHsumjAyAva2UHf5MPU75SD6Ur1ieeVac
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGMWO5OPnbJWHsumjAyAva2UHf5MPU75SD6Ur1ieeVac
   name = bachgg
   email = github@bach.gg
 [core]
@@ -17,6 +17,6 @@
   dark = true      # or light = true, or omit for auto-detection
   features = arctic-fox
 [include]
-    path = ~/.config/delta/themes.gitconfig
+  path = ~/.config/delta/themes.gitconfig
 [init]
-	defaultBranch = main
+  defaultBranch = main
