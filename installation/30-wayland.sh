@@ -1,8 +1,11 @@
 # Some git config
-git -C ~/dotfiles remote set-url origin "$(git -C ~/dotfiles remote get-url origin | sed 's_https://github.com/_git@github.com:_g')"
-git -C ~/dotfiles config user.name bachgg
-git -C ~/dotfiles config user.email "$(printf %s@%s.%s github bach gg)"
-git -C ~/dotfiles config pull.rebase false
+_git() {
+  git -C "$HOME/dotfiles" "$@"
+}
+_git remote set-url origin "$(_git remote get-url origin | sed 's_https://github.com/_git@github.com:_g')"
+_git config user.name bachgg
+_git config user.email "$(printf %s@%s.%s github bach gg)"
+_git config pull.rebase false
 ln -s ~/.config/.gitconfig ~/.gitconfig
 
 # Desktop manager
