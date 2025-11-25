@@ -67,3 +67,7 @@ vim.keymap.set("v", "<leader>ss", "y/<C-r>\"")
 -- move faster
 vim.keymap.set({ "n", "v" }, "J", "4j")
 vim.keymap.set({ "n", "v" }, "K", "4k")
+
+-- insert & remove tabs from lines
+vim.keymap.set('v', '<Tab>', ":<C-u>silent '<,'>normal! I    <CR>gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<S-Tab>', ":<C-u>silent '<,'>s/^\\%(\t\\|    \\)//e<CR>gv", { noremap = true, silent = true })
