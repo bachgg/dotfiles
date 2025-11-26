@@ -31,3 +31,4 @@ alacritty.toml
 .config/1Password/settings/settings.json
 .config/helm
 .ssh/id_ed25519_sk*
+.ssh/known_hosts
