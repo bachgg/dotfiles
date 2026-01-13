@@ -10,7 +10,8 @@ ln -s ~/.config/.gitconfig ~/.gitconfig
 
 # Desktop manager
 yay -S --noconfirm ly
-sudo systemctl enable ly.service
+sudo systemctl enable ly@tty2.service
+sudo systemctl disable getty@tty2.service
 sudo ln -sf ~/dotfiles/.config/ly/config.ini /etc/ly/config.ini
 
 # Window manager
