@@ -7,7 +7,7 @@ return {
         'bash-language-server',
         'cssls',
         'helm_ls',
-        'harper-ls',
+        -- 'harper-ls',
         'jsonls',
         'lemminx',
         'lua_ls',
