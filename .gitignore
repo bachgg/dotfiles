@@ -36,3 +36,9 @@ alacritty.toml
 .config/yarn/global/node_modules/@aws-crypto/crc32/node_modules/@aws-sdk/types
 .config/yarn/global
 .ssh/known_hosts
+.config/gh
+.config/gh-dash
+.ssh/id
+.ssh/id.pub
+.ssh/id_ec_controller
+.ssh/id_ec_controller.pub
