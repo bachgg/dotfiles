@@ -32,6 +32,14 @@ PROMPT="%y %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{
 # KUBECONFIG=$(ls -1 ~/.kube/kubeconfig-garden* | tr '\n' ':') kubectl config view --merge --flatten > ~/.kube/config
 
 export N_PREFIX=~/.local/
-if [ -d /usr/share/zsh/plugins/zsh-vi-mode ]; then source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh; fi
-if [ -d /usr/share/zsh/plugins/fast-syntax-highlighting ]; then source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh; fi
+zsh_plugin_source() {
+  if [ -f "$1" ]; then
+    source "$1"
+  fi
+}
+
+zsh_plugin_source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+zsh_plugin_source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+zsh_plugin_source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+zsh_plugin_source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 

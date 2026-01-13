@@ -11,6 +11,7 @@ return {
       javascriptreact = { "biome", "prettierd", "prettier" },
       typescript = { "biome", "prettierd", "prettier" },
       typescriptreact = { "biome", "prettierd", "prettier" },
+      html = { "biome", "prettierd", "prettier" },
       terraform = { "terraform_fmt" },
       vue = { "prettierd", "prettier" },
       kdl = { "kdlfmt" }

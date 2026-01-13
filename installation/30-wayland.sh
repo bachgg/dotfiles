@@ -69,3 +69,5 @@ sudo usermod -aG plugdev "$(whoami)"
 
 # More stuff
 yay -S --noconfirm ruby gum biome
+yay -S --noconfirm cronie
+sudo systemctl enable cronie

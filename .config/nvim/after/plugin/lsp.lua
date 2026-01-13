@@ -1,3 +1,46 @@
+vim.lsp.inlay_hint.enable(false)
+-- vim.lsp.enable('copilot')
+-- vim.lsp.enable('copilot_ls')
+-- vim.lsp.config('copilot', {})
+-- vim.lsp.config('copilot_ls', {})
+vim.lsp.enable('biome')
+
+-- Enable treesitter highlight for Prisma files automatically
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "prisma",
+  callback = function()
+    vim.cmd("TSEnable highlight")
+  end,
+})
+
+vim.lsp.enable('atlas')
+vim.filetype.add({
+  filename = {
+    ['atlas.hcl'] = 'atlas-config',
+  },
+  pattern = {
+    ['.*/*.my.hcl'] = 'atlas-schema-mysql',
+    ['.*/*.pg.hcl'] = 'atlas-schema-postgresql',
+    ['.*/*.lt.hcl'] = 'atlas-schema-sqlite',
+    ['.*/*.ch.hcl'] = 'atlas-schema-clickhouse',
+    ['.*/*.ms.hcl'] = 'atlas-schema-mssql',
+    ['.*/*.rs.hcl'] = 'atlas-schema-redshift',
+    ['.*/*.test.hcl'] = 'atlas-test',
+    ['.*/*.plan.hcl'] = 'atlas-plan',
+    ['.*/*.rule.hcl'] = 'atlas-rule',
+  },
+})
+vim.treesitter.language.register('hcl', 'atlas-config')
+vim.treesitter.language.register('hcl', 'atlas-schema-mysql')
+vim.treesitter.language.register('hcl', 'atlas-schema-postgresql')
+vim.treesitter.language.register('hcl', 'atlas-schema-sqlite')
+vim.treesitter.language.register('hcl', 'atlas-schema-clickhouse')
+vim.treesitter.language.register('hcl', 'atlas-schema-mssql')
+vim.treesitter.language.register('hcl', 'atlas-schema-redshift')
+vim.treesitter.language.register('hcl', 'atlas-test')
+vim.treesitter.language.register('hcl', 'atlas-plan')
+vim.treesitter.language.register('hcl', 'atlas-rule')
+
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)

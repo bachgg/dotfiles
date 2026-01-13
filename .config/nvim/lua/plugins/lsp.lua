@@ -15,7 +15,7 @@ return {
         -- 'rust_analyzer',
         'shellcheck',
         'shfmt',
-        'sqlls',
+        -- 'sqlls',
         'tailwindcss',
         'tflint',
         'tombi',
