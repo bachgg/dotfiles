@@ -87,19 +87,28 @@ tssh() {
       "$local_tmux_dir/" "${host}:${remote_tmux_dir}/" || return 1
   fi
 
-  # 2) Remote tmux command:
-  #    - Use the /tmp/bach/.tmux.conf
-  #    - Use a distinct session name
-  local remote_cmd
-  remote_cmd="export CONFIG_BASE_DIR=$remote_base; tmux -f $remote_tmux_conf attach -t $host 2>/dev/null || tmux -f $remote_tmux_conf new -s $host"
-  # echo remote cmd: "ssh -t ${ssh_extra_args[*]} '$host' '$remote_cmd'"
+  # 2) Remote tmux command as ROOT:
+  #    - ssh as ubuntu
+  #    - sudo su - (root login shell)
+  #    - inside root: export CONFIG_BASE_DIR and run tmux with /tmp/bach/.tmux.conf
+  #    - session name = $host
+  #
+  # Inner command run by root's shell:
+  local remote_inner_cmd
+  remote_inner_cmd="export CONFIG_BASE_DIR=$remote_base;"
+  remote_inner_cmd="$remote_inner_cmd tmux -f $remote_tmux_conf attach -t bach/$host 2>/dev/null || tmux -f $remote_tmux_conf new -s bach/$host"
 
-  # 3) Spawn a new Alacritty window running ssh + remote tmux
+  # Command executed as ubuntu, which then becomes root:
+  local remote_cmd
+  remote_cmd="sudo su - -c '$remote_inner_cmd'"
+  # echo "$remote_cmd"
+
+  # 3) Spawn a new Alacritty window running ssh + sudo + root tmux
   if [ "${#ssh_extra_args[@]}" -gt 0 ]; then
     alacritty \
-      --command zsh -lc "ssh -t ${ssh_extra_args[*]} '$host' '$remote_cmd'"
+      --command ssh -t ${ssh_extra_args[*]} "$host" "$remote_cmd"
   else
     alacritty \
-      --command zsh -lc "ssh -t '$host' '$remote_cmd'"
+      --command ssh -t "$host" "$remote_cmd"
   fi
 }
