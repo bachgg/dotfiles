@@ -24,6 +24,7 @@ foreground = "0xabb2bf"
 
 [env]
 TERM = "xterm-256color"
+CONFIG_BASE_DIR = "/home/bach"
 
 [font]
 size = 13
@@ -46,19 +47,18 @@ style = "Regular"
 
 [keyboard]
 bindings = [
-#   { key = "Return", mods = "Shift", chars = "\u001B[13;2u" },
-#   { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
-#
+  # { key = "Return", mods = "Shift", chars = "\u001B[13;2u" },
+  #   { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
+  #
   { key = "V", mods = "Super", action = "Paste" },
   { key = "C", mods = "Super", action = "Copy" },
-#   { key = "V", mods = "Control", action = "ReceiveChar" },
+  # { key = "V", mods = "Control", action = "ReceiveChar" },
   { key = "1", mods = "Super", chars = "\u001B1" },
   { key = "2", mods = "Super", chars = "\u001B2" },
   { key = "3", mods = "Super", chars = "\u001B3" },
   { key = "4", mods = "Super", chars = "\u001B4" },
   { key = "5", mods = "Super", chars = "\u001B5" },
 ]
-
 
 [scrolling]
 history = 100000

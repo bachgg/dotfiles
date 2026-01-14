@@ -43,3 +43,63 @@ zsh_plugin_source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.pl
 zsh_plugin_source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 zsh_plugin_source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
+tssh() {
+  if [ "$#" -lt 1 ]; then
+    echo "Usage: tssh <host> [ssh-args...]" >&2
+    return 1
+  fi
+
+  local host="$1"
+  shift
+  # Any extra args after host will be passed to ssh (e.g. -p 2222)
+  local ssh_extra_args=("$@")
+
+  # Local paths for config
+  local local_tmux_conf="$HOME/.config/tmux/tmux.conf"
+  local local_tmux_dir="$HOME/.config/tmux"
+
+  # Remote paths
+  local remote_base="/tmp/bach"
+  local remote_tmux_conf="$remote_base/.tmux.conf"
+  local remote_tmux_dir="$remote_base/.config/tmux"
+
+  # 0) Ensure /tmp/bach exists on remote before rsync
+  if [ "${#ssh_extra_args[@]}" -gt 0 ]; then
+    ssh "${ssh_extra_args[@]}" "$host" "mkdir -p '$remote_tmux_dir'" || return 1
+  else
+    ssh "$host" "mkdir -p '$remote_tmux_dir'" || return 1
+  fi
+
+  # 1) rsync tmux config to remote:
+  #    - Copy ~/.config/tmux/tmux.conf -> /tmp/bach/.tmux.conf
+  #    - Copy whole ~/.config/tmux/ -> /tmp/bach/.config/tmux/
+  if [ "${#ssh_extra_args[@]}" -gt 0 ]; then
+    rsync -avzq -e "ssh ${ssh_extra_args[*]}" \
+      "$local_tmux_conf" "${host}:${remote_tmux_conf}" || return 1
+
+    rsync -avzq -e "ssh ${ssh_extra_args[*]}" \
+      "$local_tmux_dir/" "${host}:${remote_tmux_dir}/" || return 1
+  else
+    rsync -avzq \
+      "$local_tmux_conf" "${host}:${remote_tmux_conf}" || return 1
+
+    rsync -avzq \
+      "$local_tmux_dir/" "${host}:${remote_tmux_dir}/" || return 1
+  fi
+
+  # 2) Remote tmux command:
+  #    - Use the /tmp/bach/.tmux.conf
+  #    - Use a distinct session name
+  local remote_cmd
+  remote_cmd="export CONFIG_BASE_DIR=$remote_base; tmux -f $remote_tmux_conf attach -t $host 2>/dev/null || tmux -f $remote_tmux_conf new -s $host"
+  # echo remote cmd: "ssh -t ${ssh_extra_args[*]} '$host' '$remote_cmd'"
+
+  # 3) Spawn a new Alacritty window running ssh + remote tmux
+  if [ "${#ssh_extra_args[@]}" -gt 0 ]; then
+    alacritty \
+      --command zsh -lc "ssh -t ${ssh_extra_args[*]} '$host' '$remote_cmd'"
+  else
+    alacritty \
+      --command zsh -lc "ssh -t '$host' '$remote_cmd'"
+  fi
+}
