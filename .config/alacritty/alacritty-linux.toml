@@ -27,7 +27,7 @@ TERM = "xterm-256color"
 CONFIG_BASE_DIR = "/home/bach"
 
 [font]
-size = 13
+size = 11.5
 
 [font.bold]
 family = "monospace"
