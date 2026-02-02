@@ -101,10 +101,17 @@ window-rule {
     open-floating true
 }
 window-rule {
-    match app-id="1Password"
+    match app-id="1password"
     exclude title="QuickAccess - 1Password"
     open-focused true
     open-fullscreen false
+}
+window-rule {
+    match app-id="1password"
+    block-out-from "screencast"
+}
+window-rule {
+    match title="^nocast.+$"
     block-out-from "screencast"
 }
 window-rule {
@@ -165,7 +172,7 @@ binds {
         spawn "~/.config/scripts/switcher.sh" "Slack"
     }
     Mod+p {
-        spawn "~/.config/scripts/switcher.sh" "1Password"
+        spawn "~/.config/scripts/switcher.sh" "1password"
     }
     // Mod+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
     // Mod+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
