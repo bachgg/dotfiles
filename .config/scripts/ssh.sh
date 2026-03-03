@@ -7,6 +7,7 @@ CONFIG_FILES=(
   "$HOME/.ssh/config"
   "$HOME/.ssh/tl.config"
   "$HOME/.ssh/cs.config"
+  "$HOME/.ssh/gt.config"
   "$HOME/.ssh/private.config"
 )
 
