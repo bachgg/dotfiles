@@ -1,9 +1,6 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  opts = {
-    ensure_installed = {
-      "html", "tsx"
-    }
-  }
+  'nvim-treesitter/nvim-treesitter',
+  lazy = false,
+  build = ':TSUpdate',
+  branch = 'main'
 }
