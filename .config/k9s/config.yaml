@@ -1,8 +1,8 @@
 k9s:
-  liveViewAutoRefresh: false
+  liveViewAutoRefresh: true
   gpuVendors: {}
   screenDumpDir: /home/bach/.local/state/k9s/screen-dumps
-  refreshRate: 2
+  refreshRate: 1
   apiServerTimeout: 15s
   maxConnRetry: 5
   readOnly: false

@@ -1,9 +1,9 @@
 #!/usr/bin/env -S zsh
-EDITOR="$(which nvim)" && export "EDITOR"
+EDITOR="$(command -v nvim)" && export "EDITOR"
 export VISUAL="$EDITOR"
 export ZVM_VI_EDITOR="$EDITOR"
 
-if which starship 2>&1 1>&/dev/null; then
+if command -v starship &>/dev/null; then
   export STARSHIP_CONFIG=~/.config/starship/starship.toml
   eval "$(starship init zsh)"
 fi
@@ -11,7 +11,7 @@ fi
 export XDG_CONFIG_HOME="$HOME/.config"
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
-if which op 2>&1 1>&/dev/null && [ -f ~/.config/op/plugins.sh ]; then source "$HOME/.config/op/plugins.sh"; fi
+if command -v op &>/dev/null && [ -f ~/.config/op/plugins.sh ]; then source "$HOME/.config/op/plugins.sh"; fi
 
 # https://github.com/jeffreytse/zsh-vi-mode#execute-extra-commands
 zvm_after_init_commands+=('source <(fzf --zsh)')
@@ -22,7 +22,7 @@ export ZVM_SYSTEM_CLIPBOARD_ENABLED=false
 
 # https://github.com/ohmyzsh/ohmyzsh/discussions/9849
 # git_prompt_info() {}
-PROMPT="%y %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
+PROMPT="%y %B%F{red}:: %F{green}%3~%(0?. . %F{red}%? )%F{blue}»%f%b "
 
 # gardenctl session
 [ -n "$GCTL_SESSION_ID" ] || [ -n "$TERM_SESSION_ID" ] || export GCTL_SESSION_ID=$(uuidgen)
