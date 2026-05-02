@@ -1,5 +1,6 @@
 return {
   'stevearc/conform.nvim',
+  event = "BufWritePre",
   opts = {
     default_format_opts = {
       stop_after_first = true
@@ -7,6 +8,7 @@ return {
     formatters_by_ft = {
       json = { "biome", "prettierd", "prettier" },
       lua = { "stylua" },
+      python = { "ruff_format" },
       javascript = { "biome", "prettierd", "prettier" },
       javascriptreact = { "biome", "prettierd", "prettier" },
       typescript = { "biome", "prettierd", "prettier" },
@@ -17,9 +19,8 @@ return {
       kdl = { "kdlfmt" }
     },
     format_on_save = {
-      -- These options will be passed to conform.format()
       timeout_ms = 500,
-      lsp_fallback = true,
+      lsp_format = "fallback",
     },
   }
 

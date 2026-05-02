@@ -13,6 +13,7 @@ return {
         'lua_ls',
         'marksman',
         -- 'rust_analyzer',
+        'ruff',
         'shellcheck',
         'shfmt',
         -- 'sqlls',
@@ -31,6 +32,7 @@ return {
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-buffer' },
   { 'L3MON4D3/LuaSnip' },
+  { 'saadparwaiz1/cmp_luasnip' },
   { 'towolf/vim-helm',                  ft = 'helm' },
   {
     "pmizio/typescript-tools.nvim",

@@ -11,6 +11,7 @@ vim.opt.smartcase = true
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = false
 vim.opt.smartindent = true
+vim.opt.splitright = true
 
 vim.opt.wrap = false
 
@@ -21,7 +22,8 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 0
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 250
+vim.opt.signcolumn = "yes"
 
 vim.opt.colorcolumn = "80"
 vim.opt.showmode = false

@@ -68,7 +68,7 @@ lsp_zero.on_attach(function(client, bufnr)
   end)
   map('n', 'gn', function() vim.diagnostic.jump({ count = 1, float = true }) end)
   map('n', 'gN', function() vim.diagnostic.jump({ count = -1, float = true }) end)
-  map('n', '<C-y>', function() vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" }) end)
+  map('n', 'gl', function() vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" }) end)
 end)
 
 lsp_zero.set_sign_icons({
@@ -78,8 +78,7 @@ lsp_zero.set_sign_icons({
   info = '»'
 })
 
--- Has to setup neodev before lspconfig
-require("neodev").setup({})
+-- Has to setup lazydev before lspconfig (handled by lazy.nvim ft loading)
 
 local lspconfig = require 'lspconfig'
 local configs = require 'lspconfig.configs'
@@ -146,6 +145,7 @@ local cmp = require('cmp')
 cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
     { name = 'buffer' }
   },
   mapping = cmp.mapping.preset.insert({

@@ -1,5 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
+  event = "BufReadPost",
   opts = {
     signs                        = {
       add          = { text = '│' },
@@ -21,7 +22,7 @@ return {
     current_line_blame_opts      = {
       virt_text = true,
       virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
-      delay = 0,
+      delay = 300,
       ignore_whitespace = false,
       virt_text_priority = 100,
     },
