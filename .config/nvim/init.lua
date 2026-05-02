@@ -1,8 +1,14 @@
+vim.loader.enable()
+
+for _, p in ipairs({ "perl", "ruby", "python3", "node" }) do
+  vim.g["loaded_" .. p .. "_provider"] = 0
+end
+
 require("default.set")
 require("default.remap")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",

@@ -21,12 +21,12 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 0
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 250
 
 vim.opt.colorcolumn = "80"
 vim.opt.showmode = false
 vim.opt.list = true
-vim.opt.listchars = "trail:-,tab:   ,nbsp:␣"
+vim.opt.listchars = "trail:·,tab:» ,nbsp:␣"
 
 -- vim.g: global variables (g:)
 vim.g.mapleader = " "

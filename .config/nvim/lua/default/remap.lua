@@ -41,12 +41,6 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 vim.keymap.set({ "n", "v" }, "gg", "gg0")
 vim.keymap.set({ "n", "v" }, "G", "G$")
 
--- moving between panes
--- vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
--- vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
--- vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
--- vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
-
 -- resizing panes
 vim.keymap.set("n", "<M-->", ":resize -3<CR>")
 vim.keymap.set("n", "<M-=>", ":resize +3<CR>")
@@ -61,13 +55,11 @@ vim.keymap.set("c", "<C-l>", "<Right>")
 
 -- search & replace
 vim.keymap.set("v", "<leader>ss", "y/<C-r>\"")
--- below is replaced by nvim-rip-substitute
--- vim.keymap.set("v", "<leader>sr", "y:%s/<C-r>\"/<C-r>\"/g<Left><Left>")
 
 -- move faster
 vim.keymap.set({ "n", "v" }, "J", "4j")
 vim.keymap.set({ "n", "v" }, "K", "4k")
 
 -- insert & remove tabs from lines
-vim.keymap.set('v', '<Tab>', ":<C-u>silent '<,'>normal! I    <CR>gv", { noremap = true, silent = true })
-vim.keymap.set('v', '<S-Tab>', ":<C-u>silent '<,'>s/^\\%(\t\\|    \\)//e<CR>gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<Tab>', '>gv', { noremap = true, silent = true })
+vim.keymap.set('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
