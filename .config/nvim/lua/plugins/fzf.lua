@@ -2,19 +2,22 @@ return {
   "ibhagwan/fzf-lua",
   -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  cmd = "FzfLua",
+  keys = {
+    { "<leader>ff", function() require("fzf-lua").files() end },
+    { "<leader>fg", function() require("fzf-lua").git_files() end },
+    { "<leader>fj", function() require("fzf-lua").live_grep() end, mode = "n" },
+    { "<leader>fj", function() require("fzf-lua").grep_visual() end, mode = "v" },
+    { "<leader>fc", function() require("fzf-lua").commands() end },
+    { "<leader> ", function() require("fzf-lua").buffers() end, mode = { "n", "v" } },
+    { "gr", function() require("fzf-lua").lsp_references() end, mode = { "n", "v" } },
+    { "ga", function() require("fzf-lua").lsp_code_actions() end, mode = { "n", "v" } },
+    { "ge", function() require("fzf-lua").lsp_document_diagnostics() end },
+    { "gE", function() require("fzf-lua").lsp_workspace_diagnostics() end },
+  },
   config = function()
     local fzf = require("fzf-lua")
     fzf.register_ui_select()
-    vim.keymap.set('n', '<leader>ff', fzf.files, {})
-    vim.keymap.set('n', '<leader>fg', fzf.git_files, {})
-    vim.keymap.set('n', '<leader>fj', fzf.live_grep, {})
-    vim.keymap.set('v', '<leader>fj', fzf.grep_visual, {})
-    vim.keymap.set('n', '<leader>fc', fzf.commands, {})
-    vim.keymap.set({ 'n', 'v' }, '<leader> ', fzf.buffers, {})
-    vim.keymap.set({ 'n', 'v' }, 'gr', fzf.lsp_references, {})
-    vim.keymap.set({ 'n', 'v' }, 'ga', fzf.lsp_code_actions, {})
-    vim.keymap.set({ 'n' }, 'ge', fzf.lsp_document_diagnostics, {})
-    vim.keymap.set({ 'n' }, 'gE', fzf.lsp_workspace_diagnostics, {})
 
     local actions = fzf.actions
     -- calling `setup` is optional for customization

@@ -1,6 +1,24 @@
 return {
   "lewis6991/gitsigns.nvim",
   event = "BufReadPost",
+  keys = {
+    { "gb", function() require("gitsigns").blame_line({ full = true }) end, desc = "Git blame line" },
+    {
+      "gB",
+      function()
+        local commit = require("gitsigns").get_hunks and vim.fn.system("git blame -l -L" .. vim.fn.line(".") .. "," .. vim.fn.line(".") .. " -- " .. vim.fn.expand("%")):match("^(%x+)")
+        if not commit or commit:match("^0+$") then
+          vim.notify("Not committed yet", vim.log.levels.WARN)
+          return
+        end
+        local remote = vim.fn.system("git remote get-url origin"):gsub("%s+$", "")
+        local url = remote:gsub("git@(.+):(.+)%.git", "https://%1/%2"):gsub("%.git$", "")
+        url = url .. "/commit/" .. commit
+        vim.fn.system({ "open", url })
+      end,
+      desc = "Open blame commit on GitHub",
+    },
+  },
   opts = {
     signs                        = {
       add          = { text = '│' },
