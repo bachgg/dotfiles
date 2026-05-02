@@ -69,6 +69,7 @@ lsp_zero.on_attach(function(client, bufnr)
   map('n', 'gn', function() vim.diagnostic.jump({ count = 1, float = true }) end)
   map('n', 'gN', function() vim.diagnostic.jump({ count = -1, float = true }) end)
   map('n', 'gl', function() vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" }) end)
+  map('n', '<leader>rn', vim.lsp.buf.rename)
 end)
 
 lsp_zero.set_sign_icons({
