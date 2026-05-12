@@ -2,6 +2,7 @@
 EDITOR="$(command -v nvim)" && export "EDITOR"
 export VISUAL="$EDITOR"
 export ZVM_VI_EDITOR="$EDITOR"
+export PATH="$PATH:$HOME/.local/bin"
 
 if command -v starship &>/dev/null; then
   export STARSHIP_CONFIG=~/.config/starship/starship.toml

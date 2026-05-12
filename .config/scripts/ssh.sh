@@ -2,14 +2,23 @@
 
 command="${1:-ssh}"
 
-# SSH config files to parse
-CONFIG_FILES=(
-  "$HOME/.ssh/config"
-  "$HOME/.ssh/tl.config"
-  "$HOME/.ssh/cs.config"
-  "$HOME/.ssh/gt.config"
-  "$HOME/.ssh/private.config"
-)
+MAIN_CONFIG="$HOME/.ssh/config"
+
+# Build CONFIG_FILES from the main config's Include directives
+CONFIG_FILES=("$MAIN_CONFIG")
+
+if [[ -f "$MAIN_CONFIG" ]]; then
+  while IFS= read -r included; do
+    # Expand ~ to $HOME
+    included="${included/#\~/$HOME}"
+    # If path is relative, resolve it relative to ~/.ssh
+    [[ "$included" != /* ]] && included="$HOME/.ssh/$included"
+    # Expand globs (Include supports them); only add if file exists
+    for f in $included; do
+      [[ -f "$f" ]] && CONFIG_FILES+=("$f")
+    done
+  done < <(grep -iE "^[[:space:]]*Include[[:space:]]+" "$MAIN_CONFIG" | awk '{for (i=2; i<=NF; i++) print $i}')
+fi
 
 # Extract all Host entries (excluding wildcards like *)
 get_hosts() {
