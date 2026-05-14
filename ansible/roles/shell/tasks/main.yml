@@ -1,0 +1,107 @@
+---
+# zsh, oh-my-zsh, terminals, CLI tooling, docker.
+
+- name: Install zsh and shell plugins
+  kewlfft.aur.aur:
+    name:
+      - zsh
+      - zsh-vi-mode
+      - zsh-fast-syntax-highlighting
+    state: present
+    use: yay
+
+- name: Set user's login shell to zsh
+  become: true
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    shell: /usr/bin/zsh
+
+- name: Check oh-my-zsh installation
+  ansible.builtin.stat:
+    path: "{{ user_home }}/.oh-my-zsh"
+  register: omz
+
+- name: Install oh-my-zsh (unattended)
+  when: not omz.stat.exists
+  ansible.builtin.shell: |
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+  args:
+    creates: "{{ user_home }}/.oh-my-zsh"
+
+- name: Install terminals + core CLI tools
+  kewlfft.aur.aur:
+    name:
+      - alacritty
+      - tmux
+      - eza
+      - fzf
+      - bat
+      - lazygit
+      - fastfetch
+      - man
+      - openssh
+      - dust
+      - jq
+      - go-yq
+      - wev
+      - git-delta
+      - github-cli
+      - k3sup
+      - cmake
+      - ripgrep
+      - fd
+      - nodejs
+      - npm
+      - go
+      - unzip
+      - neovim
+      - rust-analyzer
+      - bind
+      - zk
+      - socat
+      - jnv
+      - jwt-cli
+      - wl-clipboard
+      - ruby
+      - gum
+      - biome
+    state: present
+    use: yay
+
+- name: Install docker
+  kewlfft.aur.aur:
+    name:
+      - docker
+      - docker-compose
+    state: present
+    use: yay
+
+- name: Enable docker services
+  become: true
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  loop:
+    - docker.service
+    - docker.socket
+
+- name: Add user to docker group
+  become: true
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    groups: docker
+    append: true
+
+- name: Install cronie
+  kewlfft.aur.aur:
+    name: [cronie]
+    state: present
+    use: yay
+
+- name: Enable cronie
+  become: true
+  ansible.builtin.systemd:
+    name: cronie
+    enabled: true
+    state: started

@@ -1,0 +1,57 @@
+---
+# Keyboard remapping (keyd), brightness, ZSA Moonlander udev rules.
+
+- name: Install brillo
+  kewlfft.aur.aur:
+    name: [brillo]
+    state: present
+    use: yay
+
+- name: Add user to video group (brightness)
+  become: true
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    groups: video
+    append: true
+
+- name: Install keyd
+  kewlfft.aur.aur:
+    name: [keyd]
+    state: present
+    use: yay
+
+- name: Symlink keyd config
+  become: true
+  ansible.builtin.file:
+    src: "{{ config_dir }}/keyd/default.conf"
+    dest: /etc/keyd/default.conf
+    state: link
+    force: true
+
+- name: Enable keyd
+  become: true
+  ansible.builtin.systemd:
+    name: keyd
+    enabled: true
+    state: started
+
+- name: Symlink Moonlander udev rules
+  become: true
+  ansible.builtin.file:
+    src: "{{ user_home }}/.config/etc/udev/rules.d/50-zsa.rules"
+    dest: /etc/udev/rules.d/50-zsa.rules
+    state: link
+    force: true
+
+- name: Ensure plugdev group
+  become: true
+  ansible.builtin.group:
+    name: plugdev
+    state: present
+
+- name: Add user to plugdev group
+  become: true
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    groups: plugdev
+    append: true

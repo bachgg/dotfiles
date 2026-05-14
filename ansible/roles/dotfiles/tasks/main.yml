@@ -1,0 +1,73 @@
+---
+# Symlink dotfiles + git config for the dotfiles repo itself.
+
+- name: Symlink ~/.config -> dotfiles/.config
+  ansible.builtin.file:
+    src: "{{ dotfiles_dir }}/.config"
+    dest: "{{ user_home }}/.config"
+    state: link
+    force: true
+
+- name: Symlink ~/.ssh -> dotfiles/.ssh
+  ansible.builtin.file:
+    src: "{{ dotfiles_dir }}/.ssh"
+    dest: "{{ user_home }}/.ssh"
+    state: link
+    force: true
+
+- name: Symlink ~/.gitconfig
+  ansible.builtin.file:
+    src: "{{ config_dir }}/.gitconfig"
+    dest: "{{ user_home }}/.gitconfig"
+    state: link
+    force: true
+
+- name: Symlink ~/.zshrc
+  ansible.builtin.file:
+    src: "{{ config_dir }}/.zshrc"
+    dest: "{{ user_home }}/.zshrc"
+    state: link
+    force: true
+
+- name: Symlink alacritty config (linux)
+  ansible.builtin.file:
+    src: "{{ config_dir }}/alacritty/alacritty-linux.toml"
+    dest: "{{ config_dir }}/alacritty/alacritty.toml"
+    state: link
+    force: true
+
+- name: Symlink ghostty config (linux)
+  ansible.builtin.file:
+    src: "{{ config_dir }}/ghostty/config-linux"
+    dest: "{{ config_dir }}/ghostty/config"
+    state: link
+    force: true
+
+# Dotfiles repo git config
+- name: Switch dotfiles remote to SSH
+  community.general.git_config:
+    name: remote.origin.url
+    scope: local
+    repo: "{{ dotfiles_dir }}"
+    value: "git@github.com:bachgg/dotfiles.git"
+
+- name: Set git user.name
+  community.general.git_config:
+    name: user.name
+    scope: local
+    repo: "{{ dotfiles_dir }}"
+    value: bachgg
+
+- name: Set git user.email
+  community.general.git_config:
+    name: user.email
+    scope: local
+    repo: "{{ dotfiles_dir }}"
+    value: "github@bach.gg"
+
+- name: Set git pull.rebase false
+  community.general.git_config:
+    name: pull.rebase
+    scope: local
+    repo: "{{ dotfiles_dir }}"
+    value: "false"

@@ -1,0 +1,9 @@
+# Skip rules that are noisy or wrong for a personal provisioning playbook.
+skip_list:
+  - role-name           # roles live under roles/ without a galaxy prefix
+  - fqcn-builtins       # we use bare module names like 'ansible.builtin.file' already; this allows shorter ones too
+  - var-naming[no-role-prefix]
+
+exclude_paths:
+  - .github/
+  - ansible/test/

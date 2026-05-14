@@ -1,0 +1,8 @@
+---
+- name: Install language toolchains
+  kewlfft.aur.aur:
+    name:
+      - typescript
+      - rust
+    state: present
+    use: yay

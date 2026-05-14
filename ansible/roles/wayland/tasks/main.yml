@@ -1,0 +1,38 @@
+---
+# Display manager + Niri window manager + portals + notifications + screen tools.
+
+- name: Install ly + niri + portals + misc WM tooling
+  kewlfft.aur.aur:
+    name:
+      - ly
+      - niri
+      - niriswitcher
+      - xdg-desktop-portal-gtk
+      - xdg-desktop-portal-gnome
+      - mako
+      - fyi
+      - swaylock
+      - swayidle
+      - grim
+    state: present
+    use: yay
+
+- name: Symlink ly config
+  become: true
+  ansible.builtin.file:
+    src: "{{ config_dir }}/ly/config.ini"
+    dest: /etc/ly/config.ini
+    state: link
+    force: true
+
+- name: Enable ly on tty2
+  become: true
+  ansible.builtin.systemd:
+    name: ly@tty2.service
+    enabled: true
+
+- name: Disable getty on tty2
+  become: true
+  ansible.builtin.systemd:
+    name: getty@tty2.service
+    enabled: false

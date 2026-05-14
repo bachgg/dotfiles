@@ -1,0 +1,40 @@
+---
+- name: Provision Arch Linux workstation
+  hosts: localhost
+  gather_facts: true
+
+  pre_tasks:
+    - name: Ensure required system packages
+      become: true
+      community.general.pacman:
+        name:
+          - base-devel
+          - git
+          - python-pip
+        state: present
+        update_cache: true
+      tags: [always]
+
+  roles:
+    - { role: bootstrap, tags: [bootstrap] }
+    - { role: dotfiles,  tags: [dotfiles]  }
+    - { role: drivers,   tags: [drivers]   }
+    - { role: wayland,   tags: [wayland]   }
+    - { role: shell,     tags: [shell]     }
+    - { role: audio,     tags: [audio]     }
+    - { role: bluetooth, tags: [bluetooth] }
+    - { role: desktop,   tags: [desktop]   }
+    - { role: input,     tags: [input]     }
+    - { role: languages, tags: [languages] }
+    - { role: work,      tags: [work]      }
+
+  post_tasks:
+    - name: Prompt for reboot
+      ansible.builtin.pause:
+        prompt: "Provisioning complete. Reboot now? (Ctrl-C to skip, Enter to reboot)"
+      tags: [reboot]
+
+    - name: Reboot
+      become: true
+      ansible.builtin.reboot:
+      tags: [reboot]

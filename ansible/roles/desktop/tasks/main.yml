@@ -1,0 +1,56 @@
+---
+# Browser, file manager, media apps, themes, fonts, networking, switchboard.
+
+- name: Install desktop apps
+  kewlfft.aur.aur:
+    name:
+      - brave-bin
+      - pantheon-polkit-agent
+      - 1password
+      - 1password-cli
+      - tofi
+      - nautilus
+      - eog
+      - totem
+      - evince
+      - amberol
+      - swww
+      - btop
+      - networkmanager
+      - satty
+      - switchboard
+      - switchboard-plug-bluetooth
+      - switchboard-plug-network
+      - switchboard-plug-sound
+      - gnome-settings-daemon
+    state: present
+    use: yay
+
+- name: Install themes and fonts
+  kewlfft.aur.aur:
+    name:
+      - gnome-themes-extra
+      - adwaita-qt5-git
+      - adwaita-qt6-git
+      - noto-fonts
+      - noto-fonts-emoji
+      - ttf-roboto
+      - ttf-jetbrains-mono-nerd
+    state: present
+    use: yay
+
+- name: Enable NetworkManager
+  become: true
+  ansible.builtin.systemd:
+    name: NetworkManager
+    enabled: true
+    state: started
+
+- name: Disable services that slow boot
+  become: true
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: false
+  loop:
+    - systemd-networkd.service
+    - NetworkManager-wait-online.service

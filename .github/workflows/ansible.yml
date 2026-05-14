@@ -1,0 +1,60 @@
+name: ansible
+
+on:
+  push:
+    paths:
+      - 'ansible/**'
+      - 'install_v2.sh'
+      - '.github/workflows/ansible.yml'
+  pull_request:
+    paths:
+      - 'ansible/**'
+      - 'install_v2.sh'
+      - '.github/workflows/ansible.yml'
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint & syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install ansible + ansible-lint
+        run: |
+          python -m pip install --upgrade pip
+          pip install ansible ansible-lint
+
+      - name: Install Galaxy collections
+        working-directory: ansible
+        run: ansible-galaxy collection install -r requirements.yml
+
+      - name: ansible-lint
+        working-directory: ansible
+        run: ansible-lint
+
+      - name: Syntax check
+        working-directory: ansible
+        run: ansible-playbook playbook.yml --syntax-check
+
+  container-e2e:
+    name: Container E2E (tags=${{ matrix.tags }})
+    runs-on: ubuntu-latest
+    needs: lint
+    strategy:
+      fail-fast: false
+      matrix:
+        tags:
+          - 'bootstrap,dotfiles'
+          - 'shell,languages'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run playbook in Arch container (apply + idempotency)
+        env:
+          TAGS: ${{ matrix.tags }}
+        run: ./ansible/test/run.sh

@@ -1,0 +1,26 @@
+---
+# Pipewire stack.
+
+- name: Remove jack2 (conflicts with pipewire-jack)
+  become: true
+  community.general.pacman:
+    name: jack2
+    state: absent
+    extra_args: -dd
+  failed_when: false
+
+- name: Install pipewire + friends
+  kewlfft.aur.aur:
+    name:
+      - pipewire
+      - pipewire-alsa
+      - pipewire-jack
+      - pipewire-pulse
+      - gst-plugin-pipewire
+      - libpulse
+      - wireplumber
+      - wiremix
+      - playerctl
+      - sof-firmware
+    state: present
+    use: yay

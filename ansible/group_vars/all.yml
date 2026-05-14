@@ -1,0 +1,6 @@
+---
+# Shared variables.
+dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
+config_dir:   "{{ dotfiles_dir }}/.config"
+user_name:    "{{ ansible_env.USER }}"
+user_home:    "{{ ansible_env.HOME }}"

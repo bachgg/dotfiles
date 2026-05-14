@@ -1,0 +1,59 @@
+---
+# Bootstrap: tune pacman + install yay (AUR helper).
+
+- name: Enable Color in pacman.conf
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/pacman.conf
+    regexp: '^#?Color'
+    line: 'Color'
+    state: present
+
+- name: Enable ILoveCandy in pacman.conf
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/pacman.conf
+    insertafter: '^Color'
+    line: 'ILoveCandy'
+    state: present
+
+- name: Check if yay is installed
+  ansible.builtin.command: command -v yay
+  register: yay_check
+  changed_when: false
+  failed_when: false
+
+- name: Build and install yay-bin from AUR
+  when: yay_check.rc != 0
+  block:
+    - name: Create temp build dir
+      ansible.builtin.tempfile:
+        state: directory
+        suffix: yay-build
+      register: yay_tmp
+
+    - name: Clone yay-bin
+      ansible.builtin.git:
+        repo: https://aur.archlinux.org/yay-bin.git
+        dest: "{{ yay_tmp.path }}"
+        depth: 1
+
+    - name: makepkg yay-bin
+      ansible.builtin.command: makepkg -s --noconfirm
+      args:
+        chdir: "{{ yay_tmp.path }}"
+
+    - name: Find built package
+      ansible.builtin.find:
+        paths: "{{ yay_tmp.path }}"
+        patterns: "yay-bin-*.pkg.tar.zst"
+      register: yay_pkg
+
+    - name: Install yay package
+      become: true
+      ansible.builtin.command: "pacman -U --noconfirm {{ yay_pkg.files[0].path }}"
+
+    - name: Cleanup
+      ansible.builtin.file:
+        path: "{{ yay_tmp.path }}"
+        state: absent

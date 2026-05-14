@@ -1,4 +1,8 @@
-# sh <(curl -fsSL bachgg.github.io/dotfiles/install.sh)
+#!/usr/bin/env bash
+# Bootstrap entrypoint.
+#   sh <(curl -fsSL https://bachgg.github.io/dotfiles/install.sh)
+
+set -euo pipefail
 
 if [ -d /run/archiso ]; then
   curl -fsSLO bachgg.github.io/dotfiles/user_configuration.json

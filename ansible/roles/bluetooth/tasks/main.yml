@@ -1,0 +1,23 @@
+---
+- name: Install bluez stack
+  kewlfft.aur.aur:
+    name:
+      - bluez
+      - bluez-utils
+      - blueman
+    state: present
+    use: yay
+
+- name: Enable bluetooth service
+  become: true
+  ansible.builtin.systemd:
+    name: bluetooth
+    enabled: true
+    state: started
+
+- name: Enable mpris-proxy (user)
+  ansible.builtin.systemd:
+    name: mpris-proxy
+    enabled: true
+    state: started
+    scope: user

@@ -1,0 +1,31 @@
+---
+# Work-specific tooling: Kubernetes, GCP, Slack.
+
+- name: Install work tools (AUR)
+  kewlfft.aur.aur:
+    name:
+      - kubectl
+      - kubectx
+      - k9s
+      - kubelogin
+      - gardenctl-bin
+      - gardenlogin-bin
+      - google-cloud-cli
+      - google-cloud-cli-gke-gcloud-auth-plugin
+      - minikube
+      - helm
+      - slack-bin
+      - yarn
+      - nodejs-n
+    state: present
+    use: yay
+
+- name: Check installed helm plugins
+  ansible.builtin.command: helm plugin list
+  register: helm_plugins
+  changed_when: false
+  failed_when: false
+
+- name: Install helm-diff plugin
+  ansible.builtin.command: helm plugin install https://github.com/databus23/helm-diff
+  when: "'diff' not in helm_plugins.stdout"

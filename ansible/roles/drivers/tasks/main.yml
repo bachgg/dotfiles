@@ -1,0 +1,8 @@
+---
+- name: Install GPU/media drivers
+  kewlfft.aur.aur:
+    name:
+      - intel-media-driver
+      - mesa
+    state: present
+    use: yay
